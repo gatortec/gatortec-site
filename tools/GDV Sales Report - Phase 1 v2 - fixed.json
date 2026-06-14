@@ -142,7 +142,8 @@
       "position": [
         3232,
         -144
-      ]
+      ],
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -183,7 +184,8 @@
           "id": "SH3KragVhEnhfwCY",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -209,7 +211,8 @@
           "id": "SH3KragVhEnhfwCY",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -222,7 +225,8 @@
         176
       ],
       "id": "926a2434-20dc-4623-af7d-927855a45b93",
-      "name": "Prepare GS Rows"
+      "name": "Prepare GS Rows",
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -235,7 +239,8 @@
         176
       ],
       "id": "f4c3c68b-f59c-4585-8e9e-d8eba1335483",
-      "name": "Single Item"
+      "name": "Single Item",
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -261,7 +266,8 @@
           "id": "SH3KragVhEnhfwCY",
           "name": "Google Sheets account"
         }
-      }
+      },
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -274,7 +280,8 @@
         176
       ],
       "id": "e521c457-114b-48e1-a21f-7850289a7e67",
-      "name": "Build Slack Blocks"
+      "name": "Build Slack Blocks",
+      "executeOnce": true
     },
     {
       "parameters": {
@@ -315,7 +322,8 @@
           "id": "4If1uX9M5Ew9Tx6h",
           "name": "The RepairShopr Bot"
         }
-      }
+      },
+      "executeOnce": true
     }
   ],
   "pinData": {},
