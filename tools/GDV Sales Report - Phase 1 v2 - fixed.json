@@ -250,7 +250,7 @@
         "nodeCredentialType": "googleSheetsOAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ { \"requests\": [{ \"updateSheetProperties\": { \"properties\": { \"sheetId\": $('Create sheet').first().json.sheetId, \"gridProperties\": { \"rowCount\": $('Prepare GS Rows').all().length + 1 } }, \"fields\": \"gridProperties.rowCount\" } }] } }}",
+        "jsonBody": "={{ { \"requests\": [{ \"updateSheetProperties\": { \"properties\": { \"sheetId\": $('Create sheet').first().json.sheetId, \"gridProperties\": { \"rowCount\": $('Prepare GS Rows').first().json.rowCount } }, \"fields\": \"gridProperties.rowCount\" } }] } }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
