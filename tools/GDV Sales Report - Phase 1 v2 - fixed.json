@@ -1,0 +1,501 @@
+{
+  "name": "GDV Sales Report - Phase 1 v2",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 23 * * 6"
+            }
+          ]
+        }
+      },
+      "id": "db56c077-7b54-439c-a531-af3d967f73ff",
+      "name": "Weekly Saturday 11PM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        1264,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate LAST week's Sun-Sat window\n// If today is Sunday, we want the week that just ended (yesterday was Saturday)\n// If today is Saturday (when cron runs), we want this current week\nconst now = new Date();\nconst dayOfWeek = now.getDay(); // 0=Sun, 6=Sat\n\nlet lastSunday;\nif (dayOfWeek === 6) {\n  // Saturday (cron trigger) - this week's Sunday\n  lastSunday = new Date(now);\n  lastSunday.setDate(now.getDate() - 6);\n} else {\n  // Any other day (manual trigger) - last week's Sunday\n  lastSunday = new Date(now);\n  lastSunday.setDate(now.getDate() - dayOfWeek - 7);\n}\nlastSunday.setHours(0, 0, 0, 0);\n\nconst lastSaturday = new Date(lastSunday);\nlastSaturday.setDate(lastSunday.getDate() + 6);\n\nconst fromDate = lastSunday.toISOString().split('T')[0];\nconst toDate = lastSaturday.toISOString().split('T')[0];\n\nreturn [{ json: { fromDate, toDate } }];"
+      },
+      "id": "96520044-f572-436d-9547-655e383f1018",
+      "name": "Calculate Report Dates",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1488,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all();"
+      },
+      "id": "8c6e6dca-1670-4b18-8abb-9de2b1c1a06f",
+      "name": "Filter to Reporting Week",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1936,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://gatortec.repairshopr.com/api/v1/invoices/{{ $json.id }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "api_key",
+              "value": "__PASTE_REPAIRSHOPR_API_KEY__"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "11478003-b06c-468b-8c4b-3a705fc86430",
+      "name": "Get Invoice Details + Line Items",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2144,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = [];\n\nfor (const inputItem of $input.all()) {\n  const data = inputItem.json;\n  const invoice = data.invoice || data;\n  if (!invoice || !invoice.line_items || !invoice.line_items.length) continue;\n\n  const appleItems = invoice.line_items.filter(item => {\n    const category = (item.product_category || '').toLowerCase();\n    return category.includes('apple retail');\n  });\n\n  if (appleItems.length === 0) continue;\n\n  const hasGov = invoice.line_items.some(item => {\n    const sku = (item.item || '').toUpperCase().trim();\n    const name = (item.name || '').toUpperCase();\n    return sku === 'GOV' || name === 'GOV';\n  });\n\n  const customer = invoice.customer || {};\n  const customerName = (customer.business_then_name || customer.business_name || '').trim();\n  const customerNameLower = customerName.toLowerCase();\n\n  let gdvLocationId = '745667';\n  if (customerNameLower.includes('getupgraded') || customerNameLower.includes('equipped')) {\n    gdvLocationId = '2093771';\n  } else if (customerNameLower.includes('amazon')) {\n    gdvLocationId = '2060280';\n  }\n\n  for (const item of appleItems) {\n    let sku = (item.item || '').trim();\n    if (sku.startsWith('Z') && sku.length > 4) {\n      sku = sku.substring(0, 4);\n    }\n\n    const rawDate = invoice.date || '';\n    const dateFormatted = rawDate.replace(/-/g, '');\n\n    let soldQty = Math.abs(parseInt(item.quantity) || 0);\n    let returnedQty = 0;\n    if (parseFloat(invoice.subtotal || '0') < 0) {\n      returnedQty = soldQty;\n      soldQty = 0;\n    }\n\n    results.push({\n      json: {\n        location: gdvLocationId,\n        apple_product: sku,\n        sold_qty: soldQty,\n        returned_qty: returnedQty,\n        invoice_number: invoice.number || '',\n        invoice_date: dateFormatted,\n        _rs_customer_name: customerName,\n        _rs_customer_fullname: customer.fullname || '',\n        _rs_customer_address: customer.address || '',\n        _rs_customer_city: customer.city || '',\n        _rs_customer_state: customer.state || '',\n        _rs_customer_zip: customer.zip || '',\n        _rs_ticket_id: invoice.ticket_id,\n        _rs_invoice_id: invoice.id,\n        _rs_location_id: invoice.location_id,\n        _rs_has_gov: hasGov,\n        _rs_contact_name: customer.fullname || '',\n        _rs_item_price: item.price,\n        _rs_item_name: item.name\n      }\n    });\n  }\n}\n\nreturn results;"
+      },
+      "id": "4f921b44-9989-41b8-be6a-a346d829919c",
+      "name": "Filter Apple SKUs + Map Fields",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2368,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://gatortec.repairshopr.com/api/v1/tickets/{{ $json._rs_ticket_id }}/comments",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "api_key",
+              "value": "__PASTE_REPAIRSHOPR_API_KEY__"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "0ba084b1-5add-411e-a88a-1a6f134a5ff4",
+      "name": "Get Ticket Comments",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2592,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const LOOKUP = {\"AL JAZEERA INTERNATIONAL\": {\"n\": \"AL JAZEERA INTERNATIONAL\", \"t\": \"2L\", \"a\": \"1200 NEW HAMPSHIRE AVE NW\", \"c\": \"WASHINGTON\", \"co\": \"US\"}, \"ALSTOM MSF\": {\"n\": \"ALSTOM MSF\", \"t\": \"2L\", \"a\": \"5815 West 96th Street\", \"c\": \"Los Angeles\", \"co\": \"US\"}, \"APAX PARTNERS\": {\"n\": \"Apax Partners\", \"t\": \"2L\", \"a\": \"601 Lexington Ave.\", \"c\": \"New York\", \"co\": \"US\"}, \"ATTIO\": {\"n\": \"ATTIO\", \"t\": \"2L\", \"a\": \"25 Easton Street\", \"c\": \"London\", \"co\": \"UK\"}, \"ADFORM\": {\"n\": \"Adform\", \"t\": \"2L\", \"a\": \"17 Halsey St\", \"c\": \"Brooklyn\", \"co\": \"US\"}, \"ADVANCED PAIN MEDICINE OF NORTH FLORIDA\": {\"n\": \"Advanced Pain Medicine of North Florida\", \"t\": \"21\", \"a\": \"194 Northwest 137th Drive\", \"c\": \"Newberry\", \"co\": \"US\"}, \"ALIRA HEALTH BOSTON\": {\"n\": \"Alira Health Boston\", \"t\": \"2L\", \"a\": \"1 Grant St\", \"c\": \"Framingham\", \"co\": \"US\"}, \"ALIRA HEALTH BOSTON LLC\": {\"n\": \"Alira Health Boston, LLC\", \"t\": \"2L\", \"a\": \"1 Grant St\", \"c\": \"Framingham\", \"co\": \"US\"}, \"ALL POINTS LLC\": {\"n\": \"All Points LLC\", \"t\": \"2L\", \"a\": \"190 South Sykes Creek Parkway\", \"c\": \"Merritt Island\", \"co\": \"US\"}, \"ALPHA IT\": {\"n\": \"Alpha IT\", \"t\": \"21\", \"a\": \"2400 River Road\", \"c\": \"Eugene\", \"co\": \"US\"}, \"AMESTO\": {\"n\": \"Amesto\", \"t\": \"2L\", \"a\": \"205 East 42nd Street\", \"c\": \"New York\", \"co\": \"US\"}, \"APAX\": {\"n\": \"Apax\", \"t\": \"2L\", \"a\": \"601 Lexington Avenue\", \"c\": \"New York\", \"co\": \"US\"}, \"ARCHDIOCESE OF NY\": {\"n\": \"Archdiocese of NY\", \"t\": \"21\", \"a\": \"172 Broadway\", \"c\": \"New York\", \"co\": \"US\"}, \"ASCH PHOENIX DESIGN\": {\"n\": \"Asch Phoenix Design\", \"t\": \"21\", \"a\": \"2603 NW 13th St.\", \"c\": \"Gainesvile\", \"co\": \"US\"}, \"ATRANDI BIOSCIENCES\": {\"n\": \"Atrandi Biosciences\", \"t\": \"2L\", \"a\": \"1562 S Lincoln St\", \"c\": \"Denver\", \"co\": \"US\"}, \"BL HARBERT INTERNATIONAL\": {\"n\": \"BL Harbert International\", \"t\": \"2L\", \"a\": \"5816 Genoa Red Bluff Road\", \"c\": \"Pasadena\", \"co\": \"US\"}, \"BSPORT\": {\"n\": \"BSPORT\", \"t\": \"2L\", \"a\": \"1028 Tranquil Gardens Place\", \"c\": \"Acworth\", \"co\": \"US\"}, \"BTS INTEGRATED CONNECTIONS LLC\": {\"n\": \"BTS Integrated Connections, LLC\", \"t\": \"21\", \"a\": \"729 Grapevine Hwy\", \"c\": \"Hurst\", \"co\": \"US\"}, \"BABYCORPS\": {\"n\": \"BabyCorps\", \"t\": \"2L\", \"a\": \"787 Victor Road\", \"c\": \"Macedon\", \"co\": \"US\"}, \"BAKER BOTTS LLP\": {\"n\": \"Baker Botts LLP\", \"t\": \"2L\", \"a\": \"30 Rockefeller Plaza\", \"c\": \"New York\", \"co\": \"US\"}, \"BALYASNY ASSET MANAGEMENT\": {\"n\": \"Balyasny Asset Management\", \"t\": \"21\", \"a\": \"945 Bunker Hill\", \"c\": \"Houston\", \"co\": \"US\"}, \"BANC OF CALIFORNIA\": {\"n\": \"Banc of California\", \"t\": \"2L\", \"a\": \"11611 San Vicente Blvd\", \"c\": \"Los Angeles\", \"co\": \"US\"}, \"BEELINE IMPORT AND SERVICES\": {\"n\": \"Beeline Import and Services\", \"t\": \"2L\", \"a\": \"3565 Piedmont Road NE\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"BEELINE IMPORT AND SERVICES LLC\": {\"n\": \"Beeline Import and Services LLC\", \"t\": \"2L\", \"a\": \"3565 Piedmont Road\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"BEL BRANDS\": {\"n\": \"Bel Brands\", \"t\": \"2L\", \"a\": \"1500 E North Ave\", \"c\": \"Little Chute\", \"co\": \"US\"}, \"BILLABONG\": {\"n\": \"Billabong\", \"t\": \"2L\", \"a\": \"5161 CALIFORNIA AVE\", \"c\": \"IRVINE\", \"co\": \"US\"}, \"BIRD LOECHL MCCANTS & HOLLIDAY LLC\": {\"n\": \"Bird, Loechl, McCants & Holliday, LLC\", \"t\": \"21\", \"a\": \"3350 Riverwood Parkway\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"BOYES LAW\": {\"n\": \"Boyes Law\", \"t\": \"21\", \"a\": \"5700 Southwest 34th Street\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"BREVARD COUNTY SHERIFF\\u2019S OFFICE\": {\"n\": \"Brevard County Sheriff\\u2019s Office\", \"t\": \"QW\", \"a\": \"160 Doler Lane\", \"c\": \"Cocoa\", \"co\": \"US\"}, \"BRIGHTWELL LLC\": {\"n\": \"Brightwell LLC\", \"t\": \"21\", \"a\": \"900 Circle 75 Parkway Southeast\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"BRITTANY THIBAULT HEALTH SERVICES\": {\"n\": \"Brittany Thibault Health Services\", \"t\": \"21\", \"a\": \"3625 Southwest 32nd Court\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"CLK MULTIFAMILY MANAGEMENT\": {\"n\": \"CLK Multifamily Management\", \"t\": \"2L\", \"a\": \"5545 Murray Ave\", \"c\": \"Memphis\", \"co\": \"US\"}, \"CWK NETWORK\": {\"n\": \"CWK Network\", \"t\": \"2L\", \"a\": \"6849 Peachtree Dunwoody Road\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"CADDELL CONSTRUCTION\": {\"n\": \"Caddell Construction\", \"t\": \"2L\", \"a\": \"445 Dexter Ave\", \"c\": \"Montgomery\", \"co\": \"US\"}, \"CAESARS ENTERTAINMENT INC\": {\"n\": \"Caesars Entertainment, Inc\", \"t\": \"2L\", \"a\": \"777 Casino Pkwy\", \"c\": \"Murphy\", \"co\": \"US\"}, \"CAGE & MILES\": {\"n\": \"Cage & Miles\", \"t\": \"21\", \"a\": \"16644 West Bernardo Drive\", \"c\": \"San Diego\", \"co\": \"US\"}, \"CAGE AND MILES\": {\"n\": \"Cage and Miles\", \"t\": \"21\", \"a\": \"16644 West Bernardo Drive\", \"c\": \"San Diego\", \"co\": \"US\"}, \"CATAWBA INDIAN NATION\": {\"n\": \"Catawba Indian Nation\", \"t\": \"QW\", \"a\": \"538 Kings Mountain Blvd\", \"c\": \"Kings Mountain\", \"co\": \"US\"}, \"CHICAGO METALLIC CORP\": {\"n\": \"Chicago Metallic Corp\", \"t\": \"2L\", \"a\": \"4849 S Austin Ave\", \"c\": \"Chicago\", \"co\": \"US\"}, \"CHICAGO METALLIC CORPORATION\": {\"n\": \"Chicago Metallic Corporation\", \"t\": \"2L\", \"a\": \"4849 S Austin Ave\", \"c\": \"Chicago\", \"co\": \"US\"}, \"CHRIST COMMUNITY CHURCH\": {\"n\": \"Christ Community Church\", \"t\": \"21\", \"a\": \"1603 Southwest 122nd Street\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"CHUNG AND KLL\": {\"n\": \"Chung and KLL\", \"t\": \"21\", \"a\": \"3909 Spring Mountain Road\", \"c\": \"Las Vegas\", \"co\": \"US\"}, \"CHUNG AND KLL INC\": {\"n\": \"Chung and KLL INC\", \"t\": \"21\", \"a\": \"3909 Spring Mountain Road\", \"c\": \"Las Vegas\", \"co\": \"US\"}, \"CITY OF MIAMI BEACH\": {\"n\": \"City of Miami Beach\", \"t\": \"QW\", \"a\": \"1755 Meridian Avenue\", \"c\": \"Miami Beach\", \"co\": \"US\"}, \"CLOUDSMITH LTD\": {\"n\": \"Cloudsmith Ltd\", \"t\": \"2L\", \"a\": \"60 Ramshead Road\", \"c\": \"Medford\", \"co\": \"US\"}, \"COOK COUNTY ILLINOIS\": {\"n\": \"Cook County Illinois\", \"t\": \"QW\", \"a\": \"118 North Clark Street\", \"c\": \"Chicago\", \"co\": \"US\"}, \"COUNTY OF MONTEREY\": {\"n\": \"County of Monterey\", \"t\": \"QW\", \"a\": \"1488 Schilling PI\", \"c\": \"Salinas\", \"co\": \"US\"}, \"COUSINS PROPERTIES\": {\"n\": \"Cousins Properties\", \"t\": \"2L\", \"a\": \"550 South Caldwell Street\", \"c\": \"Charlotte\", \"co\": \"US\"}, \"DIVISION OF BLIND SERVICES/DOE\": {\"n\": \"DIVISION OF BLIND SERVICES/DOE\", \"t\": \"QW\", \"a\": \"325 West Gaines Street\", \"c\": \"Tallahassee\", \"co\": \"US\"}, \"DANFOSS\": {\"n\": \"Danfoss\", \"t\": \"2L\", \"a\": \"8701 North Harrison\", \"c\": \"Shawnee\", \"co\": \"US\"}, \"DANFOSS POWER SOLUTIONS\": {\"n\": \"Danfoss Power Solutions\", \"t\": \"2L\", \"a\": \"8701 N Harrison St\", \"c\": \"Shawnee\", \"co\": \"US\"}, \"DANFOSS TURBOCOR COMPRESSORS\": {\"n\": \"Danfoss Turbocor Compressors\", \"t\": \"21\", \"a\": \"1769 E. Paul Dirac Dr\", \"c\": \"Tallahassee\", \"co\": \"US\"}, \"DATAIKU\": {\"n\": \"Dataiku\", \"t\": \"2L\", \"a\": \"3233 W 31st Ave\", \"c\": \"Denver\", \"co\": \"US\"}, \"DATAIKU INC\": {\"n\": \"Dataiku Inc\", \"t\": \"2L\", \"a\": \"125 West 25th Street\", \"c\": \"New York\", \"co\": \"US\"}, \"DEEPIP\": {\"n\": \"Deepip\", \"t\": \"21\", \"a\": \"1 Dock 72 Wy\", \"c\": \"Brooklyn\", \"co\": \"US\"}, \"DOLEAD\": {\"n\": \"Dolead\", \"t\": \"2L\", \"a\": \"625 Massachusetts Ave\", \"c\": \"Cambridge\", \"co\": \"US\"}, \"DUKE ENERGY\": {\"n\": \"Duke Energy\", \"t\": \"2L\", \"a\": \"525 S Tryon St\", \"c\": \"Charlotte\", \"co\": \"US\"}, \"EGYM\": {\"n\": \"EGYM\", \"t\": \"2L\", \"a\": \"6293 West Jewell Ave\", \"c\": \"Lakewood\", \"co\": \"US\"}, \"EGYM INC\": {\"n\": \"EGYM Inc.\", \"t\": \"2L\", \"a\": \"1920 17th Street\", \"c\": \"Denver\", \"co\": \"US\"}, \"EVOLUTION US\": {\"n\": \"Evolution US\", \"t\": \"2L\", \"a\": \"1500 Spring Garden St\", \"c\": \"Philadelphia\", \"co\": \"US\"}, \"EMBREY MANAGEMENT SERVICES\": {\"n\": \"Embrey Management Services\", \"t\": \"2L\", \"a\": \"7600 Broadway\", \"c\": \"San Antonio\", \"co\": \"US\"}, \"ENGLEWOOD CHRISTIAN\": {\"n\": \"Englewood Christian\", \"t\": \"21\", \"a\": \"404 W Green St\", \"c\": \"Englewood\", \"co\": \"US\"}, \"EPIC ENTERTAINMENT\": {\"n\": \"Epic Entertainment\", \"t\": \"21\", \"a\": \"920 Huber Street\", \"c\": \"Grover Beach\", \"co\": \"US\"}, \"EVOLUTION\": {\"n\": \"Evolution\", \"t\": \"2L\", \"a\": \"1500 Spring Garden St\", \"c\": \"Philadelphia\", \"co\": \"US\"}, \"F1 ARCADE\": {\"n\": \"F1 Arcade\", \"t\": \"2L\", \"a\": \"1115 HOWELL MILL ROAD NW\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"FANDUEL\": {\"n\": \"FanDuel\", \"t\": \"2L\", \"a\": \"19 Union Square West\", \"c\": \"New York\", \"co\": \"US\"}, \"FERRARI NORTH AMERICA\": {\"n\": \"Ferrari North America\", \"t\": \"2L\", \"a\": \"250 Sylvan Avenue\", \"c\": \"Englewood Cliffs\", \"co\": \"US\"}, \"FERRARI NORTH AMERICA INC\": {\"n\": \"Ferrari North America Inc.\", \"t\": \"2L\", \"a\": \"250 Sylvan Avenue,\", \"c\": \"Englewood Cliffs\", \"co\": \"US\"}, \"FIRSTBASE\": {\"n\": \"FirstBase\", \"t\": \"2L\", \"a\": \"3815 WEST PARKWAY BLVD WEST\", \"c\": \"WEST VALLEY CITY\", \"co\": \"US\"}, \"FLO HEALTH\": {\"n\": \"Flo Health,\", \"t\": \"2L\", \"a\": \"43 W Bare Hill Road\", \"c\": \"Harvard\", \"co\": \"US\"}, \"FORTE BIOSCIENCES\": {\"n\": \"Forte Biosciences\", \"t\": \"2L\", \"a\": \"3060 Pegaus Park Drive\", \"c\": \"Dallas\", \"co\": \"US\"}, \"FORTE BIOSCIENCES INC\": {\"n\": \"Forte Biosciences, Inc.\", \"t\": \"2L\", \"a\": \"3060 Pegaus Park Drive\", \"c\": \"Dallas\", \"co\": \"US\"}, \"FOUR SEASONS\": {\"n\": \"Four Seasons\", \"t\": \"2L\", \"a\": \"One N 19th St\", \"c\": \"Philadelphia\", \"co\": \"US\"}, \"GETTY GRANITE\": {\"n\": \"GETTY GRANITE\", \"t\": \"2L\", \"a\": \"120 East Haddam Road\", \"c\": \"Salem\", \"co\": \"US\"}, \"GN HEARING CARE\": {\"n\": \"GN Hearing Care\", \"t\": \"2L\", \"a\": \"656 W Randolph\", \"c\": \"Chicago\", \"co\": \"US\"}, \"GRU\": {\"n\": \"GRU\", \"t\": \"QW\", \"a\": \"4747 North Main Street\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"GAINESVILLE PEDIATRIC ASSOCIATES\": {\"n\": \"Gainesville Pediatric Associates\", \"t\": \"21\", \"a\": \"6440 West Newberry Road\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"GENERAL MOTORS\": {\"n\": \"General Motors\", \"t\": \"2L\", \"a\": \"767 5th Ave\", \"c\": \"New York\", \"co\": \"US\"}, \"GILMER COUNTY COURTHOUSE\": {\"n\": \"Gilmer County Courthouse\", \"t\": \"QW\", \"a\": \"1 Broad Street\", \"c\": \"Ellijay\", \"co\": \"US\"}, \"GIPPER MEDIA INC\": {\"n\": \"Gipper Media Inc\", \"t\": \"2L\", \"a\": \"825 NORTHVIEW CIR\", \"c\": \"Limon\", \"co\": \"US\"}, \"GOCARDLESS\": {\"n\": \"GoCardless\", \"t\": \"2L\", \"a\": \"2014 JESSE E. SEGOVIA STREET\", \"c\": \"Austin\", \"co\": \"US\"}, \"GREENWOOD COUNTY EMS\": {\"n\": \"Greenwood County EMS\", \"t\": \"QW\", \"a\": \"528 Monument Street\", \"c\": \"Greenwood\", \"co\": \"US\"}, \"GUIDEPOST ENERGY\": {\"n\": \"Guidepost Energy\", \"t\": \"2L\", \"a\": \"2700 Technology Forest Blvd\", \"c\": \"The Woodlands\", \"co\": \"US\"}, \"HITT CONTRACTING\": {\"n\": \"HITT Contracting\", \"t\": \"2L\", \"a\": \"4909 DICKENS ROAD\", \"c\": \"Richmond\", \"co\": \"US\"}, \"HYUNDAI\": {\"n\": \"HYUNDAI\", \"t\": \"2L\", \"a\": \"9730 HIGHWAY 280\", \"c\": \"Ellabell\", \"co\": \"US\"}, \"HALLIE CASANAS\": {\"n\": \"Hallie Casanas\", \"t\": \"21\", \"a\": \"433 LAGUNA AVE\", \"c\": \"Key Largo\", \"co\": \"US\"}, \"HARDEE COUNTY BOARD OF COMMISSIONERS\": {\"n\": \"Hardee County Board of Commissioners\", \"t\": \"QW\", \"a\": \"404 W Orange St\", \"c\": \"Wauchula\", \"co\": \"US\"}, \"HERITAGE VET PARTNERS\": {\"n\": \"Heritage Vet Partners\", \"t\": \"2L\", \"a\": \"201 W. Beatty\", \"c\": \"Johnson\", \"co\": \"US\"}, \"HILTON REALTY\": {\"n\": \"Hilton Realty\", \"t\": \"2L\", \"a\": \"902 CARNEGIE CENTER\", \"c\": \"Princeton\", \"co\": \"US\"}, \"HUMAN INTEREST\": {\"n\": \"Human Interest\", \"t\": \"2L\", \"a\": \"2675 W 600 N\", \"c\": \"Lindon\", \"co\": \"US\"}, \"INNIO WAUKESHA GAS ENGINES\": {\"n\": \"INNIO Waukesha Gas Engines\", \"t\": \"2L\", \"a\": \"1101 W St. Paul Ave.\", \"c\": \"Waukesha\", \"co\": \"US\"}, \"IMMUNIC\": {\"n\": \"Immunic\", \"t\": \"2L\", \"a\": \"1200 Avenue of the Americas\", \"c\": \"New York\", \"co\": \"US\"}, \"INFINITE HOME LLC\": {\"n\": \"Infinite Home LLC\", \"t\": \"21\", \"a\": \"1300 Peachtree Industrial Blvd\", \"c\": \"Suwanee\", \"co\": \"US\"}, \"INFO TECH INC\": {\"n\": \"Info Tech, Inc.\", \"t\": \"2L\", \"a\": \"2970 sw 50th terr\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"INSURANCE RESOURCES INTERNATIONAL LLC\": {\"n\": \"Insurance Resources International, LLC\", \"t\": \"21\", \"a\": \"315 Rhodes Chase Court\", \"c\": \"Alpharetta\", \"co\": \"US\"}, \"INTERA\": {\"n\": \"Intera\", \"t\": \"2L\", \"a\": \"2440 Louisiana Boulevard NE\", \"c\": \"Albuquerque\", \"co\": \"US\"}, \"JACKSON COUNTY\": {\"n\": \"Jackson County\", \"t\": \"QW\", \"a\": \"102 E LAUREL ST\", \"c\": \"SCOTTSBORO\", \"co\": \"US\"}, \"JAEB CENTER FOR HEALTH RESEARCH\": {\"n\": \"Jaeb Center for Health Research\", \"t\": \"21\", \"a\": \"15310 Amberly Drive\", \"c\": \"Tampa\", \"co\": \"US\"}, \"JELLYFISH US\": {\"n\": \"Jellyfish US\", \"t\": \"2L\", \"a\": \"4 Bryant Park\", \"c\": \"New York\", \"co\": \"US\"}, \"JETBRAINS INC\": {\"n\": \"JetBrains Inc\", \"t\": \"2L\", \"a\": \"2 Seaport Lane\", \"c\": \"Boston\", \"co\": \"US\"}, \"KELLY TEPEDINO M D\": {\"n\": \"Kelly Tepedino, M. D.\", \"t\": \"21\", \"a\": \"1722 Southwest Newland Way\", \"c\": \"Lake City\", \"co\": \"US\"}, \"LAKESIDE COUNTRY CLUB\": {\"n\": \"Lakeside Country Club\", \"t\": \"21\", \"a\": \"100 Wilcrest Dr.\", \"c\": \"Houston\", \"co\": \"US\"}, \"LARRY CIESLA\": {\"n\": \"Larry Ciesla\", \"t\": \"21\", \"a\": \"4400 Northwest 23rd Avenue\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"LEGRAND AV INC\": {\"n\": \"Legrand AV Inc.\", \"t\": \"2L\", \"a\": \"6436 City West Parkway\", \"c\": \"Eden Prairie\", \"co\": \"US\"}, \"LEVY COUNTY PREVENTION COALITION\": {\"n\": \"Levy County Prevention Coalition\", \"t\": \"QW\", \"a\": \"801 South Main Street\", \"c\": \"Williston\", \"co\": \"US\"}, \"LITTRELL & ASSOCIATES\": {\"n\": \"Littrell & Associates\", \"t\": \"21\", \"a\": \"155 Fox Point Circle\", \"c\": \"Weatherford\", \"co\": \"US\"}, \"LUM APPS\": {\"n\": \"Lum Apps\", \"t\": \"2L\", \"a\": \"151 S. 1st Street\", \"c\": \"Austin\", \"co\": \"US\"}, \"LUMAPPS\": {\"n\": \"LumApps\", \"t\": \"2L\", \"a\": \"345 West 145th St,\", \"c\": \"New York\", \"co\": \"US\"}, \"LUNDY LAW\": {\"n\": \"Lundy Law\", \"t\": \"21\", \"a\": \"1040 North Kings Highway,\", \"c\": \"Cherry Hill\", \"co\": \"US\"}, \"MAAC\": {\"n\": \"MAAC\", \"t\": \"21\", \"a\": \"1355 3rd Ave\", \"c\": \"Chila Vista\", \"co\": \"US\"}, \"MAAC PROJECT\": {\"n\": \"MAAC Project\", \"t\": \"21\", \"a\": \"1355 3rd Ave\", \"c\": \"Chula Vista\", \"co\": \"US\"}, \"MAERSK INC\": {\"n\": \"MAERSK, INC.\", \"t\": \"2L\", \"a\": \"9300 Arrowpoint Boulevard\", \"c\": \"Charlotte\", \"co\": \"US\"}, \"MOTORCYCLE SAFETY FOUNDATION\": {\"n\": \"MOTORCYCLE SAFETY FOUNDATION\", \"t\": \"2L\", \"a\": \"15635 ALTON PARKWAY\", \"c\": \"IRVINE\", \"co\": \"US\"}, \"MELDON LAW\": {\"n\": \"Meldon Law\", \"t\": \"EN\", \"a\": \"703 North Main Street\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"MIAMI DADE COUNTY\": {\"n\": \"Miami Dade County\", \"t\": \"QW\", \"a\": \"9300 NW 41st St.\", \"c\": \"DORAL\", \"co\": \"US\"}, \"MIAMI DADE SHERRIF OFFICE\": {\"n\": \"Miami Dade Sherrif Office\", \"t\": \"QW\", \"a\": \"9105 NW 25th St.\", \"c\": \"DORAL\", \"co\": \"US\"}, \"MIAMI DOWNTOWN DEVELOPMENT AUTHORITY\": {\"n\": \"Miami Downtown Development Authority\", \"t\": \"QW\", \"a\": \"200 South Biscayne Boulevard\", \"c\": \"Miami\", \"co\": \"US\"}, \"MISTRAL AI\": {\"n\": \"Mistral AI\", \"t\": \"2L\", \"a\": \"325 Lytton Avenue\", \"c\": \"Palo Alto\", \"co\": \"US\"}, \"NASSAU COUNTY\": {\"n\": \"Nassau County\", \"t\": \"QW\", \"a\": \"96135 Nassau Place\", \"c\": \"Yulee\", \"co\": \"US\"}, \"NETPROS TECHNOLOGIES\": {\"n\": \"NetPros Technologies\", \"t\": \"21\", \"a\": \"3843 S Bristol St\", \"c\": \"Santa Ana\", \"co\": \"US\"}, \"NEXREV\": {\"n\": \"NexRev\", \"t\": \"2L\", \"a\": \"601 Development Drive\", \"c\": \"Plano\", \"co\": \"US\"}, \"NORTH CAROLINA BOARD OF EXAMINERS FOR ENGINEERS AND SURVEYORS\": {\"n\": \"North Carolina Board of Examiners for Engineers and Surveyors\", \"t\": \"QW\", \"a\": \"4601 Six Forks Rd\", \"c\": \"Raleigh\", \"co\": \"US\"}, \"NORTH CAROLINA OFFICE OF STATE FIRE MARSHAL\": {\"n\": \"North Carolina Office of State Fire Marshal\", \"t\": \"QW\", \"a\": \"1429 ROCK QUARRY RD\", \"c\": \"Raleigh\", \"co\": \"US\"}, \"NORTHERN BUSINESS PRODUCTS\": {\"n\": \"Northern Business Products\", \"t\": \"21\", \"a\": \"96 State St\", \"c\": \"Presque Isle\", \"co\": \"US\"}, \"NUTRIEN AG SOLUTIONS\": {\"n\": \"Nutrien Ag Solutions\", \"t\": \"2L\", \"a\": \"5296 HARVEST LAKE DRIVE\", \"c\": \"Loveland\", \"co\": \"US\"}, \"NUTRIEN US LLC C/O ACCOUNTS PAYABLE SHARED SERVICE\": {\"n\": \"Nutrien US LLC c/o Accounts Payable Shared Service\", \"t\": \"2L\", \"a\": \"PO Box 696004\", \"c\": \"San Antonio\", \"co\": \"US\"}, \"OAG AVIATION WORLDWIDE\": {\"n\": \"OAG Aviation Worldwide\", \"t\": \"2L\", \"a\": \"550 West Van Buren Street\", \"c\": \"Chicago\", \"co\": \"US\"}, \"OMI\": {\"n\": \"OMI\", \"t\": \"2L\", \"a\": \"19 W 21st St\", \"c\": \"New York\", \"co\": \"US\"}, \"OVED APPAREL GROUP\": {\"n\": \"Oved Apparel Group\", \"t\": \"2L\", \"a\": \"31 W. 34th ST\", \"c\": \"New York\", \"co\": \"US\"}, \"OIL TOOL SOLUTIONS\": {\"n\": \"Oil Tool Solutions\", \"t\": \"2L\", \"a\": \"2604 N FM 1788\", \"c\": \"Midland\", \"co\": \"US\"}, \"OVED APPAREL\": {\"n\": \"Oved Apparel\", \"t\": \"2L\", \"a\": \"31 W. 34th Street\", \"c\": \"New York\", \"co\": \"US\"}, \"PGM OF TEXAS\": {\"n\": \"PGM of Texas\", \"t\": \"2L\", \"a\": \"525 Platinum Dr\", \"c\": \"San Marcos\", \"co\": \"US\"}, \"PORTO ROCHA\": {\"n\": \"PORTO ROCHA\", \"t\": \"21\", \"a\": \"75 Stewart Avenue\", \"c\": \"Brooklyn\", \"co\": \"US\"}, \"PALANTIR TECHNOLOGIES\": {\"n\": \"Palantir Technologies\", \"t\": \"2L\", \"a\": \"100 Hamilton\", \"c\": \"Palo Alto\", \"co\": \"US\"}, \"PANDROL USA\": {\"n\": \"Pandrol USA\", \"t\": \"2L\", \"a\": \"611 WINCHESTER RD\", \"c\": \"Memphis\", \"co\": \"US\"}, \"PEACHTREE TOWN & COUNTRY\": {\"n\": \"Peachtree Town & Country\", \"t\": \"21\", \"a\": \"1815 Marcia Overlook Drive\", \"c\": \"Cumming\", \"co\": \"US\"}, \"PIANO SOFTWARE\": {\"n\": \"Piano Software\", \"t\": \"2L\", \"a\": \"111 S Independence Mall\", \"c\": \"Philadelphia\", \"co\": \"US\"}, \"PICKENS COUNTY GOVERNMENT\": {\"n\": \"Pickens County Government\", \"t\": \"QW\", \"a\": \"50 North Main Street\", \"c\": \"Jasper\", \"co\": \"US\"}, \"PORTX\": {\"n\": \"PortX\", \"t\": \"2L\", \"a\": \"7525 SE 24th st\", \"c\": \"Mercer Island\", \"co\": \"US\"}, \"PROVIDENCE COMMUNITY CHURCH\": {\"n\": \"Providence Community Church\", \"t\": \"21\", \"a\": \"6146 York Road\", \"c\": \"Spring Grove\", \"co\": \"US\"}, \"RARITEX TRADE\": {\"n\": \"Raritex Trade\", \"t\": \"2L\", \"a\": \"715 North Main Street\", \"c\": \"Mansfield\", \"co\": \"US\"}, \"RAWLINGS FINE HOMES\": {\"n\": \"Rawlings Fine Homes\", \"t\": \"21\", \"a\": \"1815 MARCIA OVERLOOK DR\", \"c\": \"CUMMING\", \"co\": \"US\"}, \"RESOUND US\": {\"n\": \"ReSound US\", \"t\": \"2L\", \"a\": \"8001 E. Bloomington Fwy\", \"c\": \"Bloomington\", \"co\": \"US\"}, \"RELEX SOLUTIONS\": {\"n\": \"Relex Solutions\", \"t\": \"2L\", \"a\": \"1230 PEACHTREE ST,\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"RELEX SOLUTIONS INC\": {\"n\": \"Relex Solutions, Inc\", \"t\": \"2L\", \"a\": \"1201 PEACHTREE ST\", \"c\": \"Atlanta\", \"co\": \"US\"}, \"RILLION\": {\"n\": \"Rillion\", \"t\": \"2L\", \"a\": \"310 E. Huntland Drive\", \"c\": \"Austin\", \"co\": \"US\"}, \"ROKOS CAPITAL MANAGEMENT\": {\"n\": \"Rokos Capital Management\", \"t\": \"2L\", \"a\": \"600 Lexington Avenue\", \"c\": \"New York\", \"co\": \"US\"}, \"SAN DIEGO HUMANE SOCIETY\": {\"n\": \"San Diego Humane Society\", \"t\": \"21\", \"a\": \"5545 Gains Street\", \"c\": \"San Diego\", \"co\": \"US\"}, \"SCANDIT\": {\"n\": \"Scandit\", \"t\": \"2L\", \"a\": \"15W355 CONCORD ST.\", \"c\": \"ELMHURST\", \"co\": \"US\"}, \"SOCIAL IMPACT COMMUNITY PARTNERS\": {\"n\": \"Social Impact Community Partners\", \"t\": \"21\", \"a\": \"912 N.E. 16th Ave\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"SOLAR IMPACT\": {\"n\": \"Solar Impact\", \"t\": \"21\", \"a\": \"4509 Northwest 23rd Avenue\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"SONIO\": {\"n\": \"Sonio\", \"t\": \"2L\", \"a\": \"20 University Rd\", \"c\": \"Cambridge\", \"co\": \"US\"}, \"SOUTH FLORIDA VETERANS AFFAIRS\": {\"n\": \"South Florida Veterans Affairs\", \"t\": \"QW\", \"a\": \"1201 Northwest 16th Street\", \"c\": \"Miami\", \"co\": \"US\"}, \"SOUTHERN SITE & POWER CONSTRUCTION\": {\"n\": \"Southern Site & Power Construction\", \"t\": \"21\", \"a\": \"6700 North Tallahassee Road\", \"c\": \"Crystal River\", \"co\": \"US\"}, \"SPORTRADAR\": {\"n\": \"Sportradar\", \"t\": \"2L\", \"a\": \"23100 Avenue San Luis\", \"c\": \"Woodland Hills\", \"co\": \"US\"}, \"SPORTRADAR US\": {\"n\": \"Sportradar US\", \"t\": \"2L\", \"a\": \"7251 West Lake Mead Blvd\", \"c\": \"Las Vegas\", \"co\": \"US\"}, \"SPRYKER SYSTEMS AMERICA INC\": {\"n\": \"Spryker Systems America Inc.\", \"t\": \"2L\", \"a\": \"8110 Ranch Road 2222\", \"c\": \"Austin\", \"co\": \"US\"}, \"STARFIRE LUMBER\": {\"n\": \"Starfire Lumber\", \"t\": \"21\", \"a\": \"2795 Mosby Creek Rd,\", \"c\": \"Cottage Grove\", \"co\": \"US\"}, \"STEELSERIES\": {\"n\": \"SteelSeries\", \"t\": \"2L\", \"a\": \"656 W RANDOLPH ST\", \"c\": \"CHICAGO\", \"co\": \"US\"}, \"STOKES CONSTRUCTION\": {\"n\": \"Stokes Construction\", \"t\": \"21\", \"a\": \"18050 SE Highway 19\", \"c\": \"Inglis\", \"co\": \"US\"}, \"SUMDUB\": {\"n\": \"Sumdub\", \"t\": \"2L\", \"a\": \"1819 SW 22nd St.\", \"c\": \"Fort Lauderdale\", \"co\": \"US\"}, \"TASBO\": {\"n\": \"TASBO\", \"t\": \"2L\", \"a\": \"5920 William Cannon Drive\", \"c\": \"Austin\", \"co\": \"US\"}, \"TATA CONSULTANCY SERVICES\": {\"n\": \"TATA CONSULTANCY SERVICES\", \"t\": \"2L\", \"a\": \"379 THORNALL STREET\", \"c\": \"EDISON\", \"co\": \"US\"}, \"TENETIC\": {\"n\": \"TENETIC\", \"t\": \"2L\", \"a\": \"75 South Broadway\", \"c\": \"White Plains\", \"co\": \"US\"}, \"TOSHIBA INTERNATIONAL\": {\"n\": \"TOSHIBA INTERNATIONAL\", \"t\": \"2L\", \"a\": \"13131 W LITTLE YORK RD\", \"c\": \"Houston\", \"co\": \"US\"}, \"TECHARY\": {\"n\": \"Techary\", \"t\": \"EN\", \"a\": \"341 Kaplan Drive\", \"c\": \"Fairfield\", \"co\": \"US\"}, \"THE COMMUNITY FOUNDATION\": {\"n\": \"The Community Foundation\", \"t\": \"21\", \"a\": \"3919 W. Newberry Rd.\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"THE HEAT GROUP\": {\"n\": \"The Heat Group\", \"t\": \"2L\", \"a\": \"601 Biscayne Blvd\", \"c\": \"Miami\", \"co\": \"US\"}, \"THE LAW OFFICE OF SETH N KATZ LLC\": {\"n\": \"The Law Office of Seth N. Katz, LLC\", \"t\": \"21\", \"a\": \"57 Bernice Lane\", \"c\": \"Ringgold\", \"co\": \"US\"}, \"THE VILLAGE JEWELER\": {\"n\": \"The Village Jeweler\", \"t\": \"21\", \"a\": \"3625 Southwest 32nd Court\", \"c\": \"Gainesville\", \"co\": \"US\"}, \"THE WESTPORT LIBRARY\": {\"n\": \"The Westport  Library\", \"t\": \"QW\", \"a\": \"20 Jesup Road\", \"c\": \"Westport\", \"co\": \"US\"}, \"THE WOOD DOCTOR TREE SERVICE\": {\"n\": \"The Wood Doctor Tree Service\", \"t\": \"21\", \"a\": \"P.O. BOX 129\", \"c\": \"Micnopy\", \"co\": \"US\"}, \"TOTAL CLINICAL TRIAL MANAGEMENT\": {\"n\": \"Total Clinical Trial Management\", \"t\": \"2L\", \"a\": \"100 N Central Expressway\", \"c\": \"Richardson\", \"co\": \"US\"}, \"TOWN OF CUMBERLAND\": {\"n\": \"Town of Cumberland\", \"t\": \"QW\", \"a\": \"45 Broad Street\", \"c\": \"Cumberland\", \"co\": \"US\"}, \"TWINSTAKE\": {\"n\": \"Twinstake\", \"t\": \"2L\", \"a\": \"49 Westfield Street\", \"c\": \"Providence\", \"co\": \"US\"}, \"USERCENTRICS\": {\"n\": \"Usercentrics\", \"t\": \"2L\", \"a\": \"500 7th Ave\", \"c\": \"New Yrok\", \"co\": \"US\"}, \"VF CORP\": {\"n\": \"VF Corp\", \"t\": \"2L\", \"a\": \"105 Corporate Center Blvd\", \"c\": \"Greensboro\", \"co\": \"US\"}, \"VISEO USA INC\": {\"n\": \"VISEO USA INC\", \"t\": \"2L\", \"a\": \"40 East Main Street\", \"c\": \"Jersey City\", \"co\": \"US\"}, \"VAYCOM\": {\"n\": \"VayCom\", \"t\": \"21\", \"a\": \"362 Highland Dr\", \"c\": \"Rantoul\", \"co\": \"US\"}, \"VESTAS AMERICAN WIND\": {\"n\": \"Vestas American Wind\", \"t\": \"2L\", \"a\": \"5697 Transpecos Road\", \"c\": \"Fort Stockton\", \"co\": \"US\"}, \"VESTAS AMERICAN WIND TECHNOLOGY\": {\"n\": \"Vestas American Wind Technology\", \"t\": \"2L\", \"a\": \"1417 NW Everett Street\", \"c\": \"Portland\", \"co\": \"US\"}, \"VESTAS BLADES AMERICA\": {\"n\": \"Vestas Blades America\", \"t\": \"2L\", \"a\": \"11140 Eastman Park Dr\", \"c\": \"Windsor\", \"co\": \"US\"}, \"VESTAS NACELLES AMERICA\": {\"n\": \"Vestas Nacelles America\", \"t\": \"2L\", \"a\": \"1500N East Crown Prince Blvd\", \"c\": \"Brighton\", \"co\": \"US\"}, \"VESTIAIRE COLLECTIVE\": {\"n\": \"Vestiaire Collective\", \"t\": \"2L\", \"a\": \"850 3rd Ave\", \"c\": \"New York\", \"co\": \"US\"}, \"VESTIAIRE COLLECTIVE USA\": {\"n\": \"Vestiaire Collective USA\", \"t\": \"2L\", \"a\": \"850 3rd Ave\", \"c\": \"New York\", \"co\": \"US\"}, \"VIVI VENTURES\": {\"n\": \"Vivi Ventures\", \"t\": \"2L\", \"a\": \"5718 GREENBRIER DRIVE\", \"c\": \"DALLAS\", \"co\": \"US\"}, \"W COMMUNICATIONS\": {\"n\": \"W Communications\", \"t\": \"2L\", \"a\": \"413 W 14th St\", \"c\": \"New York\", \"co\": \"US\"}, \"WARTSILA NORTH AMERICA\": {\"n\": \"Wartsila North America\", \"t\": \"2L\", \"a\": \"485 Springpark Pl\", \"c\": \"Herndon\", \"co\": \"US\"}, \"WET WADERS\": {\"n\": \"Wet Waders\", \"t\": \"21\", \"a\": \"246 Northeast 59th Street\", \"c\": \"Ocala\", \"co\": \"US\"}, \"WHITEHOUSE ADVERTISING\": {\"n\": \"Whitehouse Advertising\", \"t\": \"21\", \"a\": \"1105 Muirfield Court\", \"c\": \"Alpharetta\", \"co\": \"US\"}, \"YMCA\": {\"n\": \"YMCA\", \"t\": \"2L\", \"a\": \"100 Fanny Rd\", \"c\": \"Mountain Lakes\", \"co\": \"US\"}, \"ZGOLF FOOD & BEVERAGE SVS\": {\"n\": \"ZGolf Food & Beverage Svs\", \"t\": \"2L\", \"a\": \"43385 Business Park Drive\", \"c\": \"Temecula\", \"co\": \"US\"}, \"CENTREXIT\": {\"n\": \"centrexIT\", \"t\": \"21\", \"a\": \"12232 Thatcher Ct\", \"c\": \"Poway\", \"co\": \"US\"}, \"ERESOURCES\": {\"n\": \"eResources\", \"t\": \"21\", \"a\": \"233 Southwest 3rd Street\", \"c\": \"Ocala\", \"co\": \"US\"}, \"FRANKCRUM\": {\"n\": \"FrankCrum\", \"t\": \"21\", \"a\": \"100 S Missouri Ave\", \"c\": \"Clearwater\", \"co\": \"US\"}, \"SUNSHINE AESTHETICS MED SPA\": {\"n\": \"Sunshine Aesthetics Med Spa\", \"t\": \"21\", \"a\": \"23352 West U.S. Highway 27\", \"c\": \"High Springs\", \"co\": \"US\"}, \"CLUTCH\": {\"n\": \"CLUTCH\", \"t\": \"2L\", \"a\": \"56 Grove Street\", \"c\": \"Milton\", \"co\": \"US\"}};\n\n\nfunction normalizeCompany(name) {\n  return (name || '').toUpperCase().replace(/[.,]+/g, '').replace(/\\s+/g, ' ').trim();\n}\n\nfunction findCompany(name) {\n  if (!name) return null;\n  const norm = normalizeCompany(name);\n  if (norm.length < 3) return null;\n  if (LOOKUP[norm]) return LOOKUP[norm];\n  const words = norm.replace(/[\\-\\/]+/g, ' ').split(/\\s+/).filter(w => w.length >= 4);\n  for (const word of words) {\n    if (word.length >= 5 && LOOKUP[word]) return LOOKUP[word];\n  }\n  if (words.length > 0 && words[0].length >= 5) {\n    for (const [key, val] of Object.entries(LOOKUP)) {\n      if (key.startsWith(words[0] + ' ') || key === words[0]) return val;\n    }\n  }\n  for (const [key, val] of Object.entries(LOOKUP)) {\n    if (key.length >= 6 && (norm.includes(key) || key.includes(norm))) return val;\n  }\n  return null;\n}\n\nfunction looksLikeAddress(line) { return /^\\d+\\s/.test(line.trim()); }\nfunction looksLikePhone(line) { return line.replace(/\\D/g, '').length >= 10; }\nfunction looksLikeEmail(line) { return /@/.test(line); }\nfunction looksLikeCityStateZip(line) { return /,\\s*[A-Z]{2}\\s+\\d{4,5}/.test(line); }\nfunction looksLikeStateZip(line) { return /^[A-Z]{2}\\s+\\d{4,5}/.test(line.trim()); }\n\nfunction cleanCity(raw) {\n  if (!raw) return '';\n  let s = String(raw).trim();\n  s = s.replace(/[,\\s]+[A-Za-z]{2}\\s+\\d{5}(-\\d{4})?$/,'');\n  s = s.replace(/[,\\s]+\\d{5}(-\\d{4})?$/,'');\n  s = s.replace(/[,\\s]+[A-Za-z]{2}$/,'');\n  s = s.replace(/,\\s*$/,'');\n  return s.trim();\n}\n\nfunction extractCity(line) {\n  if (!line) return '';\n  if (looksLikeStateZip(line)) return '';\n  if (looksLikeCityStateZip(line)) return cleanCity(line.split(',')[0].trim());\n  return cleanCity(line.trim());\n}\n\nfunction parseShipToBlock(lines) {\n  const cleanLines = lines.filter(l => {\n    const trimmed = l.trim();\n    return trimmed.length > 0 && !looksLikePhone(trimmed) && !looksLikeEmail(trimmed);\n  });\n  if (cleanLines.length === 0) return { name: '', company: '', address: '', city: '' };\n\n  let name = '', company = '', address = '', city = '';\n  const line1Match = findCompany(cleanLines[0]);\n  const line2Match = cleanLines.length > 1 ? findCompany(cleanLines[1]) : null;\n\n  if (line1Match) {\n    company = cleanLines[0];\n    if (cleanLines.length > 1 && !looksLikeAddress(cleanLines[1])) {\n      name = cleanLines[1];\n      if (cleanLines.length > 2) address = cleanLines[2];\n      if (cleanLines.length > 3) city = extractCity(cleanLines[3]);\n      if (!city && cleanLines.length > 2 && looksLikeCityStateZip(cleanLines[2])) {\n        city = extractCity(cleanLines[2]); address = '';\n      }\n    } else if (cleanLines.length > 1) {\n      address = cleanLines[1];\n      if (cleanLines.length > 2) city = extractCity(cleanLines[2]);\n    }\n  } else if (line2Match) {\n    name = cleanLines[0]; company = cleanLines[1];\n    if (cleanLines.length > 2) address = cleanLines[2];\n    if (cleanLines.length > 3) city = extractCity(cleanLines[3]);\n    if (!city && cleanLines.length > 2 && looksLikeCityStateZip(cleanLines[2])) {\n      city = extractCity(cleanLines[2]); address = '';\n    }\n  } else {\n    if (cleanLines.length >= 2 && looksLikeAddress(cleanLines[1])) {\n      name = cleanLines[0]; address = cleanLines[1];\n      if (cleanLines.length > 2) city = extractCity(cleanLines[2]);\n    } else if (cleanLines.length >= 3 && looksLikeAddress(cleanLines[2])) {\n      const corp = /\\b(inc|llc|corp|ltd|group|partners|services|church|county|foundation|spa|med|construction|law|associates)\\b/i;\n      const hasCorpWord1 = corp.test(cleanLines[0]);\n      const hasCorpWord2 = corp.test(cleanLines[1]);\n      if (hasCorpWord1 && !hasCorpWord2) { company = cleanLines[0]; name = cleanLines[1]; }\n      else if (hasCorpWord2 && !hasCorpWord1) { name = cleanLines[0]; company = cleanLines[1]; }\n      else {\n        const words1 = cleanLines[0].split(/\\s+/).length;\n        if (words1 <= 3 && !/\\d/.test(cleanLines[0])) { name = cleanLines[0]; company = cleanLines[1]; }\n        else { company = cleanLines[0]; name = cleanLines[1]; }\n      }\n      address = cleanLines[2];\n      if (cleanLines.length > 3) city = extractCity(cleanLines[3]);\n    } else if (cleanLines.length === 1) {\n      name = cleanLines[0];\n    } else {\n      name = cleanLines[0];\n      if (looksLikeCityStateZip(cleanLines[1])) city = extractCity(cleanLines[1]);\n      else if (!looksLikeStateZip(cleanLines[1])) company = cleanLines[1];\n      if (cleanLines.length > 2) address = cleanLines[2];\n      if (cleanLines.length > 3) city = extractCity(cleanLines[3]);\n    }\n  }\n\n  if (city && looksLikeStateZip(city)) city = '';\n  if (!city && address && looksLikeCityStateZip(address)) {\n    city = extractCity(address); address = '';\n  }\n  return { name, company, address: (address || '').trim(), city: cleanCity(city) };\n}\n\nconst allComments = $input.all();\nconst allAppleItems = $('Filter Apple SKUs + Map Fields').all();\nconst results = [];\n\nfor (let i = 0; i < allComments.length; i++) {\n  const commentsData = allComments[i].json;\n  const comments = commentsData.comments || [];\n  const prevData = allAppleItems[i].json;\n\n  let euCompany = '';\n  let euName = prevData._rs_contact_name || '';\n  let euAddress = '';\n  let euCity = '';\n  let euCountry = 'US';\n  let euSource = 'none';\n  let customerType = 'EN';\n\n  for (const comment of comments) {\n    const body = (comment.body || '').trim();\n    if (/(?:ship\\s*to\\/?\\s*eu|ship\\s*to|^eu\\s*:)/im.test(body)) {\n      const lines = body.split('\\n').map(l => l.replace(/\\t/g, ' ').trim()).filter(l => l);\n      const startIdx = lines.findIndex(l => /(?:ship\\s*to\\/?\\s*eu|ship\\s*to|^eu\\s*:)/i.test(l));\n      if (startIdx >= 0 && lines.length > startIdx + 1) {\n        const parsed = parseShipToBlock(lines.slice(startIdx + 1));\n        if (parsed.name) euName = parsed.name;\n        euCompany = parsed.company;\n        euAddress = parsed.address;\n        euCity = parsed.city;\n        euSource = 'ticket_comment';\n      }\n      break;\n    }\n  }\n\n  if (euCompany) {\n    const match = findCompany(euCompany);\n    if (match) {\n      customerType = match.t;\n      if (!euAddress) euAddress = match.a;\n      if (!euCity) euCity = match.c;\n      euCountry = match.co || 'US';\n      euSource = 'ticket_comment+lookup';\n    } else {\n      customerType = '2L';\n    }\n  }\n\n  if (!euCompany && prevData._rs_customer_name) {\n    const custLower = prevData._rs_customer_name.toLowerCase();\n    const intermediaries = ['markit', 'it devices', 'tachary', 'equipped', 'getupgraded', 'amazon', 'vtech', 'network & communication'];\n    const isIntermediary = intermediaries.some(int => custLower.includes(int));\n\n    if (!isIntermediary) {\n      const match = findCompany(prevData._rs_customer_name);\n      if (match) {\n        euCompany = match.n;\n        if (!euAddress) euAddress = match.a;\n        if (!euCity) euCity = match.c;\n        euCountry = match.co || 'US';\n        customerType = match.t;\n        euSource = 'lookup';\n      } else {\n        euCompany = prevData._rs_customer_name;\n        if (!euAddress) euAddress = prevData._rs_customer_address;\n        if (!euCity) euCity = cleanCity(prevData._rs_customer_city);\n        customerType = '2L';\n        euSource = 'rs_customer';\n      }\n     } else if (custLower.includes('equipped') || custLower.includes('getupgraded')) {\n      customerType = 'EN';\n      euSource = 'getupgraded_consumer';\n    } else {\n      // Intermediary (IT Devices, MarkIT, etc.) \u2014 populate raw RS data so you can review\n      euCompany = prevData._rs_customer_name;\n      if (!euAddress) euAddress = prevData._rs_customer_address;\n      if (!euCity) euCity = cleanCity(prevData._rs_customer_city);\n      customerType = '2L';\n      euSource = 'needs_review';\n    }\n  }\n\n  if (prevData.location === '2093771') {\n    customerType = 'EN';\n    if (euSource === 'none') euSource = 'getupgraded_consumer';\n    if (euSource === 'ticket_comment' && !euCompany) euSource = 'getupgraded_consumer';\n  }\n\n  if (prevData._rs_has_gov) customerType = 'QW';\n\n  euCity = cleanCity(euCity);\n   if (euSource === 'getupgraded_consumer') euCountry = '';\n\n  results.push({\n    json: {\n      location: prevData.location,\n      apple_product: prevData.apple_product,\n      sold_qty: prevData.sold_qty,\n      returned_qty: prevData.returned_qty,\n      invoice_number: prevData.invoice_number,\n      invoice_date: prevData.invoice_date,\n      eu_company: euCompany,\n      eu_name: euName,\n      eu_address: euAddress,\n      eu_city: euCity,\n      eu_country: euCountry,\n      customer_type: customerType,\n      _eu_source: euSource,\n      _rs_customer_name: prevData._rs_customer_name,\n      _rs_ticket_id: prevData._rs_ticket_id,\n      _rs_invoice_id: prevData._rs_invoice_id,\n      _rs_item_price: prevData._rs_item_price,\n      _rs_item_name: prevData._rs_item_name,\n      _needs_review: euSource === 'needs_review' || euSource === 'none'\n    }\n  });\n}\n\nreturn results;\n"
+      },
+      "id": "051e855b-8923-4e66-910f-58b5063e5953",
+      "name": "Parse EU Info + Assign Type",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2816,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all().map(i => i.json);\nconst needsReview = items.filter(i => i._needs_review);\nconst autoResolved = items.filter(i => !i._needs_review);\nconst sources = {};\nitems.forEach(i => {\n  sources[i._eu_source] = (sources[i._eu_source] || 0) + 1;\n});\nconst summary = {\n  report_week: $('Calculate Report Dates').first().json.fromDate + ' to ' + $('Calculate Report Dates').first().json.toDate,\n  total_line_items: items.length,\n  auto_resolved: autoResolved.length,\n  needs_review: needsReview.length,\n  eu_sources: sources,\n  review_items: Object.values(needsReview.reduce((acc, i) => {\n    if (!acc[i.invoice_number]) {\n      acc[i.invoice_number] = {\n        invoice: i.invoice_number,\n        invoice_id: i._rs_invoice_id,\n        ticket_id: i._rs_ticket_id,\n        customer: i._rs_customer_name,\n        skus: [],\n        source: i._eu_source\n      };\n    }\n    acc[i.invoice_number].skus.push(i.apple_product + ' (qty: ' + i.sold_qty + ')');\n    return acc;\n  }, {})),\n  all_items: items.map(i => ({\n    location: i.location,\n    apple_product: i.apple_product,\n    sold_qty: i.sold_qty,\n    returned_qty: i.returned_qty,\n    invoice_number: i.invoice_number,\n    invoice_date: i.invoice_date,\n    eu_company: i.eu_company,\n    eu_name: i.eu_name,\n    eu_address: i.eu_address,\n    eu_city: i.eu_city,\n    eu_country: i.eu_country,\n    customer_type: i.customer_type\n  }))\n};\nreturn [{ json: summary }];"
+      },
+      "id": "e4c06ef9-2f5f-4092-b761-91c0fb99237e",
+      "name": "Compile Report Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3232,
+        -144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const baseUrl = 'https://gatortec.repairshopr.com/api/v1/invoices';\nconst apiKey = '__PASTE_REPAIRSHOPR_API_KEY__';\nconst fromDate = $input.first().json.fromDate;\nconst toDate = $input.first().json.toDate;\n\nlet allInvoices = [];\nlet page = 1;\nlet keepGoing = true;\n\nwhile (keepGoing && page <= 10) {\n  const response = await this.helpers.httpRequest({\n    method: 'GET',\n    url: `${baseUrl}?api_key=${apiKey}&page=${page}&per_page=25`,\n  });\n  \n  const invoices = response.invoices || [];\n  \n  if (invoices.length === 0) break;\n  \n  for (const inv of invoices) {\n    const invDate = new Date(inv.date + 'T00:00:00');\n    const from = new Date(fromDate + 'T00:00:00');\n    const to = new Date(toDate + 'T23:59:59');\n    \n    if (invDate >= from && invDate <= to) {\n      allInvoices.push(inv);\n    }\n    \n    if (invDate < from) {\n      keepGoing = false;\n      break;\n    }\n  }\n  \n  page++;\n}\n\nreturn allInvoices.map(inv => ({ json: inv }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1696,
+        -144
+      ],
+      "id": "75942f69-1d59-44d2-bdf0-b34bee2761a0",
+      "name": "Pull RS Invoices"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "documentId": {
+          "__rl": true,
+          "value": "1EolT-rt_mDE3f7Ky4JUpf5BX9czVZkCg7mRfQmbVBBo",
+          "mode": "list",
+          "cachedResultName": "Apple Product Sales",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EolT-rt_mDE3f7Ky4JUpf5BX9czVZkCg7mRfQmbVBBo/edit?usp=drivesdk"
+        },
+        "title": "={{ new Date($('Calculate Report Dates').first().json.toDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2048,
+        176
+      ],
+      "id": "6d17aec8-5d4f-411a-b68d-fce9cc8e7e6e",
+      "name": "Create sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SH3KragVhEnhfwCY",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://sheets.googleapis.com/v4/spreadsheets/1EolT-rt_mDE3f7Ky4JUpf5BX9czVZkCg7mRfQmbVBBo/values/{{ encodeURIComponent($json.sheetName) }}!A1:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ values: $json.allValues }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2528,
+        176
+      ],
+      "id": "36449b7d-8255-4be4-bcc8-c6d544af7ed9",
+      "name": "Write Rows to Sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SH3KragVhEnhfwCY",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build header row + all data rows for a single Sheets API call\nconst items = $('Parse EU Info + Assign Type').all();\n\nconst headers = [\n  'Location', 'Apple Product #', 'Sold Qty', 'Returned Qty',\n  'Invoice #', 'Invoice Date', 'EU Company', 'EU Name',\n  'EU Address', 'EU City', 'Country', 'Type'\n];\n\nconst rows = items.map(i => [\n  i.json.location || '',\n  i.json.apple_product || '',\n  i.json.sold_qty || 0,\n  i.json.returned_qty || 0,\n  i.json.invoice_number || '',\n  i.json.invoice_date || '',\n  i.json.eu_company || '',\n  i.json.eu_name || '',\n  i.json.eu_address || '',\n  i.json.eu_city || '',\n  i.json.eu_country || '',\n  i.json.customer_type || 'EN'\n]);\n\n// Sheet tab name matches the one Create sheet just made\nconst sheetName = $('Create sheet').first().json.title;\n\nreturn [{ json: { sheetName, rowCount: rows.length + 1, allValues: [headers, ...rows] } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2288,
+        176
+      ],
+      "id": "926a2434-20dc-4623-af7d-927855a45b93",
+      "name": "Prepare GS Rows"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{ json: { done: true } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2928,
+        176
+      ],
+      "id": "f4c3c68b-f59c-4585-8e9e-d8eba1335483",
+      "name": "Single Item"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets/1EolT-rt_mDE3f7Ky4JUpf5BX9czVZkCg7mRfQmbVBBo:batchUpdate",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { \"requests\": [{ \"updateSheetProperties\": { \"properties\": { \"sheetId\": $('Create sheet').first().json.sheetId, \"gridProperties\": { \"rowCount\": $('Prepare GS Rows').all().length + 1 } }, \"fields\": \"gridProperties.rowCount\" } }] } }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2736,
+        176
+      ],
+      "id": "07fcf3e3-1e6b-4696-a722-30d26a8ceed8",
+      "name": "HTTP Request",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SH3KragVhEnhfwCY",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const s = $('Compile Report Summary').first().json;\nconst sheetId = $('Create sheet').first().json.sheetId;\n\nconst reviewText = s.needs_review > 0\n  ? '*Needs Review:*\\n' + s.review_items.map(i =>\n      `\u2022 <https://gatortec.repairshopr.com/invoices/${i.invoice_id}|Invoice ${i.invoice}> | ${i.customer} | <https://gatortec.repairshopr.com/tickets/${i.ticket_id}|Ticket>`\n    ).join('\\n')\n  : 'All items auto-resolved! \ud83c\udf89';\n\nconst blocks = [\n  {\n    type: 'section',\n    text: {\n      type: 'mrkdwn',\n      text: `\ud83d\udcca *GDV Weekly Review \u2014 ${s.report_week}*\\n*${s.total_line_items}* line items this week\\n\u2705 *${s.auto_resolved}* auto-resolved\\n\u26a0\ufe0f *${s.needs_review}* need your review\\n\\n${reviewText}\\n\\n\ud83d\udcdd <https://docs.google.com/spreadsheets/d/1EolT-rt_mDE3f7Ky4JUpf5BX9czVZkCg7mRfQmbVBBo/edit#gid=${sheetId}|Edit in Google Sheets>`\n    }\n  },\n  {\n    type: 'actions',\n    elements: [{\n      type: 'button',\n      text: { type: 'plain_text', text: '\u2705 Review Complete \u2014 Generate Reports', emoji: true },\n      style: 'primary',\n      action_id: 'gdv_generate'\n    }]\n  }\n];\n\nreturn [{ json: { blocks, fallback: `GDV Weekly Review \u2014 ${s.report_week}` } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3120,
+        176
+      ],
+      "id": "e521c457-114b-48e1-a21f-7850289a7e67",
+      "name": "Build Slack Blocks"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "slackApi",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "channel",
+              "value": "C0AS3PW6BP1"
+            },
+            {
+              "name": "text",
+              "value": "={{ $json.fallback }}"
+            },
+            {
+              "name": "blocks",
+              "value": "={{ JSON.stringify($json.blocks) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3296,
+        176
+      ],
+      "id": "a2245f14-2e26-43d6-8c4d-d0533633e26a",
+      "name": "HTTP Request1",
+      "credentials": {
+        "slackApi": {
+          "id": "4If1uX9M5Ew9Tx6h",
+          "name": "The RepairShopr Bot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Weekly Saturday 11PM": {
+      "main": [
+        [
+          {
+            "node": "Calculate Report Dates",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Report Dates": {
+      "main": [
+        [
+          {
+            "node": "Pull RS Invoices",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter to Reporting Week": {
+      "main": [
+        [
+          {
+            "node": "Get Invoice Details + Line Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Invoice Details + Line Items": {
+      "main": [
+        [
+          {
+            "node": "Filter Apple SKUs + Map Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Apple SKUs + Map Fields": {
+      "main": [
+        [
+          {
+            "node": "Get Ticket Comments",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Ticket Comments": {
+      "main": [
+        [
+          {
+            "node": "Parse EU Info + Assign Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse EU Info + Assign Type": {
+      "main": [
+        [
+          {
+            "node": "Compile Report Summary",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pull RS Invoices": {
+      "main": [
+        [
+          {
+            "node": "Filter to Reporting Week",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Compile Report Summary": {
+      "main": [
+        []
+      ]
+    },
+    "Create sheet": {
+      "main": [
+        [
+          {
+            "node": "Prepare GS Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare GS Rows": {
+      "main": [
+        [
+          {
+            "node": "Write Rows to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Single Item": {
+      "main": [
+        [
+          {
+            "node": "Build Slack Blocks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Single Item",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Slack Blocks": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Rows to Sheet": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "a9343fe2-473c-4fc3-8358-90cd8f2fd1bd",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "696a0ba8a4fcd1dee21720b36348953d9076e384585687a59b8ff11fea8545ee"
+  },
+  "nodeGroups": [],
+  "id": "K7nVfxXksYdBIggt",
+  "tags": []
+}
