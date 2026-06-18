@@ -841,7 +841,7 @@
       state.items = data.items || [];
       const m = data._meta || {};
       document.getElementById('meta').textContent =
-        (m.generated_at ? 'Data refreshed ' + new Date(m.generated_at).toLocaleDateString() : '') +
+        (m.generated_at ? 'Data refreshed ' + new Date(m.generated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York' }) + ' ET' : '') +
         ' · ' + state.items.length + ' SKUs';
       render();
     })
