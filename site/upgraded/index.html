@@ -71,6 +71,30 @@
   .pivot-section .micro { font-size:13.5px; color:var(--slate); margin:14px 0 0; font-style:italic; }
 
   .fine-print { font-size:12.5px; line-height:1.6; color:var(--slate-soft, var(--slate)); margin:48px 0 0; padding-top:24px; border-top:1px solid var(--mist); }
+
+  .status-callout { background:#fef9ec; border-left:4px solid #d97706; padding:20px 24px; border-radius:8px; margin:32px 0 0; }
+  .status-callout > strong { display:block; color:var(--ink); font-size:15.5px; margin-bottom:12px; letter-spacing:.01em; }
+  .status-callout ul { list-style:none; padding:0; margin:0; }
+  .status-callout ul li { font-size:14.5px; line-height:1.65; color:var(--ink); padding:5px 0 5px 28px; position:relative; }
+  .status-callout ul li::before { position:absolute; left:0; top:5px; font-size:16px; line-height:1.4; }
+  .status-callout ul li.no::before { content:'🚫'; }
+  .status-callout ul li.ok::before { content:'✅'; }
+  .status-callout ul li.q::before  { content:'❓'; }
+  .status-callout ul li strong { color:var(--ink); font-weight:600; }
+
+  .faq-section { margin-top:48px; padding-top:48px; border-top:1px solid var(--mist); }
+  .faq-section h2 { font-family:var(--display); font-weight:700; font-size:24px; color:var(--ink); margin:0 0 20px; }
+  .faq-section details { background:var(--white); border:1px solid var(--line); border-radius:10px; margin-bottom:10px; }
+  .faq-section details summary { padding:16px 20px; font-weight:600; cursor:pointer; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:15px; }
+  .faq-section details summary::-webkit-details-marker { display:none; }
+  .faq-section details summary::after { content:'+'; font-size:24px; font-weight:300; color:var(--slate-soft, var(--slate)); transition:transform .2s; flex-shrink:0; }
+  .faq-section details[open] summary::after { transform:rotate(45deg); }
+  .faq-section details[open] summary { border-bottom:1px solid var(--mist); }
+  .faq-section details .faq-body { padding:16px 20px 8px; }
+  .faq-section details .faq-body p { font-size:14.5px; line-height:1.65; color:var(--slate); margin:0 0 12px; }
+  .faq-section details .faq-body p:last-child { margin-bottom:0; }
+  .faq-section details .faq-body a { color:var(--blue); font-weight:500; }
+  .faq-section details .faq-body strong { color:var(--ink); font-weight:600; }
 </style>
 </head>
 <body>
@@ -100,6 +124,16 @@
 </div></section>
 
 <section class="section"><div class="wrap shop-body">
+
+  <div class="status-callout">
+    <strong>What this means right now</strong>
+    <ul>
+      <li class="no">The marketplace is <strong>not accepting new enrollments</strong> — you cannot sign up for an upgrade plan right now.</li>
+      <li class="no">Customers with <strong>existing plans cannot upgrade</strong> to a new device until the marketplace returns.</li>
+      <li class="ok">Your <strong>existing monthly payments continue normally</strong> — these are handled by Citizens or Affirm, not by GatorTec.</li>
+      <li class="q">GatorTec has <strong>no role</strong> in the marketplace's operation, timeline, or relaunch.</li>
+    </ul>
+  </div>
 
   <div class="shop-section" aria-labelledby="existing-h">
     <h2 id="existing-h">If you have an existing Upgraded plan</h2>
@@ -137,17 +171,60 @@
     <p>As a former seller, GatorTec is unable to access, service, or make changes to Upgraded accounts or financing.</p>
   </div>
 
-  <div class="shop-section" aria-labelledby="pivot-h">
-    <div class="pivot-section">
-      <h2 id="pivot-h">Looking to buy a new Apple device outright?</h2>
-      <p>GatorTec is an Apple Premier Partner and sells Apple products directly. <strong>We don't offer financing, monthly upgrade plans, trade-ins toward Upgraded plans, or migration of existing Upgraded accounts.</strong> For anything related to your Upgraded plan, please use the contact information above.</p>
-      <div class="ctas">
-        <a class="btn-primary" href="../products/">Browse products
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+  <section class="faq-section" aria-labelledby="faq-h">
+    <h2 id="faq-h">Frequently asked questions</h2>
+
+    <details>
+      <summary>Can I sign up for the upgrade program?</summary>
+      <div class="faq-body">
+        <p>Not at this time. The Upgraded Marketplace is not accepting new enrollments. GatorTec was a seller on the marketplace, not the operator of the program. To check for updates on when (or if) enrollment reopens, visit <a href="https://getupgraded.com" target="_blank" rel="noopener noreferrer">getupgraded.com</a>.</p>
       </div>
-    </div>
-  </div>
+    </details>
+
+    <details>
+      <summary>I have an existing plan and want to upgrade to a newer Mac — what do I do?</summary>
+      <div class="faq-body">
+        <p>Upgrade activity for existing plans is paused along with the rest of the marketplace. There is no path to upgrade your device through GatorTec right now. Your existing plan and device are still yours, and your monthly payments continue normally.</p>
+        <p>For questions specific to your plan, contact Upgraded directly at <a href="https://getupgraded.com/help" target="_blank" rel="noopener noreferrer">getupgraded.com/help</a> or email <a href="mailto:team@getupgraded.com">team@getupgraded.com</a>.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>When will the marketplace return?</summary>
+      <div class="faq-body">
+        <p>We don't know. Upgraded has not published a public timeline, and GatorTec has no insight into their plans or schedule. The best source for updates is Upgraded directly — check <a href="https://getupgraded.com" target="_blank" rel="noopener noreferrer">getupgraded.com</a> or their <a href="https://getupgraded.com/help" target="_blank" rel="noopener noreferrer">help center</a>.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What about my monthly payments?</summary>
+      <div class="faq-body">
+        <p>Your monthly payments continue exactly as before. These are handled by your lender (either <strong>Citizens</strong> or <strong>Affirm</strong>, depending on when you enrolled), not by Upgraded or GatorTec. The marketplace pause does not change your payment obligation.</p>
+        <p>If you have questions about payments, contact your lender directly using the contact info on your monthly statements.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I cancel my existing plan?</summary>
+      <div class="faq-body">
+        <p>Plan cancellation is governed by the terms you agreed to with Upgraded and your lender. GatorTec cannot cancel or modify a plan. Contact Upgraded at <a href="https://getupgraded.com/help" target="_blank" rel="noopener noreferrer">getupgraded.com/help</a> for cancellation questions, or reach out to your lender directly.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Can I trade in my Mac?</summary>
+      <div class="faq-body">
+        <p>Trade-ins toward an Upgraded plan are part of the Upgraded program — that activity is currently paused. If you'd like to trade in a Mac outside of Upgraded, Apple has its own trade-in program at <a href="https://www.apple.com/shop/trade-in" target="_blank" rel="noopener noreferrer">apple.com/shop/trade-in</a>.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Did GatorTec take over the marketplace?</summary>
+      <div class="faq-body">
+        <p>No. GatorTec was a seller on the Upgraded Marketplace — we supplied the Apple devices that customers purchased through the program. We did not own, operate, or take over the marketplace. The marketplace is operated by <strong>Upgraded Technologies, Inc.</strong>, and any questions about its status or future should be directed to them.</p>
+      </div>
+    </details>
+  </section>
 
   <p class="fine-print">GatorTec, LLC is an independent Apple Premier Partner and Apple Authorized Service Provider. The Upgraded Marketplace is operated by Upgraded Technologies, Inc., and financing is provided by third-party lenders (Citizens and Affirm). GatorTec participated as a seller on the Upgraded Marketplace and is not responsible for the marketplace, its operation, or its financing.</p>
 

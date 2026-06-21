@@ -130,6 +130,13 @@
 <textarea id="b-message" name="Message" required placeholder="e.g. We're rolling out 40 new MacBook Airs to our marketing team next month and need help with deployment + AppleCare+ pricing."></textarea>
 </div>
 
+<!-- Smart deflection: shown only when message contains Upgraded-related keywords.
+     Routes those customers to /upgraded/ instead of GatorTec's general inbox. -->
+<div id="upgraded-deflect" role="note" style="display:none;background:#eef6fc;border-left:4px solid var(--blue);padding:14px 18px;border-radius:8px;margin:6px 0 18px;font-size:14.5px;line-height:1.5;color:var(--ink)">
+  <strong style="display:block;margin-bottom:4px;color:var(--blue)">Looks like this might be about an Upgraded plan?</strong>
+  GatorTec doesn't manage Upgraded accounts, financing, or upgrade eligibility. For the fastest help on that, <a href="/upgraded/" style="color:var(--blue);font-weight:600">see the right contacts here →</a>
+</div>
+
 <div class="cf-turnstile" data-sitekey="0x4AAAAAADi0CelhpMAuj8ge" data-theme="light" style="margin-bottom:18px"></div>
 
 <button type="submit" class="submit">Send request
@@ -194,4 +201,26 @@ Gainesville, FL 32614
 <script src="../../assets/js/nav.js?v=3" defer></script>
 <script src="../../assets/js/analytics.js?v=3" defer></script>
 <script>(function(){var f=document.querySelector(".form-card");if(!f)return;var em=f.querySelector('input[name="email"]');var cc=f.querySelector("#b-cc-field");var ts=f.querySelector("#b-form-ts");if(ts)ts.value=Date.now();f.addEventListener("submit",function(){if(em&&cc&&em.value)cc.value=em.value.trim();},true);})();</script>
+<script>(function(){
+  var msg=document.getElementById("b-message");
+  var notice=document.getElementById("upgraded-deflect");
+  if(!msg||!notice)return;
+  var patterns=[
+    /\bupgraded\b/i,
+    /\baffirm\b/i,
+    /\bmonthly\s*(payment|plan|fee|installment)/i,
+    /\btrade[-\s]?in\b/i,
+    /\bfinanc(e|ing)\b/i,
+    /\bleas(e|ing)\b/i,
+    /\bpayment\s*plan\b/i,
+    /\bupgrade\s*(program|plan)\b/i
+  ];
+  function check(){
+    var t=msg.value;
+    var hit=patterns.some(function(p){return p.test(t);});
+    notice.style.display=hit?"block":"none";
+  }
+  msg.addEventListener("input",check);
+  msg.addEventListener("blur",check);
+})();</script>
 </body></html>
