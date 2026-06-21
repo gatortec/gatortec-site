@@ -72,6 +72,21 @@
 
   .fine-print { font-size:12.5px; line-height:1.6; color:var(--slate-soft, var(--slate)); margin:48px 0 0; padding-top:24px; border-top:1px solid var(--mist); }
 
+  .hero-notice {
+    background:#fef9ec;
+    border:1px solid #f59e0b;
+    border-left:4px solid #d97706;
+    padding:18px 22px;
+    border-radius:10px;
+    margin:18px 0 14px;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .hero-notice .icon { font-size:22px; flex-shrink:0; line-height:1.1; }
+  .hero-notice p { margin:0; font-size:15.5px; line-height:1.6; color:var(--ink); }
+  .hero-notice strong { color:#92400e; font-weight:700; }
+
   .status-callout { background:#fef9ec; border-left:4px solid #d97706; padding:20px 24px; border-radius:8px; margin:32px 0 0; }
   .status-callout > strong { display:block; color:var(--ink); font-size:15.5px; margin-bottom:12px; letter-spacing:.01em; }
   .status-callout ul { list-style:none; padding:0; margin:0; }
@@ -120,7 +135,13 @@
 </nav>
 <span class="ptag">Notice</span>
 <h1 id="h1">About Upgraded.</h1>
-<p class="lede">GatorTec was a seller on <strong>Upgraded</strong>'s Apple device upgrade and financing marketplace. The marketplace is <strong>not currently available</strong>, and GatorTec is not currently selling on it.</p>
+
+<div class="hero-notice" role="note">
+  <span class="icon" aria-hidden="true">🚫</span>
+  <p><strong>The Upgraded Marketplace is paused.</strong> Not accepting new enrollments. Existing plans cannot upgrade to new devices. <strong>GatorTec was a seller on the marketplace, not the operator</strong> — for any help with your plan, please contact Upgraded directly.</p>
+</div>
+
+<p class="lede">Below: contacts for your lender (Citizens or Affirm), Upgraded's help center, and answers to common questions about your plan.</p>
 </div></section>
 
 <section class="section"><div class="wrap shop-body">
