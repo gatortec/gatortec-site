@@ -23,6 +23,19 @@
     },
     {
       "parameters": {
+        "jsCode": "const now = new Date();\nconst yr = now.getFullYear();\nconst mo = now.getMonth() + 1;\nconst day = now.getDate();\n\nfunction nthWeekday(y, m, wd, n) {\n  const first = new Date(y, m - 1, 1).getDay();\n  return 1 + ((wd - first + 7) % 7) + (n - 1) * 7;\n}\nfunction lastMondayOfMay(y) {\n  const d = new Date(y, 4, 31);\n  return 31 - ((d.getDay() + 6) % 7);\n}\n\nconst today = mo * 100 + day;\n\nconst holidays = new Set([\n  101,                                              // New Year's Day\n  100 + nthWeekday(yr, 1, 1, 3),                    // MLK Day\n  200 + nthWeekday(yr, 2, 1, 3),                    // Presidents Day\n  500 + lastMondayOfMay(yr),                        // Memorial Day\n  619,                                              // Juneteenth\n  704,                                              // Independence Day\n  900 + nthWeekday(yr, 9, 1, 1),                    // Labor Day\n  1100 + nthWeekday(yr, 11, 4, 4),                  // Thanksgiving\n  1100 + nthWeekday(yr, 11, 4, 4) + 1,              // Day after Thanksgiving\n  1225,                                             // Christmas\n]);\n\nif (holidays.has(today)) {\n  console.log('Holiday \\u2014 skipping. Date code:', today);\n  return [];\n}\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4000,
+        -124
+      ],
+      "id": "skip-holidays-aaaa-bbbb-cccc-dddddddddddd",
+      "name": "Skip Holidays?"
+    },
+    {
+      "parameters": {
         "documentId": {
           "__rl": true,
           "value": "1O8B7pBSvymC8NxR0grQIeJ38vFk0xhMLONIUFrPU2UQ",
@@ -403,7 +416,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets (Read)",
+            "node": "Skip Holidays?",
             "type": "main",
             "index": 0
           }
@@ -569,6 +582,17 @@
         [
           {
             "node": "Code (Build Parts JSON)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Skip Holidays?": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets (Read)",
             "type": "main",
             "index": 0
           }
