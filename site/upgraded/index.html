@@ -83,18 +83,15 @@
     gap:14px;
     align-items:flex-start;
   }
-  .hero-notice .icon { font-size:22px; flex-shrink:0; line-height:1.1; }
+  .hero-notice .icon { flex-shrink:0; line-height:1; color:#92400e; }
   .hero-notice p { margin:0; font-size:15.5px; line-height:1.6; color:var(--ink); }
   .hero-notice strong { color:#92400e; font-weight:700; }
 
   .status-callout { background:#fef9ec; border-left:4px solid #d97706; padding:20px 24px; border-radius:8px; margin:32px 0 0; }
   .status-callout > strong { display:block; color:var(--ink); font-size:15.5px; margin-bottom:12px; letter-spacing:.01em; }
   .status-callout ul { list-style:none; padding:0; margin:0; }
-  .status-callout ul li { font-size:14.5px; line-height:1.65; color:var(--ink); padding:5px 0 5px 28px; position:relative; }
-  .status-callout ul li::before { position:absolute; left:0; top:5px; font-size:16px; line-height:1.4; }
-  .status-callout ul li.no::before { content:'🚫'; }
-  .status-callout ul li.ok::before { content:'✅'; }
-  .status-callout ul li.q::before  { content:'❓'; }
+  .status-callout ul li { font-size:14.5px; line-height:1.65; color:var(--ink); padding:6px 0; display:flex; gap:10px; align-items:flex-start; }
+  .status-callout ul li svg { flex-shrink:0; margin-top:2px; }
   .status-callout ul li strong { color:var(--ink); font-weight:600; }
 
   .faq-section { margin-top:48px; padding-top:48px; border-top:1px solid var(--mist); }
@@ -137,7 +134,9 @@
 <h1 id="h1">About Upgraded.</h1>
 
 <div class="hero-notice" role="note">
-  <span class="icon" aria-hidden="true">🚫</span>
+  <span class="icon" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+  </span>
   <p><strong>The Upgraded Marketplace is paused.</strong> Not accepting new enrollments. Existing plans cannot upgrade to new devices. <strong>GatorTec was a seller on the marketplace, not the operator</strong> — for any help with your plan, please contact Upgraded directly.</p>
 </div>
 
@@ -149,10 +148,22 @@
   <div class="status-callout">
     <strong>What this means right now</strong>
     <ul>
-      <li class="no">The marketplace is <strong>not accepting new enrollments</strong> — you cannot sign up for an upgrade plan right now.</li>
-      <li class="no">Customers with <strong>existing plans cannot upgrade</strong> to a new device until the marketplace returns.</li>
-      <li class="ok">Your <strong>existing monthly payments continue normally</strong> — these are handled by Citizens or Affirm, not by GatorTec.</li>
-      <li class="q">GatorTec has <strong>no role</strong> in the marketplace's operation, timeline, or relaunch.</li>
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span>The marketplace is <strong>not accepting new enrollments</strong> — you cannot sign up for an upgrade plan right now.</span>
+      </li>
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span>Customers with <strong>existing plans cannot upgrade</strong> to a new device until the marketplace returns.</span>
+      </li>
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+        <span>Your <strong>existing monthly payments continue normally</strong> — these are handled by Citizens or Affirm, not by GatorTec.</span>
+      </li>
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span>GatorTec has <strong>no role</strong> in the marketplace's operation, timeline, or relaunch.</span>
+      </li>
     </ul>
   </div>
 

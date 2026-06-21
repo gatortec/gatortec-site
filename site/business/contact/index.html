@@ -208,12 +208,19 @@ Gainesville, FL 32614
   var patterns=[
     /\bupgraded\b/i,
     /\baffirm\b/i,
-    /\bmonthly\s*(payment|plan|fee|installment)/i,
+    /\bcitizens\b/i,
     /\btrade[-\s]?in\b/i,
-    /\bfinanc(e|ing)\b/i,
+    /\bfinanc(e|ing|ed)\b/i,
     /\bleas(e|ing)\b/i,
+    /\bmonthly\s*(payment|plan|fee|installment)/i,
     /\bpayment\s*plan\b/i,
-    /\bupgrade\s*(program|plan)\b/i
+    /\binstallment/i,
+    /\bupgrade\s*(program|plan|every|cycle)\b/i,
+    /\b(0|zero|no)\s*(%|percent|interest|down)\b/i,
+    /\b\d+\s*month(s|ly)?\s*(payment|plan|installment|term|loan|financ)/i,
+    /\bsubscription\b/i,
+    /\bbnpl\b/i,
+    /\bbuy\s*now,?\s*pay\s*later\b/i
   ];
   function check(){
     var t=msg.value;
