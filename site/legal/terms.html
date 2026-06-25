@@ -34,19 +34,19 @@
   .legal-body p { font-size:15.5px; line-height:1.7; color:var(--slate); margin:0 0 18px; }
   .legal-body h2 { font-family:var(--display); font-weight:700; font-size:22px; color:var(--ink); margin:40px 0 14px; line-height:1.25; }
   .legal-body h3 { font-family:var(--display); font-weight:600; font-size:17px; color:var(--ink); margin:28px 0 10px; }
-  .legal-body ul { font-size:15.5px; line-height:1.65; color:var(--slate); margin:0 0 18px; padding-left:22px; }
-  .legal-body ul li { margin-bottom:6px; }
+  .legal-body ul, .legal-body ol { font-size:15.5px; line-height:1.65; color:var(--slate); margin:0 0 18px; padding-left:22px; }
+  .legal-body ul li, .legal-body ol li { margin-bottom:6px; }
   .legal-body a { color:var(--blue); }
   .legal-body strong { color:var(--ink); font-weight:600; }
   .legal-body .updated { font-size:13px; color:var(--slate); margin-bottom:32px; font-style:italic; }
-  .legal-body details { background:var(--white); border:1px solid var(--line); border-radius:10px; margin-bottom:10px; }
-  .legal-body details summary { padding:16px 20px; font-weight:600; cursor:pointer; color:var(--ink); list-style:none; display:flex; justify-content:space-between; align-items:center; }
-  .legal-body details summary::-webkit-details-marker { display:none; }
-  .legal-body details summary::after { content:'+'; font-size:24px; font-weight:300; color:var(--slate-soft); transition:transform .2s; }
-  .legal-body details[open] summary::after { transform:rotate(45deg); }
-  .legal-body details[open] summary { border-bottom:1px solid var(--mist); }
-  .legal-body details .faq-body { padding:16px 20px 4px; }
-  .legal-body details .faq-body p { font-size:15px; }
+  .legal-body .all-caps { text-transform:uppercase; font-size:13.5px; line-height:1.65; letter-spacing:.01em; }
+  .legal-body .toc { background:var(--mist); border-radius:10px; padding:18px 22px; margin:0 0 32px; }
+  .legal-body .toc strong { display:block; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:var(--slate); margin-bottom:10px; font-weight:700; }
+  .legal-body .toc ol { columns:2; column-gap:32px; margin:0; padding-left:18px; font-size:14.5px; }
+  .legal-body .toc ol li { margin-bottom:4px; }
+  .legal-body .toc a { text-decoration:none; }
+  .legal-body .toc a:hover { text-decoration:underline; }
+  @media (max-width:640px) { .legal-body .toc ol { columns:1; } }
 </style>
 </head><body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -64,62 +64,148 @@
 <section class="cat-hero" aria-labelledby="h1"><div class="wrap" style="max-width:880px">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span class="sep" aria-hidden="true">›</span><span class="current">Terms</span></nav>
 <h1 id="h1">Terms & Conditions.</h1>
-<p class="lede">The rules that govern purchases and relationships with GatorTec.</p>
+<p class="lede">The rules that govern purchases, repairs, and your relationship with GatorTec.</p>
 </div></section>
 
 <section class="section"><div class="wrap legal-body">
-<p class="updated">Last updated: 2026-06-01</p>
+<p class="updated">Last updated: June 25, 2026</p>
 
-<p>These Terms & Conditions ("Terms") govern your purchases from and relationship with GatorTec, LLC ("GatorTec," "we," or "us"). Please read them carefully. By making a purchase, you agree to these Terms.</p>
+<p>These Terms &amp; Conditions ("Terms") govern your purchases from, repairs performed by, and overall relationship with GatorTec, LLC ("GatorTec," "we," or "us"). Please read them carefully. By placing an order, authorizing a repair, or otherwise transacting with GatorTec, you agree to these Terms.</p>
 
-<h2>Sales — final and non-refundable</h2>
-<p><strong>All sales are final. No refunds or exchanges.</strong> Diagnostics, labor, service parts, and training costs are not refundable. All new products carry their own manufacturer's warranty.</p>
-<p>Cancelled orders on which a deposit has been made will be subject to a 25% cancellation fee. Printers with opened ink or toner are subject to a 30% restock fee.</p>
-<p>The following items are not returnable:</p>
+<div class="toc" aria-label="Contents">
+  <strong>Contents</strong>
+  <ol>
+    <li><a href="#sales">Sales — final and non-refundable</a></li>
+    <li><a href="#cto">Custom-ordered (CTO) products</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#availability">Product availability</a></li>
+    <li><a href="#exchange">10-day exchange on sealed items</a></li>
+    <li><a href="#payment">Payment terms</a></li>
+    <li><a href="#shipping">Shipping</a></li>
+    <li><a href="#repairs">Repair services</a></li>
+    <li><a href="#data">Data and backups</a></li>
+    <li><a href="#liability">Limitation of liability</a></li>
+    <li><a href="#abandonment">Unclaimed product / abandonment</a></li>
+    <li><a href="#arbitration">Dispute resolution by arbitration</a></li>
+    <li><a href="#smallclaims">Small-claims exception</a></li>
+    <li><a href="#jury">Jury trial waiver</a></li>
+    <li><a href="#law">Applicable law</a></li>
+    <li><a href="#severability">Severability</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</div>
+
+<h2 id="sales">1. Sales — final and non-refundable</h2>
+<p><strong>All sales are final. No refunds or exchanges</strong> except as described in section 5. Diagnostics, labor, service parts, training costs, AppleCare+, and GatorGuard products are not refundable through GatorTec.</p>
+<p>Cancelled orders on which a deposit has been made are subject to a <strong>25% cancellation fee</strong>, except for custom-ordered (CTO) configurations, which are non-cancelable once placed with our supplier (see section 2). Printers with opened ink or toner are subject to a <strong>30% restock fee</strong>.</p>
+<p>The following items are not returnable under any circumstances:</p>
 <ul>
-<li>Batteries</li>
-<li>Cables</li>
-<li>Screen protectors</li>
-<li>Single-use products</li>
-<li>Software</li>
-<li>In-ear or over-ear headphones</li>
-<li>Open box, sale, and clearance items</li>
-<li>EV vehicles (including OneWheels)</li>
+  <li>Batteries</li>
+  <li>Cables</li>
+  <li>Screen protectors</li>
+  <li>Single-use products</li>
+  <li>Software</li>
+  <li>In-ear or over-ear headphones</li>
+  <li>Open box, sale, and clearance items</li>
+  <li>EV vehicles (including OneWheels)</li>
 </ul>
-<p>AppleCare+ and GatorGuard products are nonrefundable through GatorTec. For AppleCare+ refunds, please call <strong>1-800-APL-CARE</strong> (1-800-275-2273). For GatorGuard refunds, please call Safeware at <strong>1-800-800-1492</strong>.</p>
-<p>Prices are subject to substantial change without notice. All prices are final at time of sale.</p>
+<p>All new products carry their own manufacturer's warranty. AppleCare+ and GatorGuard products are nonrefundable through GatorTec. For AppleCare+ refunds, please call <strong>1-800-APL-CARE</strong> (1-800-275-2273). For GatorGuard refunds, please call Safeware at <strong>1-800-800-1492</strong>.</p>
 
-<h2>Most new sealed items: 10-day exchange</h2>
-<p>Most new, still-sealed, non-CTO (non-custom-ordered) devices may be exchanged within 10 days of the original purchase date. These exchanges are evaluated on a case-by-case basis, and the store manager has final discretion on any exchange.</p>
+<h2 id="cto">2. Custom-ordered (CTO) products</h2>
+<p><strong>Custom-ordered (CTO) configurations are non-cancelable and non-returnable</strong> once the order has been placed with our supplier. By issuing a purchase order (PO), accepting an estimate, or otherwise authorizing a CTO purchase, you authorize GatorTec to place a non-cancelable order with our supplier on your behalf.</p>
+<p>"CTO" includes any built-to-order configuration not held in standard stock — for example, Macs with custom RAM, storage, processor, keyboard, finish, or networking options selected at order time. If you are unsure whether your order is a CTO configuration, ask your account manager or sales representative before approving the estimate.</p>
 
-<h2>Payment terms</h2>
-<p>Minimum $25 fee for returned checks plus bank charges. Unless otherwise stated in a signed contract, invoices shall be paid in full within 15 days of creation. If charges are not paid in full by their due date, a finance charge of 1.5% per month (18% per annum) will be charged to the customer.</p>
-<p>No in-store cash refunds on purchases over $100. GatorTec will refund any sale over $100 by check mailed to the customer within 7–10 business days.</p>
+<h2 id="pricing">3. Pricing</h2>
+<p><strong>Pricing is not guaranteed until your order has been placed with our supplier.</strong> Prices shown on estimates, quotes, and invoices reflect manufacturer and distributor pricing on the date issued. Suppliers may raise prices at any time, with or without notice. GatorTec cannot lock pricing until we receive your PO and place the order with our supplier — once an order is in the supplier's queue, pricing is generally honored.</p>
+<p>If supplier pricing changes between the estimate date and the date we are able to place your order, GatorTec will issue a revised estimate for your approval before proceeding. Estimates expire 14 days after their issue date unless otherwise stated, and pricing is subject to change before that time as described above.</p>
+<p>All prices are final at time of sale. Tax, shipping, and any applicable fees are calculated at order placement.</p>
 
-<h2>Shipping</h2>
-<p>GatorTec can ship products to your home, work, or as a gift — most of the time it's free. Call us at <a href="tel:+13525057582">352.505.7582</a> for details.</p>
+<h2 id="availability">4. Product availability</h2>
+<p>If a product is discontinued, end-of-lifed, or otherwise becomes unavailable from our suppliers between order acceptance and shipment, GatorTec cannot guarantee fulfillment. In such cases we will work with you to identify a suitable replacement or, if no replacement is acceptable, refund any deposit paid for the unfulfilled item.</p>
 
-<h2>Dispute resolution by binding individual arbitration</h2>
+<h2 id="exchange">5. 10-day exchange on new sealed items</h2>
+<p>Most new, still-sealed, non-CTO devices may be exchanged within 10 days of the original purchase date. These exchanges are evaluated on a case-by-case basis, and the store manager has final discretion on any exchange. Items listed in section 1 as non-returnable are excluded.</p>
+
+<h2 id="payment">6. Payment terms</h2>
+<p>Unless otherwise stated in a signed contract, invoices are due in full within <strong>15 days of creation</strong>. Past-due balances accrue a finance charge of 1.5% per month (18% per annum). A minimum $25 fee applies to returned checks, plus any bank charges.</p>
+<p>No in-store cash refunds on purchases over $100. Refunds over $100 are issued by check mailed to the customer within 7&ndash;10 business days.</p>
+
+<h2 id="shipping">7. Shipping</h2>
+<p>GatorTec can ship products to your home, work, or as a gift — most of the time it's free. Call us at <a href="tel:+13525057582">352.505.7582</a> for details. Quoted delivery dates are estimates only and may be affected by manufacturer build schedules, carrier delays, and supply chain constraints. We will notify you of any substantial delays or backorders when possible.</p>
+
+<h2 id="repairs">8. Repair services</h2>
+<p>The following terms govern repair services performed by GatorTec. By authorizing a repair, you agree to these provisions in addition to those in the other sections of these Terms.</p>
+
+<h3>Authorization and charges</h3>
+<p>GatorTec will repair your product as described and for the charges shown on your work order (unless such charges are revised with your oral or written consent). When the product is covered by warranty or an extended service contract such as AppleCare+, GatorTec will perform repairs under the terms of that warranty or contract, provided you have presented satisfactory proof of eligibility. You will be responsible for any additional charges applicable under your product's warranty or extended service contract, including any applicable tax.</p>
+<p>If repairs are not performed under warranty or extended service contract, payment is due when the product is returned to you. The estimated amount includes all parts, labor, and certain transportation required for the repair, plus any applicable tax. GatorTec may hold you responsible for the diagnostic fee shown on the work order, plus any applicable tax, if GatorTec inspects your product, provides an estimate, and you do not authorize GatorTec to undertake the repairs. GatorTec may subcontract with other service providers for the repair of your product.</p>
+<p>If the requested repairs require labor and/or parts not specified on the work order, GatorTec may seek your approval of a revised estimate. If you do not agree to the revised charges, GatorTec may return your product and hold you responsible for the diagnostic fee, plus any applicable tax.</p>
+
+<h3>Parts and warranty on repairs</h3>
+<p>When repairing your product, GatorTec may use new, used, reconditioned, or non-OEM parts where permitted. GatorTec will retain the replaced part as its property, and the replacement part will become your property. If applicable law requires GatorTec to return a replaced part to you, you agree to pay the additional cost of the replacement item.</p>
+<p>If your product is repaired under warranty or extended service contract, the repair is covered solely by the terms of that warranty or contract and applicable provisions of law. If your product is repaired outside of warranty, GatorTec warrants that (1) the repairs will be performed in a competent and workmanlike manner and (2) all parts used will be free from defects in materials and workmanship for <strong>ninety (90) days</strong>, unless otherwise specified. If a defect exists in a replacement part during the part's warranty period, GatorTec will, at its option, (i) repair the part using new, used, or reconditioned replacement parts, (ii) replace the part with a new, used, or reconditioned equivalent, or (iii) refund the fair market value of the part, as determined by GatorTec.</p>
+
+<h3>Pre-existing conditions and risk</h3>
+<ul>
+  <li><strong>Vintage and obsolete devices.</strong> Parts may not be available for devices Apple has classified as Vintage or Obsolete.</li>
+  <li><strong>Unauthorized modifications void warranty.</strong> Any unauthorized modifications to the software or hardware of an iOS device void all warranty from Apple. GatorTec and Apple may refuse service of any device with unauthorized modifications. If the customer does not disclose these modifications, the diagnostic process may render the device unusable, and the customer assumes all liability.</li>
+  <li><strong>Screen protectors are not covered.</strong> Any damage to a screen protector during service is the customer's responsibility to replace.</li>
+  <li><strong>Pre-existing display cracks may worsen during repair.</strong> If cracks are present, additional cracking may occur during the repair. GatorTec is not liable for additional damage to the display caused by pre-existing damage.</li>
+  <li><strong>Liquid damage.</strong> Liquid contact may cause extensive and unforeseeable damage that worsens over time. There is no way to guarantee that future failures will not occur due to parts permanently compromised by the original liquid damage. GatorTec is not liable for future failures or damage resulting from the original liquid contact.</li>
+  <li><strong>Liquid-damaged devices and partial repairs.</strong> If a device shows signs of contact with liquid and the customer chooses not to replace all parts specified by GatorTec as necessary, GatorTec assumes zero liability for further damage to or resulting from the device, including but not limited to thermal events involving the battery, repeat damage to already replaced components, and total device failure. The customer waives all limited warranty provided by GatorTec for the repair of a liquid-damaged device in this case.</li>
+</ul>
+
+<h3>Diagnostic process — Apple data collection</h3>
+<p>As part of the diagnostic process, you agree that Apple may collect diagnostic data from this device and any paired accessories or other devices, including the serial number, device name, information about wireless and wired networks you connect to, daily counts of call attempts, and information about app usage data and call duration. The data collected will be used by Apple and its partners to troubleshoot issues, improve products and services, and for anti-fraud purposes. For information on Apple's Privacy Policy, see <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank" rel="noopener">apple.com/legal/privacy/en-ww</a>.</p>
+
+<h3>Loaner devices</h3>
+<p>If GatorTec provides you a loaner device while your device is being repaired, you accept all responsibility for any damage caused to the loaner device. You also agree not to remove or copy any software installed on the loaner device. In the event of any damage you cause to the loaner device, you agree to pay for all repairs or the cost of replacement.</p>
+
+<h3>Software transfers and installation</h3>
+<p>If repair service involves transferring information or installing software, you represent that you have the legal right to copy the information and agree to the terms of the software license, and you authorize GatorTec to transfer the information and accept such terms on your behalf in performing the service.</p>
+
+<h3>Repair-related customer orders</h3>
+<p>If a repair work order includes products ordered on your behalf (for example, custom-configured Macs, parts, or accessories that are not directly used in the repair), those items are governed by the sales terms in this document, including the CTO, pricing, and availability sections above.</p>
+
+<h2 id="data">9. Data and backups</h2>
+<p><strong>You are responsible for backing up your data before any service.</strong> GatorTec provides no warranty related to the recovery, backup, transfer, erasure, or loss of data. While we will make all attempts to accomplish these tasks where appropriate, GatorTec makes no guarantees regarding the integrity of the data itself or the hardware it is stored on, and assumes zero liability for any customer data.</p>
+<p>Each customer bears the ultimate responsibility for creating and maintaining backups for all data relating to their devices. The customer assumes all liability related to this data and accepts the potential for undesired data loss or erasure as a consequence of not maintaining such backups.</p>
+<p>Erasing or otherwise interacting with the data on a storage device can be a lengthy process and may also cause strain to the hardware. Servicing the device may cause or reveal problems with the hardware that may not have been previously apparent. GatorTec assumes no liability for the possible failure of any hardware while GatorTec is providing service for the device.</p>
+<p>By authorizing service, you authorize GatorTec to perform data erasure on your device(s) when necessary for the requested service, and acknowledge full liability for any loss of data resulting from this service.</p>
+
+<h2 id="liability">10. Limitation of liability</h2>
+<p class="all-caps">The warranty and remedies described in section 8 are exclusive and in lieu of all other warranties, remedies, and conditions, whether oral or written, express or implied, with respect to repair parts and services. GatorTec specifically disclaims any and all implied warranties, including warranties of merchantability and fitness for a particular purpose. If GatorTec cannot lawfully disclaim implied warranties, all such warranties are limited in duration to the duration of the express limited warranty.</p>
+<p class="all-caps">To the maximum extent permitted by law, GatorTec and its affiliates will under no circumstances be liable for any special, indirect, incidental, or consequential damages resulting from the performance of any repair services or sale of any product. This includes, but is not limited to: loss of revenue; loss of actual or anticipated profits (including loss of profits on contracts); loss of the use of money; loss of anticipated savings; loss of business; loss of opportunity; loss of goodwill; loss of reputation; loss of, damage to, or corruption of data; or any costs of recovering, programming, or restoring any program or data stored or used with your product, and any failure to maintain the confidentiality of data stored on your product. The foregoing limitation shall not apply to death or personal injury claims.</p>
+<p class="all-caps">GatorTec specifically does not warrant that it will be able to (i) repair or replace your product without risk to or loss of programs or data, or (ii) maintain the confidentiality of data. If any product is damaged or lost while in GatorTec's custody, GatorTec's liability will be limited to the cost of repair or replacement of the affected product. Otherwise, GatorTec's liability for any and all damage shall in no event exceed the payments received by GatorTec for services or products provided pursuant to these Terms. The remedies set forth herein shall be your sole and exclusive remedies for any breach by GatorTec under these Terms.</p>
+<p>Some states and provinces do not allow the exclusion or limitation of incidental or consequential damages, or exclusions or limitations on the duration of implied warranties or conditions, so these limitations or exclusions may not apply to you. These Terms give you specific legal rights, and you may also have other rights that vary by state or province.</p>
+
+<h2 id="abandonment">11. Unclaimed product / abandonment</h2>
+<p>If you have not claimed your product and paid all charges due within <strong>forty-five (45) days</strong> after being notified by GatorTec that your product has been repaired or that you have declined repair, GatorTec will consider your product abandoned. GatorTec will provide such notice to you at the email address or phone number you furnished when you authorized the repairs, or by other reasonable means. GatorTec may dispose of your product in accordance with applicable provisions of law, and specifically may sell your product at a private or public sale without liability to you. GatorTec reserves its statutory and any other lawful liens for unpaid charges.</p>
+
+<h2 id="arbitration">12. Dispute resolution by binding individual arbitration</h2>
 <p><strong>Any dispute involving you and GatorTec or any of its agents shall be resolved through individual arbitration, except as otherwise noted below.</strong></p>
 <p>"Dispute" shall be interpreted broadly and includes any claim or controversy arising out of or relating in any way to your relationship with GatorTec and its subsidiaries, affiliates, and designees — whether based in contract, tort, statute, fraud, misrepresentation, or any other legal theory. This includes (1) in-home consultations; (2) use of GatorTec's websites; (3) any service terms and conditions; and (4) any products or services offered, sold, or distributed by GatorTec, including their advertising and sales practices.</p>
 <p>By agreeing to arbitration, you understand and agree that you are waiving your right to maintain other available resolution processes, such as a court action or administrative proceeding. The rules in arbitration are different: no judge or jury, less discovery, and limited appellate review. Arbitrators can award the same damages and relief that a court can award.</p>
 <p>Either party may initiate arbitration by sending a demand to the American Arbitration Association (AAA). You may serve a copy of a demand at: <strong>GatorTec, LLC · 602 S Main St · Gainesville, FL 32601</strong>. Arbitration will be governed by the AAA's Consumer Arbitration Rules or Commercial Arbitration Rules (as appropriate), as modified by these Terms. AAA Rules and the filing form are available at <a href="https://www.adr.org" target="_blank" rel="noopener">www.adr.org</a> or by calling 1-800-778-7879. Payment of all filing, administration, and arbitrator fees will be governed by the AAA's rules; however, we will reimburse those fees (but not any attorney's fees) for claims totaling less than $1,000 unless the arbitrator determines the claim is frivolous.</p>
 <p>You and GatorTec agree that each may bring claims against the other only in your or its individual capacity, and not as a plaintiff or class member in any purported class, consolidated, or representative proceeding. This means you may not act on behalf of a class or any other person. The arbitrator may award declaratory or injunctive relief only in favor of the individual party seeking relief and only to the extent necessary to provide relief warranted by that party's individual claim.</p>
 
-<h2>Small-claims exception</h2>
+<h2 id="smallclaims">13. Small-claims exception</h2>
 <p>Any dispute that falls within the jurisdictional scope and amount of an appropriate small-claims court shall be brought in small-claims court on an individual basis. Either party may also elect to bring an action in a court of competent jurisdiction to enjoin infringement or other misuse of intellectual property rights.</p>
 
-<h2>Jury trial waiver</h2>
-<p>If for any reason a claim may proceed in court rather than in arbitration, we each waive any right to a jury trial, unless such waiver is unenforceable. This means that any claim would be decided by a judge, not a jury.</p>
+<h2 id="jury">14. Jury trial waiver</h2>
+<p>If for any reason a claim proceeds in court rather than in arbitration, we each waive any right to a jury trial, unless such waiver is unenforceable. This means that any claim would be decided by a judge, not a jury.</p>
 
-<h2>Applicable law</h2>
-<p>The Federal Arbitration Act and applicable federal law (or in the absence of applicable federal law, then the laws of the State of Florida), without regard to principles of conflict of laws, will govern these Terms and apply to any disputes against GatorTec.</p>
+<h2 id="law">15. Applicable law</h2>
+<p>The Federal Arbitration Act and applicable federal law (or in the absence of applicable federal law, then the laws of the State of Florida), without regard to principles of conflict of laws, will govern these Terms and apply to any disputes against GatorTec. These Terms are the only ones that govern GatorTec's sale and repair of products. No other oral or written terms or conditions apply, including ones in any purchase order that you provide to GatorTec. No one has the authority from GatorTec to vary any of these Terms.</p>
 
-<h2>Severability</h2>
-<p>If any portion of these Terms is found unenforceable, the remaining portions will continue in full force and effect.</p>
+<h2 id="severability">16. Severability</h2>
+<p>If any provision of these Terms is found unenforceable, that provision will no longer be part of the Terms, and the remaining provisions will continue in full force and effect as though that provision was never part of them.</p>
 
-<h2>Contact</h2>
-<p>If you have questions about these Terms, contact us at <a href="mailto:legal@gatortec.com">legal@gatortec.com</a> or 352.505.7582.</p>
+<h2 id="contact">17. Contact</h2>
+<p>If you have questions about these Terms, contact us at <a href="mailto:legal@gatortec.com">legal@gatortec.com</a> or <a href="tel:+13525057582">352.505.7582</a>. Our mailing address is:</p>
+<p><strong>GatorTec, LLC</strong><br>
+PO Box 142846<br>
+Gainesville, FL 32614</p>
 
 </div></section>
 

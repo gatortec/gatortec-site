@@ -384,8 +384,8 @@
       const add = state.dealerAdd != null ? state.dealerAdd : 0.95;
       return round2((d + add) * (1 + state.dealerPct / 100));
     }
-    // Default rule
-    return round2((d + 0.95) * 1.01);
+    // Default rule: Dealer B + $0.95 (no markup)
+    return round2(d + 0.95);
   }
 
   function money(n) {
