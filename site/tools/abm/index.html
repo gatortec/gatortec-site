@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0171B9">
+<title>ABM / DEP Enrollment Submission — GatorTec</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/site/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/site/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/site/apple-touch-icon.png">
+<meta name="description" content="Submit serial numbers for enrollment in Apple Business Manager / DEP through GatorTec and TD Synnex.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gatortec.com/tools/abm/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/tokens.css?v=3">
+<link rel="stylesheet" href="../../assets/css/base.css?v=3">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<style>
+.banner-warn{background:#FFF4E5;border:1px solid #F5B66A;border-left:4px solid #E08A1A;border-radius:10px;padding:18px 22px;margin:0 0 28px 0;color:#5A3A0B}
+.banner-warn h2{margin:0 0 8px 0;font-size:18px;font-weight:700;color:#7A4E12;letter-spacing:-0.01em}
+.banner-warn p{margin:6px 0;font-size:15px;line-height:1.55}
+.banner-warn a{color:#0171B9;font-weight:600;text-decoration:underline}
+.banner-warn strong.id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:16px;background:#FFE6BF;padding:1px 8px;border-radius:4px;color:#7A4E12}
+.help-text{font-size:13px;color:#6c757d;margin-top:6px;line-height:1.45}
+textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.5}
+.form-extra{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
+</style>
+</head><body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../" aria-label="GatorTec home"><img src="../../assets/img/site/gatortec-mark.png" alt="" aria-hidden="true"><span>GatorTec</span></a>
+<nav class="main" aria-label="Primary">
+<a href="../../products/">Products</a>
+<a href="../../business/">For Business</a>
+<a href="../../consumer/">For Home</a>
+<a href="../../service/">Service</a>
+<a class="pill" href="../../contact/">Contact</a>
+</nav></div></header>
+<main id="main">
+
+<section class="cat-hero" aria-labelledby="h1"><div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="../../">Home</a><span class="sep" aria-hidden="true">›</span>
+<span class="current">ABM / DEP Enrollment</span>
+</nav>
+<span class="ptag">Apple Business Manager</span>
+<h1 id="h1">DEP / ABM Enrollment Submission</h1>
+<p class="lede">Submit serial numbers for enrollment in your customer's Apple Business Manager. GatorTec forwards the request to TD Synnex for processing.</p>
+</div></section>
+
+<section class="section"><div class="wrap" style="max-width:780px;margin:0 auto">
+
+<div class="banner-warn" role="alert">
+<h2>One-time setup required before submitting</h2>
+<p>Your customer must first add GatorTec as a Device Supplier in their Apple Business Manager. Our Reseller ID is <strong class="id">5559440</strong>.</p>
+<p><a href="https://support.apple.com/guide/business/manage-device-suppliers-axmef1c47493/web" target="_blank" rel="noopener">View Apple's instructions for adding a Device Supplier →</a></p>
+<p style="margin-top:10px;padding-top:10px;border-top:1px solid #F5B66A;font-size:14px"><strong>Note:</strong> This form only accepts enrollments for hardware purchased through TD Synnex.</p>
+</div>
+
+<form class="form-card" id="abm-form" action="https://gatortec.app.n8n.cloud/webhook/abm-enrollment" method="POST">
+
+<!-- Spam controls -->
+<input type="text" name="_alt_contact" id="alt-contact" class="form-extra" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Leave this field blank">
+<input type="hidden" name="_form_ts" id="form-ts" value="">
+
+<div class="field">
+<label for="org-id">End User ABM / DEP # (Organization ID) <span class="req">*</span></label>
+<input type="text" id="org-id" name="Organization ID" required pattern="[0-9]+" inputmode="numeric" autocomplete="off">
+<div class="help-text">This is your customer's Apple Business Manager Organization ID — typically a 7-digit number found in their ABM account settings.</div>
+</div>
+
+<div class="field">
+<label for="serials">Serial Numbers <span class="req">*</span></label>
+<textarea id="serials" name="Serial Numbers" class="serials" required placeholder="One serial number per line, e.g.:&#10;SD65M94GVWL&#10;SDC996PF4J2&#10;SDKYXCJQX3J"></textarea>
+<div class="help-text">One serial number per line. Each device will become a separate row in the enrollment file sent to TD Synnex.</div>
+</div>
+
+<div class="field">
+<label for="email">Email for Confirmation <span class="req">*</span></label>
+<input type="email" id="email" name="Email" required autocomplete="email">
+<div class="help-text">TD Synnex will send the enrollment confirmation to this address once processed.</div>
+</div>
+
+<div class="cf-turnstile" data-sitekey="0x4AAAAAADi0CelhpMAuj8ge" data-theme="light" style="margin-bottom:18px"></div>
+
+<button type="submit" class="btn btn-primary" id="submit-btn">Submit Enrollment Request</button>
+
+<p class="help-text" style="margin-top:14px">By submitting, you confirm the hardware listed above was purchased through TD Synnex and that your customer has added GatorTec (Reseller ID <strong>5559440</strong>) as a Device Supplier in Apple Business Manager.</p>
+
+</form>
+
+<div id="success-msg" style="display:none;background:#E7F5EA;border:1px solid #6BC97D;border-radius:10px;padding:24px;margin-top:20px;text-align:center">
+<h2 style="margin:0 0 10px 0;color:#1F6B33">Enrollment request received.</h2>
+<p style="margin:0;color:#2C5237">TD Synnex typically processes enrollments within one business day. You'll receive a confirmation email at the address you provided once it's complete.</p>
+</div>
+
+</div></section>
+
+</main>
+
+<footer class="site-foot"><div class="wrap">
+<div class="foot-grid">
+<div><strong>GatorTec</strong><p style="margin:6px 0 0;font-size:13px;color:#6c757d">Apple Premier Partner<br>Gainesville, Florida</p></div>
+<div><strong>Visit</strong><p style="margin:6px 0 0;font-size:13px"><a href="../../">Home</a><br><a href="../../business/">For Business</a><br><a href="../../service/">Service</a></p></div>
+<div><strong>Legal</strong><p style="margin:6px 0 0;font-size:13px"><a href="../../legal/privacy.html">Privacy</a><br><a href="../../legal/terms.html">Terms</a></p></div>
+</div>
+<p class="foot-fine">© <span id="yr"></span> GatorTec. Apple, the Apple logo, and all related marks are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
+</div></footer>
+
+<script src="../../assets/js/nav.js?v=3" defer></script>
+<script src="../../assets/js/analytics.js?v=3" defer></script>
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var f = document.getElementById('abm-form');
+  var ts = document.getElementById('form-ts');
+  if (ts) ts.value = Date.now();
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true; btn.textContent = 'Submitting...';
+
+    var fd = new FormData(f);
+    fetch(f.action, { method: 'POST', body: fd })
+      .then(function(r){ return r.ok ? r.text() : Promise.reject(r); })
+      .then(function(){
+        f.style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'Submit Enrollment Request';
+        alert('Submission failed. Please try again or email jim@gatortec.com directly.');
+      });
+  });
+})();
+</script>
+</body>
+</html>
