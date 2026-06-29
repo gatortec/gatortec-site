@@ -71,7 +71,6 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 <option value="TD Synnex" selected>TD Synnex</option>
 <option value="Ingram Micro">Ingram Micro (beta)</option>
 </select>
-<div class="help-text" id="dist-help">Distributor automation for Ingram Micro is in beta — the request will be emailed to GatorTec staff who will forward it to Ingram manually.</div>
 </div>
 
 <div class="field">
@@ -81,9 +80,9 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 </div>
 
 <div class="field ingram-only" id="field-gt-po" style="display:none">
-<label for="gt-po">Internal / GatorTec PO <span class="req ingram-req">*</span></label>
+<label for="gt-po">Your PO Number <span class="req ingram-req">*</span></label>
 <input type="text" id="gt-po" name="GatorTec PO" autocomplete="off">
-<div class="help-text">The PO number GatorTec used when placing the order with Ingram (e.g., <code>20250610-5</code>).</div>
+<div class="help-text">The PO number used to place the order — your own, your customer's, or whatever PO was on the Ingram invoice.</div>
 </div>
 
 <div class="field ingram-only" id="field-im-order" style="display:none">
@@ -141,18 +140,13 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 
   var distSelect = document.getElementById('distributor');
   var ingramFields = document.querySelectorAll('.ingram-only');
-  var distHelp = document.getElementById('dist-help');
   var successMsg = document.getElementById('success-msg-body');
 
   function toggleDistributor() {
     var isIngram = distSelect.value === 'Ingram Micro';
     ingramFields.forEach(function(el){ el.style.display = isIngram ? 'block' : 'none'; });
-    // Make Ingram-only fields required only when Ingram is selected
     document.getElementById('gt-po').required = isIngram;
     document.getElementById('im-order').required = isIngram;
-    distHelp.textContent = isIngram
-      ? 'Distributor automation for Ingram Micro is in beta — the request will be emailed to GatorTec staff who will forward it to Ingram manually.'
-      : 'TD Synnex orders are processed automatically — you\'ll receive a confirmation email once enrollment completes.';
   }
   distSelect.addEventListener('change', toggleDistributor);
   toggleDistributor();
