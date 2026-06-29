@@ -47,7 +47,7 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 </nav>
 <span class="ptag">Apple Business Manager</span>
 <h1 id="h1">DEP / ABM Enrollment Submission</h1>
-<p class="lede">Submit serial numbers for enrollment in your customer's Apple Business Manager. GatorTec forwards the request to TD Synnex for processing.</p>
+<p class="lede">Submit serial numbers for enrollment in your customer's Apple Business Manager. GatorTec forwards the request to the appropriate distributor for processing.</p>
 </div></section>
 
 <section class="section"><div class="wrap" style="max-width:780px;margin:0 auto">
@@ -56,7 +56,7 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 <h2>One-time setup required before submitting</h2>
 <p>Your customer must first add GatorTec as a Device Supplier in their Apple Business Manager. Our Reseller ID is <strong class="id">5559440</strong>.</p>
 <p><a href="https://support.apple.com/guide/business/manage-device-suppliers-axmef1c47493/web" target="_blank" rel="noopener">View Apple's instructions for adding a Device Supplier →</a></p>
-<p style="margin-top:10px;padding-top:10px;border-top:1px solid #F5B66A;font-size:14px"><strong>Note:</strong> This form only accepts enrollments for hardware purchased through TD Synnex.</p>
+<p style="margin-top:10px;padding-top:10px;border-top:1px solid #F5B66A;font-size:14px"><strong>Note:</strong> This form accepts enrollments for hardware purchased through <strong>TD Synnex</strong> or <strong>Ingram Micro</strong>.</p>
 </div>
 
 <form class="form-card" id="abm-form" action="https://gatortec.app.n8n.cloud/webhook/abm-enrollment" method="POST">
@@ -66,34 +66,55 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 <input type="hidden" name="_form_ts" id="form-ts" value="">
 
 <div class="field">
+<label for="distributor">Where was this hardware purchased? <span class="req">*</span></label>
+<select id="distributor" name="Distributor" required>
+<option value="TD Synnex" selected>TD Synnex</option>
+<option value="Ingram Micro">Ingram Micro (beta)</option>
+</select>
+<div class="help-text" id="dist-help">Distributor automation for Ingram Micro is in beta — the request will be emailed to GatorTec staff who will forward it to Ingram manually.</div>
+</div>
+
+<div class="field">
 <label for="org-id">End User ABM / DEP # (Organization ID) <span class="req">*</span></label>
 <input type="text" id="org-id" name="Organization ID" required pattern="[0-9]+" inputmode="numeric" autocomplete="off">
 <div class="help-text">This is your customer's Apple Business Manager Organization ID — typically a 7-digit number found in their ABM account settings.</div>
 </div>
 
+<div class="field ingram-only" id="field-gt-po" style="display:none">
+<label for="gt-po">Internal / GatorTec PO <span class="req ingram-req">*</span></label>
+<input type="text" id="gt-po" name="GatorTec PO" autocomplete="off">
+<div class="help-text">The PO number GatorTec used when placing the order with Ingram (e.g., <code>20250610-5</code>).</div>
+</div>
+
+<div class="field ingram-only" id="field-im-order" style="display:none">
+<label for="im-order">Ingram Order # <span class="req ingram-req">*</span></label>
+<input type="text" id="im-order" name="Ingram Order" autocomplete="off">
+<div class="help-text">The full Ingram order number (e.g., <code>US-C-T-25061056560489304801</code>).</div>
+</div>
+
 <div class="field">
 <label for="serials">Serial Numbers <span class="req">*</span></label>
 <textarea id="serials" name="Serial Numbers" class="serials" required placeholder="One serial number per line, e.g.:&#10;SD65M94GVWL&#10;SDC996PF4J2&#10;SDKYXCJQX3J"></textarea>
-<div class="help-text">One serial number per line. Each device will become a separate row in the enrollment file sent to TD Synnex.</div>
+<div class="help-text">One serial number per line. Each device will become a separate row in the enrollment request.</div>
 </div>
 
 <div class="field">
 <label for="email">Email for Confirmation <span class="req">*</span></label>
 <input type="email" id="email" name="Email" required autocomplete="email">
-<div class="help-text">TD Synnex will send the enrollment confirmation to this address once processed.</div>
+<div class="help-text">The distributor will send the enrollment confirmation to this address once processed.</div>
 </div>
 
 <div class="cf-turnstile" data-sitekey="0x4AAAAAADi0CelhpMAuj8ge" data-theme="light" style="margin-bottom:18px"></div>
 
 <button type="submit" class="btn btn-primary" id="submit-btn">Submit Enrollment Request</button>
 
-<p class="help-text" style="margin-top:14px">By submitting, you confirm the hardware listed above was purchased through TD Synnex and that your customer has added GatorTec (Reseller ID <strong>5559440</strong>) as a Device Supplier in Apple Business Manager.</p>
+<p class="help-text" style="margin-top:14px">By submitting, you confirm the hardware listed above was purchased through the distributor selected and that your customer has added GatorTec (Reseller ID <strong>5559440</strong>) as a Device Supplier in Apple Business Manager.</p>
 
 </form>
 
 <div id="success-msg" style="display:none;background:#E7F5EA;border:1px solid #6BC97D;border-radius:10px;padding:24px;margin-top:20px;text-align:center">
 <h2 style="margin:0 0 10px 0;color:#1F6B33">Enrollment request received.</h2>
-<p style="margin:0;color:#2C5237">TD Synnex typically processes enrollments within one business day. You'll receive a confirmation email at the address you provided once it's complete.</p>
+<p id="success-msg-body" style="margin:0;color:#2C5237">TD Synnex typically processes enrollments within one business day. You'll receive a confirmation email at the address you provided once it's complete.</p>
 </div>
 
 </div></section>
@@ -118,15 +139,39 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
   var ts = document.getElementById('form-ts');
   if (ts) ts.value = Date.now();
 
+  var distSelect = document.getElementById('distributor');
+  var ingramFields = document.querySelectorAll('.ingram-only');
+  var distHelp = document.getElementById('dist-help');
+  var successMsg = document.getElementById('success-msg-body');
+
+  function toggleDistributor() {
+    var isIngram = distSelect.value === 'Ingram Micro';
+    ingramFields.forEach(function(el){ el.style.display = isIngram ? 'block' : 'none'; });
+    // Make Ingram-only fields required only when Ingram is selected
+    document.getElementById('gt-po').required = isIngram;
+    document.getElementById('im-order').required = isIngram;
+    distHelp.textContent = isIngram
+      ? 'Distributor automation for Ingram Micro is in beta — the request will be emailed to GatorTec staff who will forward it to Ingram manually.'
+      : 'TD Synnex orders are processed automatically — you\'ll receive a confirmation email once enrollment completes.';
+  }
+  distSelect.addEventListener('change', toggleDistributor);
+  toggleDistributor();
+
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = document.getElementById('submit-btn');
     btn.disabled = true; btn.textContent = 'Submitting...';
 
     var fd = new FormData(f);
+    var isIngram = distSelect.value === 'Ingram Micro';
     fetch(f.action, { method: 'POST', body: fd })
       .then(function(r){ return r.ok ? r.text() : Promise.reject(r); })
       .then(function(){
+        if (successMsg) {
+          successMsg.textContent = isIngram
+            ? 'Your request was emailed to GatorTec staff for manual forwarding to Ingram Micro\'s DEP team. You\'ll hear back once Ingram processes the enrollment — typically within one business day.'
+            : 'TD Synnex typically processes enrollments within one business day. You\'ll receive a confirmation email at the address you provided once it\'s complete.';
+        }
         f.style.display = 'none';
         document.getElementById('success-msg').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
