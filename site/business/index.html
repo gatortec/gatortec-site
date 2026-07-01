@@ -94,6 +94,177 @@
   </div>
 </section>
 
+<!-- ============ LEASING CALCULATOR ============ -->
+<section class="section alt" id="leasing" aria-labelledby="lease-h">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Financing</span>
+      <h2 id="lease-h">Own more Mac for less month-to-month.</h2>
+      <p class="lede">Apple hardware costs have climbed — leasing is how many teams keep up without straining cash flow. Spread the cost of new Macs, iPads, and Apple accessories over 24, 36, or 48 months, deploy sooner, and keep your working capital where it belongs.</p>
+    </div>
+
+    <div class="lease-info-grid">
+      <div class="lease-info-card">
+        <h3 style="margin:0 0 10px;font-size:18px">$1 Buyout</h3>
+        <p style="margin:0;color:#4a5568;font-size:14px;line-height:1.55">You own the equipment at the end of the term for exactly one dollar. Slightly higher monthly payments but the hardware is yours to keep. Best when you plan to hold the devices for their full useful life.</p>
+      </div>
+      <div class="lease-info-card">
+        <h3 style="margin:0 0 10px;font-size:18px">Fair Market Value (FMV)</h3>
+        <p style="margin:0;color:#4a5568;font-size:14px;line-height:1.55">Lower monthly payments during the term. At the end you can (a) return the hardware, (b) renew the lease, or (c) buy the equipment at its fair market value. Best when you plan to refresh your fleet on a schedule.</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:#6c757d;font-size:14px;margin:0 0 26px;font-style:italic">Both structures may offer tax advantages. Please consult your accountant or tax advisor about the treatment that fits your business.</p>
+
+    <div class="lease-calc-card">
+      <div class="lease-calc-controls">
+        <div class="lease-amount">
+          <label for="lease-amount" style="display:block;font-weight:600;margin-bottom:8px">Equipment total</label>
+          <div style="font-size:32px;font-weight:700;color:#0171B9;margin-bottom:10px" id="lease-amount-display">$10,000</div>
+          <input type="range" id="lease-amount" min="3000" max="30000" step="500" value="10000" style="width:100%">
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:#6c757d;margin-top:4px"><span>$3,000</span><span>$30,000</span></div>
+        </div>
+
+        <div class="lease-matrix">
+          <div style="font-weight:600;margin-bottom:10px">Estimated monthly payment</div>
+          <table class="lease-payment-table">
+            <thead>
+              <tr><th></th><th>$1 Buyout</th><th>FMV</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>24 months</th><td data-r="24-1">—</td><td data-r="24-fmv">—</td></tr>
+              <tr><th>36 months</th><td data-r="36-1">—</td><td data-r="36-fmv">—</td></tr>
+              <tr><th>48 months</th><td data-r="48-1">—</td><td data-r="48-fmv">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:24px">
+        <button type="button" class="btn btn-primary" id="lease-cta">Request a formal proposal →</button>
+      </div>
+    </div>
+
+    <form id="lease-form" class="form-card" action="https://gatortec.app.n8n.cloud/webhook/leasing-inquiry" method="POST" style="display:none;margin-top:24px;max-width:720px;margin-left:auto;margin-right:auto">
+      <h3 style="margin:0 0 6px;font-size:22px">Request a formal lease proposal</h3>
+      <p style="margin:0 0 20px;color:#6c757d;font-size:14px">We'll pull exact numbers based on the equipment configuration you need and send a formal proposal for review.</p>
+
+      <input type="text" name="_alt_contact" id="lease-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <input type="hidden" name="_form_ts" id="lease-ts" value="">
+      <input type="hidden" name="Lease Amount" id="lease-amount-hidden" value="10000">
+      <input type="hidden" name="Lease Selection Summary" id="lease-summary-hidden" value="">
+
+      <div class="field-row">
+        <div class="field"><label for="lease-name">Your name <span class="req">*</span></label><input type="text" id="lease-name" name="Name" required autocomplete="name"></div>
+        <div class="field"><label for="lease-company">Company <span class="req">*</span></label><input type="text" id="lease-company" name="Company" required autocomplete="organization"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="lease-email">Email <span class="req">*</span></label><input type="email" id="lease-email" name="Email" required autocomplete="email"></div>
+        <div class="field"><label for="lease-phone">Phone <span class="req">*</span></label><input type="tel" id="lease-phone" name="Phone" required autocomplete="tel"></div>
+      </div>
+      <div class="field">
+        <label for="lease-msg">What are you looking to lease? <span style="color:#6c757d;font-weight:400;font-size:13px">(optional but helpful)</span></label>
+        <textarea id="lease-msg" name="Message" rows="4" placeholder="e.g., 20 MacBook Pros for our design team, plus dock and displays. Refresh cycle every 3 years."></textarea>
+      </div>
+
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADi0CelhpMAuj8ge" data-theme="light" style="margin-bottom:18px"></div>
+      <button type="submit" class="btn btn-primary" id="lease-submit">Send request</button>
+      <button type="button" class="btn" id="lease-cancel" style="margin-left:10px;background:#e5e7eb;color:#374151">Cancel</button>
+    </form>
+
+    <div id="lease-success" style="display:none;background:#E7F5EA;border:1px solid #6BC97D;border-radius:10px;padding:24px;margin-top:20px;text-align:center;max-width:720px;margin-left:auto;margin-right:auto">
+      <h3 style="margin:0 0 8px;color:#1F6B33">Request received.</h3>
+      <p style="margin:0;color:#2C5237">Your GatorTec account manager will reach out within one business day with a formal proposal.</p>
+    </div>
+
+    <p style="text-align:center;color:#6c757d;font-size:12px;margin-top:28px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.55">All lease payments are estimates for planning purposes only and are subject to credit approval from our leasing partner. Final terms may vary based on equipment configuration, credit review, and applicable sales tax. Rates current as of July 2026 and subject to change.</p>
+  </div>
+</section>
+
+<style>
+.lease-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:820px;margin:0 auto 20px}
+@media(max-width:640px){.lease-info-grid{grid-template-columns:1fr}}
+.lease-info-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px}
+.lease-calc-card{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:32px;max-width:820px;margin:0 auto;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.lease-calc-controls{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start}
+@media(max-width:720px){.lease-calc-controls{grid-template-columns:1fr}}
+.lease-payment-table{width:100%;border-collapse:collapse;font-size:14px}
+.lease-payment-table th,.lease-payment-table td{padding:10px 8px;text-align:right;border-bottom:1px solid #f1f5f9}
+.lease-payment-table thead th{color:#6c757d;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;text-align:right}
+.lease-payment-table thead th:first-child{text-align:left}
+.lease-payment-table tbody th{text-align:left;font-weight:500;color:#374151}
+.lease-payment-table tbody td{font-weight:600;color:#0f172a;font-variant-numeric:tabular-nums}
+.lease-payment-table tbody tr:last-child th,.lease-payment-table tbody tr:last-child td{border-bottom:none}
+#lease-amount{-webkit-appearance:none;appearance:none;height:6px;background:#e2e8f0;border-radius:3px;outline:none}
+#lease-amount::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#0171B9;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
+#lease-amount::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#0171B9;cursor:pointer;border:none;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
+</style>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+(function(){
+  var RATES = {
+    '24-1': 0.04768, '24-fmv': 0.04145,
+    '36-1': 0.03287, '36-fmv': 0.02937,
+    '48-1': 0.02595, '48-fmv': 0.02400
+  };
+  var slider = document.getElementById('lease-amount');
+  var display = document.getElementById('lease-amount-display');
+  var hiddenAmt = document.getElementById('lease-amount-hidden');
+  var hiddenSum = document.getElementById('lease-summary-hidden');
+  var cta = document.getElementById('lease-cta');
+  var form = document.getElementById('lease-form');
+  var cancel = document.getElementById('lease-cancel');
+  var success = document.getElementById('lease-success');
+  var ts = document.getElementById('lease-ts');
+  if (ts) ts.value = Date.now();
+
+  function fmt(n){ return '$' + Math.round(n).toLocaleString(); }
+  function fmt2(n){ return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+
+  function recalc(){
+    var amt = parseInt(slider.value, 10);
+    display.textContent = fmt(amt);
+    hiddenAmt.value = amt;
+    Object.keys(RATES).forEach(function(k){
+      var cell = document.querySelector('[data-r="' + k + '"]');
+      if (cell) cell.textContent = fmt2(amt * RATES[k]) + '/mo';
+    });
+    hiddenSum.value = 'Equipment total: ' + fmt(amt) +
+      '  ·  24mo $1: ' + fmt2(amt * RATES['24-1']) + '/mo, FMV: ' + fmt2(amt * RATES['24-fmv']) + '/mo' +
+      '  ·  36mo $1: ' + fmt2(amt * RATES['36-1']) + '/mo, FMV: ' + fmt2(amt * RATES['36-fmv']) + '/mo' +
+      '  ·  48mo $1: ' + fmt2(amt * RATES['48-1']) + '/mo, FMV: ' + fmt2(amt * RATES['48-fmv']) + '/mo';
+  }
+  slider.addEventListener('input', recalc);
+  recalc();
+
+  cta.addEventListener('click', function(){
+    form.style.display = 'block';
+    setTimeout(function(){ form.scrollIntoView({behavior:'smooth', block:'start'}); }, 50);
+  });
+  cancel.addEventListener('click', function(){
+    form.style.display = 'none';
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = document.getElementById('lease-submit');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    fetch(form.action, {method:'POST', body: new FormData(form)})
+      .then(function(r){ return r.ok ? r.text() : Promise.reject(r); })
+      .then(function(){
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({behavior:'smooth', block:'center'});
+      })
+      .catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'Send request';
+        alert('Submission failed. Please try again or call us at 352.505.9088.');
+      });
+  });
+})();
+</script>
+
 <!-- ============ EXPLORE THE LINEUP ============ -->
 <section class="section" id="lineup" aria-labelledby="lineup-h">
   <div class="wrap">
