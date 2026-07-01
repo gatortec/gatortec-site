@@ -175,10 +175,46 @@
         <div class="field"><label for="lease-website">Company website <span style="color:#6c757d;font-weight:400;font-size:13px">(optional)</span></label><input type="url" id="lease-website" name="Website" autocomplete="url" placeholder="https://"></div>
       </div>
 
+      <div class="field-row">
+        <div class="field">
+          <label for="lease-structure">Business structure <span class="req">*</span></label>
+          <select id="lease-structure" name="Business Structure" required>
+            <option value="">— Select —</option>
+            <option>LLC</option>
+            <option>Corporation (C-Corp)</option>
+            <option>S-Corporation</option>
+            <option>Partnership</option>
+            <option>Sole Proprietorship</option>
+            <option>Non-profit</option>
+            <option>Government or School</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="lease-revenue">Annual revenue <span class="req">*</span></label>
+          <select id="lease-revenue" name="Annual Revenue" required>
+            <option value="">— Select —</option>
+            <option>Under $250K</option>
+            <option>$250K – $1M</option>
+            <option>$1M – $5M</option>
+            <option>$5M – $10M</option>
+            <option>$10M+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field" style="margin-bottom:16px">
+        <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-weight:500">
+          <input type="checkbox" id="lease-ein" name="Has EIN" value="yes" style="margin-top:3px;flex-shrink:0">
+          <span>My business has a Federal EIN (Employer Identification Number).<br><span style="font-weight:400;color:#6c757d;font-size:13px">Businesses without an EIN typically require a personal guarantee and stricter credit review.</span></span>
+        </label>
+      </div>
+
       <div class="field">
         <label for="lease-msg">What are you looking to lease? <span style="color:#6c757d;font-weight:400;font-size:13px">(optional but helpful)</span></label>
         <textarea id="lease-msg" name="Message" rows="4" placeholder="e.g., 20 MacBook Pros for our design team, plus dock and displays. Refresh cycle every 3 years."></textarea>
       </div>
+
+      <p style="font-size:12px;color:#6c757d;margin:-4px 0 14px">Leasing is not available for cannabis, adult, firearms, or gambling-related businesses.</p>
 
       <div class="cf-turnstile" data-sitekey="0x4AAAAAADi0CelhpMAuj8ge" data-theme="light" style="margin-bottom:18px"></div>
       <button type="submit" class="btn btn-primary" id="lease-submit">Send request</button>
