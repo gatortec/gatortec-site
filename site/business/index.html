@@ -386,8 +386,7 @@
   function pgRequired(){
     var s = structureSelect ? structureSelect.value : '';
     var r = revenueSelect ? revenueSelect.value : '';
-    var noEin = einBox ? !einBox.checked : false;
-    return s === 'Sole Proprietorship' || r === 'Under $250K' || noEin;
+    return s === 'Sole Proprietorship' || r === 'Under $250K';
   }
   function updatePgGate(){
     var need = pgRequired();
@@ -412,7 +411,6 @@
   }
   if (structureSelect) structureSelect.addEventListener('change', updatePgGate);
   if (revenueSelect) revenueSelect.addEventListener('change', updatePgGate);
-  if (einBox) einBox.addEventListener('change', updatePgGate);
   if (pgBox) pgBox.addEventListener('change', updateSubmitState);
   updatePgGate();
   function updateCompanyRef(){
