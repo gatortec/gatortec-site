@@ -121,8 +121,8 @@
         <div class="lease-amount">
           <label for="lease-amount" style="display:block;font-weight:600;margin-bottom:8px">Equipment total</label>
           <div style="font-size:32px;font-weight:700;color:#0171B9;margin-bottom:10px" id="lease-amount-display">$10,000</div>
-          <input type="range" id="lease-amount" min="3000" max="30000" step="500" value="10000" style="width:100%">
-          <div style="display:flex;justify-content:space-between;font-size:12px;color:#6c757d;margin-top:4px"><span>$3,000</span><span>$30,000</span></div>
+          <input type="range" id="lease-amount" min="1500" max="30000" step="500" value="10000" style="width:100%">
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:#6c757d;margin-top:4px"><span>$1,500</span><span>$30,000</span></div>
         </div>
 
         <div class="lease-matrix">
@@ -177,7 +177,7 @@
       <p style="margin:0;color:#2C5237">Your GatorTec account manager will reach out within one business day with a formal proposal.</p>
     </div>
 
-    <p style="text-align:center;color:#6c757d;font-size:12px;margin-top:28px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.55">All lease payments are estimates for planning purposes only and are subject to credit approval from our leasing partner. Final terms may vary based on equipment configuration, credit review, and applicable sales tax. Rates current as of July 2026 and subject to change.</p>
+    <p style="text-align:center;color:#6c757d;font-size:12px;margin-top:28px;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.55">All lease payments are estimates for planning purposes only and are subject to credit approval from one of our leasing partners. Final terms may vary based on equipment configuration, credit review, and applicable sales tax. Rates current as of July 2026 and subject to change.</p>
   </div>
 </section>
 
@@ -202,11 +202,10 @@
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
 (function(){
-  var RATES = {
-    '24-1': 0.04768, '24-fmv': 0.04145,
-    '36-1': 0.03287, '36-fmv': 0.02937,
-    '48-1': 0.02595, '48-fmv': 0.02400
-  };
+  // Tier 1 rates apply for equipment total $500-$3,000; Tier 2 for $3,000.01+
+  var TIER1 = { '24-1': 0.05062, '24-fmv': 0.04435, '36-1': 0.03580, '36-fmv': 0.03095, '48-1': 0.02905, '48-fmv': 0.02495 };
+  var TIER2 = { '24-1': 0.04768, '24-fmv': 0.04145, '36-1': 0.03287, '36-fmv': 0.02937, '48-1': 0.02595, '48-fmv': 0.02400 };
+  function ratesFor(amt){ return amt <= 3000 ? TIER1 : TIER2; }
   var slider = document.getElementById('lease-amount');
   var display = document.getElementById('lease-amount-display');
   var hiddenAmt = document.getElementById('lease-amount-hidden');
@@ -223,16 +222,17 @@
 
   function recalc(){
     var amt = parseInt(slider.value, 10);
+    var R = ratesFor(amt);
     display.textContent = fmt(amt);
     hiddenAmt.value = amt;
-    Object.keys(RATES).forEach(function(k){
+    Object.keys(R).forEach(function(k){
       var cell = document.querySelector('[data-r="' + k + '"]');
-      if (cell) cell.textContent = fmt2(amt * RATES[k]) + '/mo';
+      if (cell) cell.textContent = fmt2(amt * R[k]) + '/mo';
     });
     hiddenSum.value = 'Equipment total: ' + fmt(amt) +
-      '  ·  24mo $1: ' + fmt2(amt * RATES['24-1']) + '/mo, FMV: ' + fmt2(amt * RATES['24-fmv']) + '/mo' +
-      '  ·  36mo $1: ' + fmt2(amt * RATES['36-1']) + '/mo, FMV: ' + fmt2(amt * RATES['36-fmv']) + '/mo' +
-      '  ·  48mo $1: ' + fmt2(amt * RATES['48-1']) + '/mo, FMV: ' + fmt2(amt * RATES['48-fmv']) + '/mo';
+      '  ·  24mo $1: ' + fmt2(amt * R['24-1']) + '/mo, FMV: ' + fmt2(amt * R['24-fmv']) + '/mo' +
+      '  ·  36mo $1: ' + fmt2(amt * R['36-1']) + '/mo, FMV: ' + fmt2(amt * R['36-fmv']) + '/mo' +
+      '  ·  48mo $1: ' + fmt2(amt * R['48-1']) + '/mo, FMV: ' + fmt2(amt * R['48-fmv']) + '/mo';
   }
   slider.addEventListener('input', recalc);
   recalc();
