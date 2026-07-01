@@ -146,9 +146,35 @@
         <div class="field"><label for="lease-company">Company <span class="req">*</span></label><input type="text" id="lease-company" name="Company" required autocomplete="organization"></div>
       </div>
       <div class="field-row">
-        <div class="field"><label for="lease-email">Email <span class="req">*</span></label><input type="email" id="lease-email" name="Email" required autocomplete="email"></div>
+        <div class="field"><label for="lease-email">Business email <span class="req">*</span></label><input type="email" id="lease-email" name="Email" required autocomplete="email"></div>
         <div class="field"><label for="lease-phone">Phone <span class="req">*</span></label><input type="tel" id="lease-phone" name="Phone" required autocomplete="tel"></div>
       </div>
+
+      <div id="personal-email-warn" style="display:none;background:#FFF4E5;border:1px solid #F5B66A;border-left:4px solid #E08A1A;border-radius:8px;padding:14px 16px;margin:8px 0 16px;color:#5A3A0B;font-size:14px;line-height:1.5">
+        <strong style="display:block;margin-bottom:6px;color:#7A4E12">Business email preferred</strong>
+        Our leasing partners generally require the applicant business to have been operating for <strong>2 or more years</strong> and to hold established business credit. Personal-domain email addresses (Gmail, Yahoo, Hotmail, etc.) can still submit, but please confirm below before continuing.
+        <label style="display:flex;align-items:flex-start;gap:8px;margin-top:12px;cursor:pointer;font-weight:600">
+          <input type="checkbox" id="lease-two-year" name="Confirms 2+ Years" value="yes" style="margin-top:3px;flex-shrink:0">
+          <span>I confirm that <strong id="lease-two-year-company">my company</strong> has been in business for at least 2 years.</span>
+        </label>
+      </div>
+
+      <div class="field-row">
+        <div class="field" style="flex:2"><label for="lease-street">Company street address <span class="req">*</span></label><input type="text" id="lease-street" name="Street Address" required autocomplete="street-address"></div>
+        <div class="field"><label for="lease-city">City <span class="req">*</span></label><input type="text" id="lease-city" name="City" required autocomplete="address-level2"></div>
+      </div>
+      <div class="field-row">
+        <div class="field" style="flex:1;max-width:120px">
+          <label for="lease-state">State <span class="req">*</span></label>
+          <select id="lease-state" name="State" required autocomplete="address-level1">
+            <option value="">—</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+          </select>
+        </div>
+        <div class="field" style="max-width:180px"><label for="lease-zip">ZIP <span class="req">*</span></label><input type="text" id="lease-zip" name="Zip" required pattern="[0-9]{5}(-[0-9]{4})?" inputmode="numeric" autocomplete="postal-code"></div>
+        <div class="field"><label for="lease-website">Company website <span style="color:#6c757d;font-weight:400;font-size:13px">(optional)</span></label><input type="url" id="lease-website" name="Website" autocomplete="url" placeholder="https://"></div>
+      </div>
+
       <div class="field">
         <label for="lease-msg">What are you looking to lease? <span style="color:#6c757d;font-weight:400;font-size:13px">(optional but helpful)</span></label>
         <textarea id="lease-msg" name="Message" rows="4" placeholder="e.g., 20 MacBook Pros for our design team, plus dock and displays. Refresh cycle every 3 years."></textarea>
@@ -264,6 +290,47 @@
   cancel.addEventListener('click', function(){
     form.style.display = 'none';
   });
+
+  // Personal-email gate: watch the email field, show warning + checkbox requirement
+  var emailInput = document.getElementById('lease-email');
+  var warnBox = document.getElementById('personal-email-warn');
+  var twoYearBox = document.getElementById('lease-two-year');
+  var twoYearCompany = document.getElementById('lease-two-year-company');
+  var companyInput = document.getElementById('lease-company');
+  var submitBtn = document.getElementById('lease-submit');
+  var PERSONAL_DOMAINS = [
+    'gmail.com','yahoo.com','yahoo.co.uk','yahoo.ca','yahoo.co.in','hotmail.com','hotmail.co.uk',
+    'outlook.com','live.com','msn.com','aol.com','icloud.com','me.com','mac.com','protonmail.com',
+    'proton.me','pm.me','yandex.com','yandex.ru','mail.ru','gmx.com','gmx.net','zoho.com',
+    'comcast.net','verizon.net','att.net','sbcglobal.net','bellsouth.net','cox.net','charter.net',
+    'earthlink.net','optonline.net','frontier.com','windstream.net','centurylink.net','roadrunner.com',
+    'rocketmail.com','ymail.com','fastmail.com','tutanota.com','hey.com','duck.com'
+  ];
+  function isPersonalEmail(addr){
+    var m = String(addr).trim().toLowerCase().match(/@([^@]+)$/);
+    return !!(m && PERSONAL_DOMAINS.indexOf(m[1]) !== -1);
+  }
+  function updateEmailGate(){
+    var personal = isPersonalEmail(emailInput.value);
+    warnBox.style.display = personal ? 'block' : 'none';
+    if (!personal) twoYearBox.checked = false;
+    updateSubmitState();
+  }
+  function updateSubmitState(){
+    var personal = isPersonalEmail(emailInput.value);
+    submitBtn.disabled = personal && !twoYearBox.checked;
+    submitBtn.style.opacity = submitBtn.disabled ? '0.5' : '1';
+    submitBtn.style.cursor = submitBtn.disabled ? 'not-allowed' : '';
+  }
+  function updateCompanyRef(){
+    var name = (companyInput.value || '').trim();
+    twoYearCompany.textContent = name || 'my company';
+  }
+  emailInput.addEventListener('input', updateEmailGate);
+  emailInput.addEventListener('blur', updateEmailGate);
+  twoYearBox.addEventListener('change', updateSubmitState);
+  companyInput.addEventListener('input', updateCompanyRef);
+  updateEmailGate();
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
