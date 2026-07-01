@@ -109,18 +109,16 @@
 
         <div class="lease-matrix">
           <div style="font-weight:600;margin-bottom:10px">Estimated monthly payment</div>
-          <div style="font-size:12px;color:#6c757d;margin-bottom:8px">Click a cell to select the option you're interested in.</div>
           <table class="lease-payment-table">
             <thead>
               <tr><th></th><th>$1 Buyout</th><th>FMV</th></tr>
             </thead>
             <tbody>
-              <tr><th>24 months</th><td data-r="24-1" class="lease-cell">—</td><td data-r="24-fmv" class="lease-cell">—</td></tr>
-              <tr><th>36 months</th><td data-r="36-1" class="lease-cell">—</td><td data-r="36-fmv" class="lease-cell">—</td></tr>
-              <tr><th>48 months</th><td data-r="48-1" class="lease-cell">—</td><td data-r="48-fmv" class="lease-cell">—</td></tr>
+              <tr><th>24 months</th><td data-r="24-1">—</td><td data-r="24-fmv">—</td></tr>
+              <tr><th>36 months</th><td data-r="36-1">—</td><td data-r="36-fmv">—</td></tr>
+              <tr><th>48 months</th><td data-r="48-1">—</td><td data-r="48-fmv">—</td></tr>
             </tbody>
           </table>
-          <div style="font-size:13px;color:#374151;margin-top:12px;min-height:20px" id="lease-selection-display"></div>
         </div>
       </div>
 
@@ -136,10 +134,25 @@
       <input type="text" name="_alt_contact" id="lease-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <input type="hidden" name="_form_ts" id="lease-ts" value="">
       <input type="hidden" name="Lease Amount" id="lease-amount-hidden" value="10000">
-      <input type="hidden" name="Lease Term" id="lease-term-hidden" value="">
-      <input type="hidden" name="Lease Buyout" id="lease-buyout-hidden" value="">
       <input type="hidden" name="Lease Monthly Payment" id="lease-payment-hidden" value="">
       <input type="hidden" name="Lease Selection Summary" id="lease-summary-hidden" value="">
+
+      <div class="field">
+        <label for="lease-choice">Which option interests you most? <span class="req">*</span></label>
+        <select id="lease-choice" name="Lease Option" required>
+          <option value="">— Select a plan —</option>
+          <option value="24 months · $1 Buyout">24 months · $1 Buyout</option>
+          <option value="24 months · FMV">24 months · FMV</option>
+          <option value="36 months · $1 Buyout">36 months · $1 Buyout</option>
+          <option value="36 months · FMV">36 months · FMV</option>
+          <option value="48 months · $1 Buyout">48 months · $1 Buyout</option>
+          <option value="48 months · FMV">48 months · FMV</option>
+          <option value="Not sure — send me a comparison">Not sure — send me a comparison</option>
+        </select>
+        <div class="help-text" id="lease-choice-payment" style="margin-top:6px;color:#0171B9;font-weight:600;min-height:20px"></div>
+      </div>
+      <input type="hidden" name="Lease Term" id="lease-term-hidden" value="">
+      <input type="hidden" name="Lease Buyout" id="lease-buyout-hidden" value="">
 
       <div class="field-row">
         <div class="field"><label for="lease-name">Your name <span class="req">*</span></label><input type="text" id="lease-name" name="Name" required autocomplete="name"></div>
@@ -244,9 +257,6 @@
 .lease-payment-table tbody th{text-align:left;font-weight:500;color:#374151}
 .lease-payment-table tbody td{font-weight:600;color:#0f172a;font-variant-numeric:tabular-nums}
 .lease-payment-table tbody tr:last-child th,.lease-payment-table tbody tr:last-child td{border-bottom:none}
-.lease-cell{cursor:pointer;border-radius:6px;transition:background 0.15s}
-.lease-cell:hover{background:#f1f5f9}
-.lease-cell.selected{background:#DCEBF7;color:#0171B9;box-shadow:inset 0 0 0 2px #0171B9}
 #lease-amount{-webkit-appearance:none;appearance:none;height:6px;background:#e2e8f0;border-radius:3px;outline:none}
 #lease-amount::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#0171B9;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
 #lease-amount::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#0171B9;cursor:pointer;border:none;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
@@ -265,7 +275,8 @@
   var hiddenTerm = document.getElementById('lease-term-hidden');
   var hiddenBuyout = document.getElementById('lease-buyout-hidden');
   var hiddenPayment = document.getElementById('lease-payment-hidden');
-  var selDisplay = document.getElementById('lease-selection-display');
+  var choiceSelect = document.getElementById('lease-choice');
+  var choicePayDisplay = document.getElementById('lease-choice-payment');
   var cta = document.getElementById('lease-cta');
   var form = document.getElementById('lease-form');
   var cancel = document.getElementById('lease-cancel');
@@ -273,30 +284,31 @@
   var ts = document.getElementById('lease-ts');
   if (ts) ts.value = Date.now();
 
-  var selected = null; // e.g., '36-fmv'
-  function selectCell(key){
-    selected = key;
-    document.querySelectorAll('.lease-cell').forEach(function(c){
-      c.classList.toggle('selected', c.getAttribute('data-r') === key);
-    });
-    updateSelectionDisplay();
-  }
+  // Map dropdown text to rate-table key. "Not sure" leaves fields blank.
+  var CHOICE_KEYS = {
+    '24 months · $1 Buyout': '24-1',   '24 months · FMV': '24-fmv',
+    '36 months · $1 Buyout': '36-1',   '36 months · FMV': '36-fmv',
+    '48 months · $1 Buyout': '48-1',   '48 months · FMV': '48-fmv'
+  };
   function updateSelectionDisplay(){
-    if (!selected){ selDisplay.textContent = ''; hiddenTerm.value=''; hiddenBuyout.value=''; hiddenPayment.value=''; return; }
+    var choice = choiceSelect ? choiceSelect.value : '';
+    var key = CHOICE_KEYS[choice];
+    if (!key){
+      hiddenTerm.value = ''; hiddenBuyout.value = ''; hiddenPayment.value = '';
+      if (choicePayDisplay) choicePayDisplay.textContent = choice === 'Not sure — send me a comparison' ? 'We\'ll send you all six options.' : '';
+      return;
+    }
     var amt = parseInt(slider.value, 10);
     var R = ratesFor(amt);
-    var parts = selected.split('-');
-    var term = parts[0], buyoutKey = parts[1];
-    var buyoutLabel = buyoutKey === '1' ? '$1 Buyout' : 'FMV';
-    var payment = fmt2(amt * R[selected]);
+    var parts = key.split('-');
+    var term = parts[0], buyoutLabel = parts[1] === '1' ? '$1 Buyout' : 'FMV';
+    var payment = fmt2(amt * R[key]);
     hiddenTerm.value = term + ' months';
     hiddenBuyout.value = buyoutLabel;
     hiddenPayment.value = payment + '/mo';
-    selDisplay.innerHTML = 'Selected: <strong>' + term + ' months · ' + buyoutLabel + '</strong> — ' + payment + '/mo';
+    if (choicePayDisplay) choicePayDisplay.textContent = 'Estimated payment at ' + fmt(amt) + ': ' + payment + '/mo';
   }
-  document.querySelectorAll('.lease-cell').forEach(function(c){
-    c.addEventListener('click', function(){ selectCell(c.getAttribute('data-r')); });
-  });
+  if (choiceSelect) choiceSelect.addEventListener('change', updateSelectionDisplay);
 
   function fmt(n){ return '$' + Math.round(n).toLocaleString(); }
   function fmt2(n){ return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
