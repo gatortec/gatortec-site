@@ -478,10 +478,11 @@ nav.main a:hover, nav.main a[aria-current="page"] { color: var(--blue); }
 
 /* Product cards grid (category landing) */
 .product-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: flex; flex-wrap: wrap; justify-content: center;
   gap: 24px; list-style: none; padding: 0;
 }
-@media (max-width: 900px) { .product-grid { grid-template-columns: 1fr; } }
+.product-grid > li { flex: 0 1 calc(33.333% - 16px); min-width: 260px; }
+@media (max-width: 900px) { .product-grid > li { flex-basis: 100%; } }
 .product-card {
   background: var(--white); border: 1px solid var(--line);
   border-radius: var(--radius-lg); padding: 32px 28px 28px;
