@@ -266,8 +266,9 @@
 </aside>
 
 <div class="stockbar">
-  <label><input type="checkbox" id="stocked-only"> In stock only</label>
+  <label title="When checked, only shows SKUs with available inventory right now. Uncheck to see the full catalog including out-of-stock items."><input type="checkbox" id="stocked-only"> Only show SKUs with inventory available now</label>
   <span class="count"><strong id="result-count">0</strong> of <span id="total-count">0</span> SKUs</span>
+  <span id="stock-filter-badge" style="display:none;background:#FEF3C7;color:#78350F;border:1px solid #F5B66A;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600">Filter active — out-of-stock hidden</span>
 </div>
 
 <div class="table-wrap">
@@ -441,9 +442,12 @@
   // ============ FILTERING ============
   // For each filter, exclude that column's filter so the dropdown shows what's available
   // assuming all OTHER filters apply. (Standard Excel autofilter behavior.)
-  function filteredItems(skipColKey) {
+  function filteredItems(opts) {
+    // Backward-compat: filteredItems('colKey') still works
+    const skipColKey = typeof opts === 'string' ? opts : (opts && opts.skipColKey) || null;
+    const skipStockFilter = !!(opts && typeof opts === 'object' && opts.skipStockFilter);
     return state.items.filter(it => {
-      if (state.stockedOnly && (!it.Inventory || Number(it.Inventory) <= 0)) return false;
+      if (!skipStockFilter && state.stockedOnly && (!it.Inventory || Number(it.Inventory) <= 0)) return false;
 
       if (state.search) {
         const hay = [it.SKU, it.Description, it.Family, it.Color, it.Memory, it.Storage, it.Processor].join(' ').toLowerCase();
@@ -654,8 +658,17 @@
     document.getElementById('total-count').textContent = state.items.length;
 
     const tbody = document.getElementById('tbody');
+    // Reflect the stock filter status in the badge
+    const stockOnly = document.getElementById('stocked-only').checked;
+    const badge = document.getElementById('stock-filter-badge');
+    if (badge) badge.style.display = stockOnly ? 'inline-block' : 'none';
     if (results.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="${COLS.length}" class="empty">No matching SKUs. Try clearing filters.</td></tr>`;
+      // Check if the stock filter alone is the cause — if so, tell the user directly
+      const wouldHaveResults = stockOnly && sortItems(filteredItems({ skipStockFilter: true })).length > 0;
+      const msg = wouldHaveResults
+        ? `No <em>in-stock</em> SKUs match your filters. Uncheck &ldquo;Only show SKUs with inventory available now&rdquo; above to see out-of-stock matches.`
+        : 'No matching SKUs. Try clearing filters.';
+      tbody.innerHTML = `<tr><td colspan="${COLS.length}" class="empty">${msg}</td></tr>`;
       return;
     }
     tbody.innerHTML = results.map(item => '<tr>' + COLS.map(c => cellHtml(item, c)).join('') + '</tr>').join('');
