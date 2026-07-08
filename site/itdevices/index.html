@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0171B9">
+<meta name="robots" content="noindex, nofollow">
+<title>Apple Parts Portal — IT Devices</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/site/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/site/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/site/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0171B9; --blue-ink: #073b5e;
+    --ink: #1a1d21; --slate: #5b6671; --slate-soft: #8b95a0;
+    --mist: #eceff2; --line: #dde1e6;
+    --bg: #f5f7fa; --header-bg: #1a1d21;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; font-family: 'Manrope', system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--bg); -webkit-text-size-adjust: 100%; display: flex; flex-direction: column; overflow: hidden; }
+  .skip-link {
+    position: absolute; top: -100px; left: 12px; z-index: 999;
+    background: var(--ink); color: #fff; padding: 12px 18px;
+    border-radius: 8px; font-weight: 600; text-decoration: none;
+  }
+  .skip-link:focus { top: 12px; }
+
+  .topbar { background: var(--header-bg); color: #fff; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-shrink: 0; z-index: 30; }
+  .topbar h1 { font-size: 16px; font-weight: 700; margin: 0; }
+  .topbar .meta { font-size: 11px; opacity: .7; font-weight: 500; }
+  .topbar-actions { display: flex; gap: 8px; align-items: center; }
+  .topbar-actions button, .topbar-actions input {
+    background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: #fff;
+    padding: 7px 12px; border-radius: 8px; font-family: inherit; font-size: 13px; cursor: pointer;
+  }
+  .topbar-actions input { width: 200px; }
+  .topbar-actions input::placeholder { color: rgba(255,255,255,.55); }
+  .topbar-actions input:focus { outline: none; border-color: var(--blue); background: rgba(255,255,255,.15); }
+  .topbar-actions button:hover { background: rgba(255,255,255,.2); }
+  @media (max-width: 640px) {
+    .topbar { flex-wrap: wrap; padding: 10px 12px; }
+    .topbar-actions input { width: 100%; }
+    .topbar-actions { width: 100%; flex-wrap: wrap; }
+  }
+
+  .notice-bar { background: #fff8e1; border-bottom: 1px solid #f0e0a0; padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 12.5px; color: #5b4a1a; line-height: 1.45; flex-shrink: 0; }
+  .notice-bar .notice { display: flex; gap: 7px; align-items: flex-start; }
+  .notice-bar .notice svg { width: 14px; height: 14px; flex-shrink: 0; margin-top: 2px; color: #a37a1a; }
+  .notice-bar strong { color: #3a2e0e; font-weight: 700; }
+  @media (max-width: 760px) {
+    .notice-bar { font-size: 12px; gap: 6px 14px; padding: 8px 12px; }
+  }
+  .stockbar { background: #fff; padding: 8px 16px; border-bottom: 1px solid var(--line); display: flex; gap: 18px; align-items: center; flex-wrap: wrap; font-size: 13px; flex-shrink: 0; z-index: 25; }
+  .price-modes { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .price-modes .mode-group { display: flex; gap: 5px; align-items: center; padding: 4px 8px; border: 1px solid var(--line); border-radius: 8px; transition: border-color .15s, background .15s; }
+  .price-modes .mode-group.active { border-color: var(--blue); background: rgba(1,113,185,.06); }
+  .price-modes input[type="radio"] { accent-color: var(--blue); margin: 0; }
+  .price-modes input[type="number"] { width: 56px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 5px; font-family: inherit; font-size: 13px; }
+  .price-modes input[type="number"]:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 2px rgba(1,113,185,.15); }
+  .price-modes label { font-weight: 600; color: var(--ink); cursor: pointer; user-select: none; }
+  .price-modes .suffix { color: var(--slate); font-size: 12px; }
+  .price-modes .sep { width: 1px; height: 22px; background: var(--line); }
+  .price-modes .ac-group { display: flex; gap: 5px; align-items: center; padding: 4px 8px; }
+  .price-modes .ac-group label { color: var(--slate); font-weight: 500; }
+  .stockbar label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+  .stockbar input { accent-color: var(--blue); }
+  .stockbar .count { margin-left: auto; color: var(--slate); font-size: 12px; }
+  .stockbar .count strong { color: var(--ink); font-weight: 700; }
+
+  /* Table */
+  .table-wrap { flex: 1 1 auto; overflow: auto; -webkit-overflow-scrolling: touch; background: #fff; min-height: 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 1400px; font-size: 13px; }
+  th, td { padding: 8px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--mist); white-space: nowrap; }
+
+  thead { position: sticky; top: 0; background: #fff; z-index: 20; box-shadow: 0 1px 0 var(--line); }
+  thead tr.label-row th {
+    background: #f0f3f6; font-weight: 700; font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--slate); padding: 10px 10px 6px; border-bottom: none;
+    cursor: pointer; user-select: none; position: relative;
+  }
+  thead tr.label-row th:hover { background: #e6eaee; color: var(--ink); }
+  thead tr.label-row th.sort-active { color: var(--blue); }
+  thead tr.label-row th .sort-icon {
+    display: inline-block; margin-left: 4px; opacity: .35; font-size: 10px; vertical-align: 1px;
+  }
+  thead tr.label-row th.sort-active .sort-icon { opacity: 1; }
+  thead tr.label-row th.no-sort { cursor: default; }
+  thead tr.label-row th.no-sort:hover { background: #f0f3f6; color: var(--slate); }
+  thead tr.filter-row th {
+    background: #f0f3f6; padding: 0 6px 8px; border-bottom: 1px solid var(--line);
+  }
+  thead select, thead input.col-search {
+    width: 100%; padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px;
+    font-family: inherit; font-size: 12.5px; background: #fff; color: var(--ink); min-width: 90px; box-sizing: border-box;
+  }
+  thead select:focus, thead input.col-search:focus { outline: none; border-color: var(--blue); }
+  thead select.active, thead input.col-search.active { border-color: var(--blue); background: rgba(1,113,185,.04); font-weight: 600; }
+
+  tbody tr:nth-child(even) { background: #fafbfc; }
+  tbody tr:hover { background: #eef5fb; }
+  tbody td.copy-cell { cursor: pointer; user-select: none; }
+  tbody td.copy-cell:hover { background: rgba(1,113,185,.08); }
+  tbody td.copy-cell.copied { background: #d5f0e0; }
+  tbody td.sku { font-family: 'SF Mono', ui-monospace, Menlo, monospace; font-weight: 700; }
+  tbody td.price { text-align: right; font-variant-numeric: tabular-nums; }
+  tbody td.price-customer { color: var(--blue-ink); font-weight: 600; }
+  tbody td.price-dealer { color: #7a8a93; }
+  tbody td.stock-cell { text-align: center; }
+  tbody td.stock-yes { color: #0a7140; font-weight: 600; }
+  tbody td.stock-no { color: #a52424; }
+
+  tbody td.actions { text-align: right; padding: 4px 8px; }
+  tbody td.actions button {
+    background: var(--blue); color: #fff; border: none;
+    padding: 5px 10px; border-radius: 6px; font-family: inherit; font-size: 11.5px; font-weight: 600;
+    cursor: pointer;
+  }
+  tbody td.actions button.copied { background: #0a7140; }
+
+  /* Drawer for full row details */
+  .drawer-overlay {
+    display: none;
+    position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 100;
+    animation: fadeIn .2s;
+  }
+  .drawer-overlay.open { display: block; }
+  .drawer {
+    position: fixed; right: 0; top: 0; bottom: 0; width: 440px; max-width: 100vw;
+    background: #fff; z-index: 101; transform: translateX(100%); transition: transform .25s;
+    overflow-y: auto; box-shadow: -8px 0 30px rgba(0,0,0,.15);
+  }
+  .drawer.open { transform: translateX(0); }
+  .drawer-head { background: var(--ink); color: #fff; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .drawer-head .drawer-sku { font-family: 'SF Mono', ui-monospace, monospace; font-size: 19px; font-weight: 700; }
+  .drawer-close { background: rgba(255,255,255,.15); border: none; color: #fff; width: 36px; height: 36px; border-radius: 50%; font-size: 20px; cursor: pointer; line-height: 1; }
+  .drawer-body { padding: 24px; }
+  .drawer-body h3 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--slate); margin: 24px 0 10px; }
+  .drawer-body > h3:first-child { margin-top: 0; }
+  .drawer-body .desc { font-size: 15px; color: var(--ink); line-height: 1.5; margin: 0 0 4px; }
+  .drawer-prices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px; max-width: 420px; }
+  .drawer-price {
+    background: var(--mist); padding: 12px; border-radius: 10px; text-align: center;
+    cursor: pointer; transition: background .15s;
+  }
+  .drawer-price:hover { background: #e2e7ec; }
+  .drawer-price.copied { background: #d5f0e0; }
+  .drawer-price .label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: var(--slate); margin-bottom: 4px; letter-spacing: .06em; }
+  .drawer-price .value { font-weight: 700; font-size: 16px; color: var(--ink); }
+  .drawer-emails { display: grid; gap: 8px; }
+  .drawer-emails .email-btn {
+    text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 8px;
+    padding: 12px 14px; font-family: inherit; font-size: 13px; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  }
+  .drawer-emails .email-btn:hover { background: var(--mist); }
+  .drawer-emails .email-btn.copied { background: #d5f0e0; border-color: #5fb87f; }
+  .drawer-emails .email-btn span { font-weight: 600; }
+
+  .applecare-card { background: #f5f7fa; border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin: 4px 0 18px; }
+  .applecare-card .ac-row { display: flex; gap: 14px; align-items: baseline; padding: 9px 0; min-height: 30px; }
+  .applecare-card .ac-row + .ac-row { border-top: 1px solid var(--mist); }
+  .applecare-card .ac-label { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--slate); width: 100px; flex-shrink: 0; padding-top: 1px; }
+  .applecare-card .ac-value { font-size: 14px; color: var(--ink); flex: 1; cursor: pointer; user-select: none; padding: 3px 8px; margin: -3px -8px; border-radius: 4px; transition: background .12s; word-break: break-word; white-space: normal; }
+  .applecare-card .ac-value:hover { background: rgba(1,113,185,.08); }
+  .applecare-card .ac-value.copied { background: #d5f0e0; }
+  .applecare-card .ac-value.sku { font-family: 'SF Mono', ui-monospace, Menlo, monospace; font-weight: 700; }
+  .applecare-card .ac-value.price { font-weight: 700; color: var(--blue-ink); font-variant-numeric: tabular-nums; }
+  .applecare-card .ac-empty { font-size: 13px; color: var(--slate); font-style: italic; padding: 4px 0; }
+  .drawer-emails .email-btn small { color: var(--slate); font-size: 11px; }
+  .drawer-specs { font-size: 13px; line-height: 1.7; }
+  .drawer-specs .row { display: flex; gap: 8px; padding: 4px 0; border-bottom: 1px solid var(--mist); }
+  .drawer-specs .k { color: var(--slate); min-width: 110px; }
+  .drawer-specs .v { color: var(--ink); flex: 1; }
+
+  .empty { padding: 60px 20px; text-align: center; color: var(--slate); font-size: 14px; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* Toast */
+  #toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; transition: transform .25s;
+    z-index: 200; pointer-events: none;
+  }
+  #toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* Multi-select column filter */
+  .col-filter-wrap { position: relative; }
+  .col-filter-btn {
+    width: 100%; padding: 4px 6px; font-size: 12px;
+    border: 1px solid var(--line); background: #fff; color: var(--ink);
+    border-radius: 5px; cursor: pointer; font-family: inherit;
+    text-align: left; display: flex; justify-content: space-between; align-items: center; gap: 4px;
+  }
+  .col-filter-btn:hover { border-color: var(--blue); }
+  .col-filter-btn.active { border-color: var(--blue); background: rgba(1,113,185,.06); color: var(--blue); font-weight: 600; }
+  .col-filter-btn .caret { font-size: 10px; opacity: .6; }
+  .col-filter-pop {
+    position: absolute; top: calc(100% + 2px); left: 0; z-index: 100;
+    background: #fff; border: 1px solid var(--line); border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.14);
+    min-width: 100%; max-width: 240px; max-height: 220px; overflow-y: auto;
+    padding: 4px 0; font-weight: 400;
+  }
+  .col-filter-pop .pop-done { background: var(--blue); color: #fff; padding: 3px 10px; border-radius: 4px; margin-left: auto; }
+  .col-filter-pop .pop-done:hover { background: var(--blue-deep, #005a94); text-decoration: none; }
+  .col-filter-pop .pop-actions { display: flex; gap: 8px; padding: 4px 10px 6px; border-bottom: 1px solid var(--mist); }
+  .col-filter-pop .pop-actions button { font-size: 11px; padding: 2px 6px; border: 0; background: none; color: var(--blue); cursor: pointer; }
+  .col-filter-pop .pop-actions button:hover { text-decoration: underline; }
+  .col-filter-pop label {
+    display: flex; gap: 8px; align-items: center;
+    padding: 5px 12px; cursor: pointer; font-size: 13px; color: var(--ink);
+    user-select: none; white-space: nowrap;
+  }
+  .col-filter-pop label:hover { background: #f0f4f8; }
+  .col-filter-pop input { accent-color: var(--blue); margin: 0; }
+
+</style>
+<link rel="canonical" href="https://gatortec.com/business/apple-parts-list/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gatortec.com/business/apple-parts-list/">
+<meta property="og:title" content="Apple Parts List — IT Devices Customer Portal">
+<meta property="og:description" content="GatorTec — Apple Premier Partner in Gainesville, FL.">
+<meta property="og:image" content="https://gatortec.com/assets/img/site/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="GatorTec — Apple Premier Partner in Gainesville, FL">
+<meta property="og:site_name" content="GatorTec">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apple Parts List — IT Devices Customer Portal">
+<meta name="twitter:description" content="GatorTec — Apple Premier Partner in Gainesville, FL.">
+<meta name="twitter:image" content="https://gatortec.com/assets/img/site/og-default.png">
+</head><body>
+<a class="skip-link" href="#tbl">Skip to data table</a>
+
+<div class="topbar">
+  <div>
+    <h1>Apple Parts — IT Devices Portal</h1>
+    <div class="meta" id="meta">Loading…</div>
+  </div>
+  <div class="topbar-actions">
+    <input type="text" id="search" aria-label="Quick search across all SKUs, models, and colors" placeholder="Quick search SKU, model, color…" autocomplete="off" spellcheck="false">
+    <button id="reset">Reset filters</button>
+  </div>
+</div>
+
+<aside class="notice-bar" aria-label="Shipping and order notices">
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span><strong>Same-day shipping cutoff: 12:00 PM ET.</strong> Orders after the cutoff ship the next business day.</span>
+  </div>
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+    <span><strong>Free ground shipping</strong> on orders over $1,000.</span>
+  </div>
+  <div class="notice">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span><strong>Residential deliveries:</strong> $8 signature-required fee per shipment (Apple policy).</span>
+  </div>
+</aside>
+
+<div class="stockbar">
+  <label title="When checked, only shows SKUs with available inventory right now. Uncheck to see the full catalog including out-of-stock items."><input type="checkbox" id="stocked-only"> Only show SKUs with inventory available now</label>
+  <span class="count"><strong id="result-count">0</strong> of <span id="total-count">0</span> SKUs</span>
+  <span id="stock-filter-badge" style="display:none;background:#FEF3C7;color:#78350F;border:1px solid #F5B66A;border-radius:999px;padding:3px 10px;font-size:12px;font-weight:600">Filter active — out-of-stock hidden</span>
+</div>
+
+<div class="table-wrap">
+  <table id="tbl">
+    <thead><tr class="label-row" id="label-row"></tr><tr class="filter-row" id="filter-row"></tr></thead>
+    <tbody id="tbody"><tr><td colspan="20" class="empty">Loading data…</td></tr></tbody>
+  </table>
+</div>
+
+<div class="drawer-overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head">
+    <div class="drawer-sku" id="d-sku">—</div>
+    <button class="drawer-close" id="d-close" aria-label="Close">×</button>
+  </div>
+  <div class="drawer-body">
+    <h3>Description</h3>
+    <p class="desc" id="d-desc"></p>
+
+    <h3>Prices (tap to copy)</h3>
+    <div class="drawer-prices">
+      <div class="drawer-price" id="d-msrp"><div class="label">MSRP</div><div class="value">—</div></div>
+      <div class="drawer-price" id="d-dealer"><div class="label">IT Devices Cost</div><div class="value">—</div></div>
+    </div>
+
+    <h3>Copy email blocks</h3>
+    <div class="drawer-emails" id="d-emails"></div>
+
+    <div id="d-applecare-block" hidden>
+      <h3>AppleCare+ for this device</h3>
+      <div class="applecare-card" id="d-applecare"></div>
+    </div>
+
+    <h3>Specs</h3>
+    <div class="drawer-specs" id="d-specs"></div>
+  </div>
+</aside>
+
+<div id="toast" role="status" aria-live="polite">Copied</div>
+
+<script>
+(function () {
+  // ============ COLUMN CONFIG ============
+  // Each column: key, label, type (text|price|stock|sku|action), filterType (select|search|none)
+  const COLS = [
+    { key: 'SKU',         label: 'SKU',           type: 'sku',        filter: 'search' },
+    { key: 'Family',      label: 'Family',        type: 'text',       filter: 'select' },
+    { key: 'Description', label: 'Description',   type: 'text',       filter: 'search' },
+    { key: 'ScreenSize',  label: 'Screen',        type: 'text',       filter: 'select' },
+    { key: 'Color',       label: 'Color',         type: 'text',       filter: 'select' },
+    { key: 'Processor',   label: 'Chip',          type: 'text',       filter: 'select' },
+    { key: 'Memory',      label: 'RAM',           type: 'text',       filter: 'select' },
+    { key: 'Storage',     label: 'Storage',       type: 'text',       filter: 'select' },
+    { key: 'NanoTexture', label: 'Nano',          type: 'text',       filter: 'select' },
+    { key: 'Cellular',    label: 'Cellular',      type: 'text',       filter: 'select' },
+    { key: 'Ethernet',    label: 'Ethernet',      type: 'text',       filter: 'select' },
+    { key: 'Power',       label: 'Power',         type: 'text',       filter: 'select' },
+        { key: '__msrp',      label: 'MSRP',          type: 'price',      filter: 'none', priceKind: 'msrp' },
+        { key: '__price',     label: 'IT Devices Cost',  type: 'price',      filter: 'none', priceKind: 'dealer' },
+        { key: 'Inventory',   label: 'Stock',         type: 'stock',      filter: 'none' },
+    { key: '__action',    label: '',              type: 'action',     filter: 'none' },
+  ];
+
+  // ============ STATE ============
+  const state = {
+    items: [],
+    colFilters: {},   // {Family: 'MacBook Air'}
+    search: '',
+    stockedOnly: false,
+    sortKey: 'Family',  // default sort
+    sortDir: 'asc',     // 'asc' | 'desc'
+  };
+
+  // ============ HELPERS ============
+    function itdevicesPrice(item) {
+    // IT Devices pricing rule: straight Dealer B on everything, no accessory markup
+    const d = Number(item.DealerB) || 0;
+    return Math.round(d * 100) / 100;
+  }
+
+  // GatorTec MSRP = Apple MSRP + $0.95
+  function gatorMSRP(item) {
+    const m = Number(item.MSRP);
+    if (!Number.isFinite(m) || m <= 0) return null;
+    return Math.round((m + 0.95) * 100) / 100;
+  }
+
+  function money(n) {
+    if (n == null || n === '' || isNaN(Number(n))) return '—';
+    const num = Number(n);
+    return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function getValue(item, col) {
+    if (col.key === '__price') return itdevicesPrice(item);
+    if (col.key === '__msrp') return gatorMSRP(item);
+    return item[col.key];
+  }
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+  }
+  function escapeAttr(s) { return escapeHtml(s); }
+
+  function distinctValues(items, key) {
+    const seen = new Set();
+    for (const it of items) {
+      const v = it[key];
+      if (v != null && v !== '') seen.add(String(v));
+    }
+    return [...seen].sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+  }
+
+  // Normalize storage values to GB for sorting (256GB → 256, 1TB → 1000, 2TB → 2000)
+  function storageToGB(v) {
+    if (v == null || v === '') return null;
+    const s = String(v).toUpperCase().trim();
+    const num = parseFloat(s.replace(/[^0-9.]/g, ''));
+    if (!Number.isFinite(num)) return null;
+    if (s.includes('TB')) return num * 1000;
+    if (s.includes('MB')) return num / 1000;
+    return num; // assume GB
+  }
+
+  function sortValue(item, col) {
+    if (!col) return '';
+    if (col.type === 'price') {
+      const v = getValue(item, col);
+      const n = Number(v);
+      return Number.isFinite(n) ? n : -Infinity;
+    }
+    if (col.key === 'Inventory') {
+      const n = Number(item.Inventory);
+      return Number.isFinite(n) ? n : -Infinity;
+    }
+    if (col.key === 'Storage' || col.key === 'Memory') {
+      const gb = storageToGB(item[col.key]);
+      return gb != null ? gb : -Infinity;
+    }
+    if (col.key === 'ScreenSize') {
+      // "13-inch" → 13, "13.6-inch" → 13.6
+      const v = item.ScreenSize;
+      if (v == null) return -Infinity;
+      const n = parseFloat(String(v).replace(/[^0-9.]/g, ''));
+      return Number.isFinite(n) ? n : -Infinity;
+    }
+    const v = item[col.key];
+    return v == null ? '' : String(v).toLowerCase();
+  }
+
+  function compareSort(a, b, col) {
+    const av = sortValue(a, col);
+    const bv = sortValue(b, col);
+    if (typeof av === 'number' && typeof bv === 'number') return av - bv;
+    return String(av).localeCompare(String(bv), 'en', { numeric: true });
+  }
+
+  function sortItems(items) {
+    if (!state.sortKey) return items;
+    const col = COLS.find(c => c.key === state.sortKey);
+    if (!col) return items;
+    const dir = state.sortDir === 'desc' ? -1 : 1;
+    return [...items].sort((a, b) => compareSort(a, b, col) * dir);
+  }
+
+  // ============ FILTERING ============
+  // For each filter, exclude that column's filter so the dropdown shows what's available
+  // assuming all OTHER filters apply. (Standard Excel autofilter behavior.)
+  function filteredItems(opts) {
+    // Backward-compat: filteredItems('colKey') still works
+    const skipColKey = typeof opts === 'string' ? opts : (opts && opts.skipColKey) || null;
+    const skipStockFilter = !!(opts && typeof opts === 'object' && opts.skipStockFilter);
+    return state.items.filter(it => {
+      if (!skipStockFilter && state.stockedOnly && (!it.Inventory || Number(it.Inventory) <= 0)) return false;
+
+      if (state.search) {
+        const hay = [it.SKU, it.Description, it.Family, it.Color, it.Memory, it.Storage, it.Processor].join(' ').toLowerCase();
+        if (!hay.includes(state.search)) return false;
+      }
+
+      for (const [k, v] of Object.entries(state.colFilters)) {
+        if (k === skipColKey) continue;
+        if (!v) continue;
+        const col = COLS.find(c => c.key === k);
+        if (!col) continue;
+        const itVal = String(it[k] == null ? '' : it[k]).toLowerCase();
+        if (col.filter === 'search') {
+          const needle = String(Array.isArray(v) ? v[0] : v).toLowerCase();
+          if (!itVal.includes(needle)) return false;
+        } else {
+          // Multi-value: match if itVal equals ANY of the selected values
+          const arr = Array.isArray(v) ? v : [v];
+          if (arr.length > 0 && !arr.some(x => itVal === String(x).toLowerCase())) return false;
+        }
+      }
+      return true;
+    });
+  }
+
+  // ============ RENDER ============
+  function renderHeaders() {
+    const labelRow = document.getElementById('label-row');
+    const filterRow = document.getElementById('filter-row');
+    labelRow.innerHTML = COLS.map(c => {
+      const sortable = c.type !== 'action';
+      const isActive = state.sortKey === c.key;
+      const arrow = isActive ? (state.sortDir === 'desc' ? '▼' : '▲') : '↕';
+      const cls = (sortable ? '' : 'no-sort') + (isActive ? ' sort-active' : '');
+      return `<th class="${cls}"${sortable ? ' data-sort="' + escapeAttr(c.key) + '"' : ''}>${escapeHtml(c.label)}${sortable ? `<span class="sort-icon">${arrow}</span>` : ''}</th>`;
+    }).join('');
+
+    // Wire sort clicks
+    labelRow.querySelectorAll('th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => {
+        const k = th.getAttribute('data-sort');
+        if (state.sortKey === k) {
+          state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          state.sortKey = k;
+          state.sortDir = 'asc';
+        }
+        render();
+      });
+    });
+    filterRow.innerHTML = COLS.map(c => {
+      if (c.filter === 'none') return '<th></th>';
+      const sel = state.colFilters[c.key] || [];
+      if (c.filter === 'search') {
+        const val = typeof sel === 'string' ? sel : (sel[0] || '');
+        return `<th><input type="text" class="col-search ${val ? 'active' : ''}" data-col="${c.key}" value="${escapeAttr(val)}" aria-label="Filter ${escapeAttr(c.label)}" placeholder="filter…" autocomplete="off" spellcheck="false"></th>`;
+      }
+      const selArr = Array.isArray(sel) ? sel : (sel ? [sel] : []);
+      const pool = filteredItems(c.key);
+      const values = distinctValues(pool, c.key);
+      const isActive = selArr.length > 0;
+      const btnLabel = selArr.length === 0 ? 'All'
+                     : selArr.length === 1 ? selArr[0]
+                     : selArr.length + ' selected';
+      const checks = values.map(v => `<label><input type="checkbox" value="${escapeAttr(v)}"${selArr.includes(v) ? ' checked' : ''}> <span>${escapeHtml(v)}</span></label>`).join('');
+      return `<th><div class="col-filter-wrap">
+        <button type="button" class="col-filter-btn ${isActive ? 'active' : ''}" data-col="${c.key}" aria-haspopup="true" aria-expanded="false">
+          <span>${escapeHtml(btnLabel)}</span><span class="caret">▾</span>
+        </button>
+        <div class="col-filter-pop" data-col="${c.key}" hidden>
+          <div class="pop-actions">
+            <button type="button" class="pop-all" data-col="${c.key}">Select all</button>
+            <button type="button" class="pop-clear" data-col="${c.key}">Clear</button>
+            <button type="button" class="pop-done" data-col="${c.key}">Done</button>
+          </div>
+          ${checks}
+        </div>
+      </div></th>`;
+    }).join('');
+
+    // Delegated click handler on filterRow — handles all popover interactions
+    if (!filterRow._popoverDelegated) {
+      filterRow._popoverDelegated = true;
+
+      filterRow.addEventListener('click', e => {
+        const t = e.target;
+
+        // Filter button → toggle popover
+        const filterBtn = t.closest('.col-filter-btn');
+        if (filterBtn) {
+          e.stopPropagation();
+          const k = filterBtn.getAttribute('data-col');
+          const pop = filterRow.querySelector(`.col-filter-pop[data-col="${k}"]`);
+          const willOpen = pop.hidden;
+          filterRow.querySelectorAll('.col-filter-pop').forEach(p => p.hidden = true);
+          filterRow.querySelectorAll('.col-filter-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+          if (willOpen) {
+            pop.hidden = false;
+            filterBtn.setAttribute('aria-expanded', 'true');
+          }
+          return;
+        }
+
+        // Select all
+        const allBtn = t.closest('.pop-all');
+        if (allBtn) {
+          e.stopPropagation();
+          const k = allBtn.getAttribute('data-col');
+          const pop = filterRow.querySelector(`.col-filter-pop[data-col="${k}"]`);
+          const vals = [...pop.querySelectorAll('input[type="checkbox"]')].map(i => i.value);
+          state.colFilters[k] = vals.slice();
+          pop.querySelectorAll('input[type="checkbox"]').forEach(i => i.checked = true);
+          updateFilterButtonLabel(k);
+          renderBody();
+          return;
+        }
+
+        // Clear
+        const clearBtn = t.closest('.pop-clear');
+        if (clearBtn) {
+          e.stopPropagation();
+          const k = clearBtn.getAttribute('data-col');
+          const pop = filterRow.querySelector(`.col-filter-pop[data-col="${k}"]`);
+          delete state.colFilters[k];
+          pop.querySelectorAll('input[type="checkbox"]').forEach(i => i.checked = false);
+          updateFilterButtonLabel(k);
+          renderBody();
+          return;
+        }
+
+        // Done
+        const doneBtn = t.closest('.pop-done');
+        if (doneBtn) {
+          e.stopPropagation();
+          document.querySelectorAll('.col-filter-pop').forEach(p => p.hidden = true);
+          document.querySelectorAll('.col-filter-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+          render(); // full re-render so cascade refresh applies AND body is guaranteed fresh
+          return;
+        }
+      });
+
+      // Delegated change handler for checkboxes (one listener catches every popover checkbox)
+      filterRow.addEventListener('change', e => {
+        if (!e.target.matches('.col-filter-pop input[type="checkbox"]')) return;
+        const pop = e.target.closest('.col-filter-pop');
+        const k = pop.getAttribute('data-col');
+        const v = e.target.value;
+        let arr = Array.isArray(state.colFilters[k]) ? state.colFilters[k].slice() : (state.colFilters[k] ? [state.colFilters[k]] : []);
+        if (e.target.checked) { if (!arr.includes(v)) arr.push(v); }
+        else { arr = arr.filter(x => x !== v); }
+        if (arr.length === 0) delete state.colFilters[k];
+        else state.colFilters[k] = arr;
+        updateFilterButtonLabel(k);
+        renderBody();
+      });
+    }
+    filterRow.querySelectorAll('.col-search').forEach(inp => {
+      inp.addEventListener('input', e => {
+        const k = e.target.getAttribute('data-col');
+        if (e.target.value.trim()) state.colFilters[k] = e.target.value.trim();
+        else delete state.colFilters[k];
+        renderBody();
+        updateActiveClasses();
+      });
+    });
+  }
+
+  function updateActiveClasses() {
+    document.querySelectorAll('.col-filter-btn, .col-search').forEach(el => {
+      const k = el.getAttribute('data-col');
+      const v = state.colFilters[k];
+      const isActive = Array.isArray(v) ? v.length > 0 : !!v;
+      if (isActive) el.classList.add('active');
+      else el.classList.remove('active');
+    });
+  }
+
+  function cellHtml(item, col) {
+    const v = getValue(item, col);
+    const dataAttr = ` data-sku="${escapeAttr(item.SKU)}"`;
+    switch (col.type) {
+      case 'sku':
+        return `<td class="sku copy-cell" data-copy="${escapeAttr(item.SKU || '')}">${escapeHtml(item.SKU || '')}</td>`;
+      case 'price': {
+        const formatted = money(v);
+        let cls = 'price';
+        if (col.priceKind === 'customer') cls += ' price-customer';
+        if (col.priceKind === 'dealer') cls += ' price-dealer';
+        const copyVal = (v == null || v === '') ? '' : v;
+        return `<td class="${cls} copy-cell" data-copy="${escapeAttr(copyVal)}">${formatted}</td>`;
+      }
+      case 'stock': {
+        const n = Number(item.Inventory);
+        const has = Number.isFinite(n) && n > 0;
+        if (!has) return `<td class="stock-cell stock-no">—</td>`;
+        return `<td class="stock-cell stock-yes">${escapeHtml(n)}</td>`;
+      }
+      case 'action':
+        return `<td class="actions"><button type="button" class="open-drawer"${dataAttr}>View</button></td>`;
+      default:
+        return `<td class="copy-cell" data-copy="${escapeAttr(v || '')}">${escapeHtml(v == null ? '' : v)}</td>`;
+    }
+  }
+
+  function renderBody() {
+    const results = sortItems(filteredItems());
+    document.getElementById('result-count').textContent = results.length;
+    document.getElementById('total-count').textContent = state.items.length;
+
+    const tbody = document.getElementById('tbody');
+    // Reflect the stock filter status in the badge
+    const stockOnly = document.getElementById('stocked-only').checked;
+    const badge = document.getElementById('stock-filter-badge');
+    if (badge) badge.style.display = stockOnly ? 'inline-block' : 'none';
+    if (results.length === 0) {
+      // Check if the stock filter alone is the cause — if so, tell the user directly
+      const wouldHaveResults = stockOnly && sortItems(filteredItems({ skipStockFilter: true })).length > 0;
+      const msg = wouldHaveResults
+        ? `No <em>in-stock</em> SKUs match your filters. Uncheck &ldquo;Only show SKUs with inventory available now&rdquo; above to see out-of-stock matches.`
+        : 'No matching SKUs. Try clearing filters.';
+      tbody.innerHTML = `<tr><td colspan="${COLS.length}" class="empty">${msg}</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = results.map(item => '<tr>' + COLS.map(c => cellHtml(item, c)).join('') + '</tr>').join('');
+
+    // Wire cell-copy
+    tbody.querySelectorAll('.copy-cell').forEach(td => {
+      td.addEventListener('click', () => {
+        const val = td.getAttribute('data-copy');
+        if (val) copy(val, td, 'Copied ' + val);
+      });
+    });
+    // Wire drawer open
+    tbody.querySelectorAll('.open-drawer').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sku = btn.getAttribute('data-sku');
+        openDrawer(sku);
+      });
+    });
+  }
+
+  function render() {
+    renderHeaders();
+    renderBody();
+  }
+
+  // ============ DRAWER ============
+  function openDrawer(sku) {
+    const item = state.items.find(it => it.SKU === sku);
+    if (!item) return;
+    document.getElementById('d-sku').textContent = item.SKU || '—';
+    document.getElementById('d-desc').textContent = item.Description || '';
+
+    const msrpGT = gatorMSRP(item);
+    setDrawerPrice('d-msrp', 'MSRP', msrpGT);
+    setDrawerPrice('d-dealer', 'IT Devices Cost', itdevicesPrice(item));
+
+    // Email blocks
+    const blocks = [
+      { label: 'Email — IT Devices Cost', text: `${item.Description}\nSKU: ${item.SKU}\nCost: ${money(itdevicesPrice(item))}` },
+      { label: 'Email — MSRP', text: `${item.Description}\nSKU: ${item.SKU}\nMSRP: ${money(msrpGT)}` },
+      { label: 'One-line summary', text: `${item.SKU} — ${item.Description} — ${money(msrpGT)}` },
+    ];
+    document.getElementById('d-emails').innerHTML = blocks.map((b, i) => `
+      <button type="button" class="email-btn" data-block="${i}">
+        <span>${escapeHtml(b.label)}</span>
+        <small>Copy</small>
+      </button>
+    `).join('');
+    document.querySelectorAll('#d-emails .email-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = +btn.getAttribute('data-block');
+        copy(blocks[idx].text, btn, 'Email block copied');
+      });
+    });
+
+    // AppleCare+ card — only renders when device has a paired AppleCare SKU
+    renderAppleCareCard(item);
+
+    // Specs — IT Devices view: just combined stock, no distributor breakdown
+    const n = Number(item.Inventory);
+    const stockLabel = Number.isFinite(n) && n > 0 ? String(n) : '—';
+    const specFields = [
+      ['Family', item.Family], ['Screen', item.ScreenSize], ['Color', item.Color],
+      ['Chip', item.Processor], ['Memory', item.Memory], ['Storage', item.Storage],
+      ['Power', item.Power], ['Nano-Texture', item.NanoTexture], ['Cellular', item.Cellular],
+      ['Ethernet', item.Ethernet], ['Keyboard', item.Keyboard], ['Moveability', item.Moveability],
+      ['Stock', stockLabel],
+    ];
+    document.getElementById('d-specs').innerHTML = specFields.filter(([_, v]) => v != null && v !== '').map(([k, v]) => `<div class="row"><div class="k">${k}</div><div class="v">${escapeHtml(v)}</div></div>`).join('');
+
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('drawer').setAttribute('aria-hidden', 'false');
+    document.getElementById('overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function renderAppleCareCard(item) {
+    const block = document.getElementById('d-applecare-block');
+    const card = document.getElementById('d-applecare');
+    const acSku = item.AppleCare_SKU;
+    const fam = (item.Family || '').toLowerCase();
+    if (!acSku || fam.includes('applecare')) {
+      block.hidden = true;
+      return;
+    }
+    const acItem = state.items.find(it => it.SKU === acSku);
+    if (!acItem) {
+      block.hidden = false;
+      card.innerHTML = `<div class="ac-empty">Paired AppleCare+ SKU "${escapeHtml(acSku)}" not found in current data.</div>`;
+      return;
+    }
+    const acPrice = itdevicesPrice(acItem);
+    const acMSRP = gatorMSRP(acItem);
+    const rows = [
+      { label: 'SKU', value: acItem.SKU, cls: 'sku' },
+      { label: 'Description', value: acItem.Description || '—', cls: '' },
+      { label: 'MSRP', value: money(acMSRP), cls: 'price', copyVal: String(acMSRP || '') },
+      { label: 'IT Devices Cost', value: money(acPrice), cls: 'price', copyVal: String(acPrice) },
+    ];
+    card.innerHTML = rows.map(r => `<div class="ac-row">
+      <div class="ac-label">${escapeHtml(r.label)}</div>
+      <div class="ac-value ${r.cls}" data-copy="${escapeAttr(r.copyVal != null ? r.copyVal : r.value)}">${escapeHtml(r.value)}</div>
+    </div>`).join('');
+    block.hidden = false;
+    card.querySelectorAll('.ac-value').forEach(el => {
+      el.addEventListener('click', () => {
+        const v = el.getAttribute('data-copy') || el.textContent;
+        copy(v, el, 'Copied: ' + (v.length > 28 ? v.slice(0, 28) + '…' : v));
+      });
+    });
+  }
+
+  function setDrawerPrice(id, label, value) {
+    const el = document.getElementById(id);
+    el.innerHTML = `<div class="label">${label}</div><div class="value">${money(value)}</div>`;
+    el.onclick = () => copy(value != null ? String(value) : '', el, label + ' copied');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('drawer').setAttribute('aria-hidden', 'true');
+    document.getElementById('overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('d-close').addEventListener('click', closeDrawer);
+  document.getElementById('overlay').addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+  // ============ COPY ============
+  let toastTimer = null;
+  function copy(text, el, message) {
+    if (!text) return;
+    const fallback = () => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      ta.remove();
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).catch(fallback);
+    } else {
+      fallback();
+    }
+    if (el) {
+      el.classList.add('copied');
+      setTimeout(() => el.classList.remove('copied'), 1200);
+    }
+    if (message) showToast(message);
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 1600);
+  }
+
+  // ============ TOP-LEVEL CONTROLS ============
+  document.getElementById('search').addEventListener('input', e => {
+    state.search = e.target.value.trim().toLowerCase();
+    render();
+  });
+  document.getElementById('stocked-only').addEventListener('change', e => {
+    state.stockedOnly = e.target.checked;
+    render();
+  });
+  document.getElementById('reset').addEventListener('click', () => {
+    state.colFilters = {};
+    state.search = '';
+    document.getElementById('search').value = '';
+    render();
+  });
+
+  // ============ LOAD ============
+  fetch('../assets/data/parts.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      state.items = data.items || [];
+      const m = data._meta || {};
+      document.getElementById('meta').textContent =
+        (m.generated_at ? 'Data refreshed ' + new Date(m.generated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York' }) + ' ET' : '') +
+        ' · ' + state.items.length + ' SKUs';
+      render();
+    })
+    .catch(err => {
+      document.getElementById('meta').textContent = 'Failed to load: ' + err.message;
+      document.getElementById('tbody').innerHTML = '<tr><td colspan="20" class="empty">Failed to load data.</td></tr>';
+    });
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.col-filter-wrap')) {
+      document.querySelectorAll('.col-filter-pop').forEach(p => {
+        if (!p.hidden) {
+          p.hidden = true;
+          const k = p.getAttribute('data-col');
+          const btn = document.querySelector(`.col-filter-btn[data-col="${k}"]`);
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+          // Refresh other columns' available options now that filter has settled
+          renderHeaders();
+        }
+      });
+    }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.col-filter-pop').forEach(p => {
+        if (!p.hidden) {
+          p.hidden = true;
+          renderHeaders();
+        }
+      });
+    }
+  });
+
+})();
+</script>
+
+</body></html>
