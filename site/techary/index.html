@@ -90,6 +90,12 @@
   thead tr.label-row th.sort-active .sort-icon { opacity: 1; }
   thead tr.label-row th.no-sort { cursor: default; }
   thead tr.label-row th.no-sort:hover { background: #f0f3f6; color: var(--slate); }
+  thead tr.label-row th .col-resize {
+    position: absolute; right: -3px; top: 0; bottom: 0; width: 8px;
+    cursor: col-resize; user-select: none; z-index: 3; background: transparent;
+  }
+  thead tr.label-row th .col-resize:hover,
+  thead tr.label-row th .col-resize.dragging { background: rgba(1,113,185,0.35); }
   thead tr.filter-row th {
     background: #f0f3f6; padding: 0 6px 8px; border-bottom: 1px solid var(--line);
   }
@@ -243,6 +249,7 @@
   <div>
     <h1>Apple Parts — Techary Portal</h1>
     <div class="meta" id="meta">Loading…</div>
+    <div class="tos-link" style="font-size:12px;color:var(--slate);margin-top:4px">By using this portal to build a PO, you agree to <a href="/legal/terms#sales" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">GatorTec's Terms of Sale →</a></div>
   </div>
   <div class="topbar-actions">
     <input type="text" id="search" aria-label="Quick search across all SKUs, models, and colors" placeholder="Quick search SKU, model, color…" autocomplete="off" spellcheck="false">
@@ -498,6 +505,36 @@
         render();
       });
     });
+    // Column resize handles
+    labelRow.querySelectorAll('th').forEach(th => {
+      if (th.querySelector('.col-resize')) return;
+      const key = 'colw:' + th.textContent.trim();
+      const saved = sessionStorage.getItem(key);
+      if (saved) { th.style.width = saved + 'px'; th.style.minWidth = saved + 'px'; }
+      const grip = document.createElement('div');
+      grip.className = 'col-resize';
+      grip.addEventListener('mousedown', e => {
+        e.preventDefault(); e.stopPropagation();
+        const startX = e.clientX; const startW = th.offsetWidth;
+        grip.classList.add('dragging');
+        document.body.style.cursor = 'col-resize';
+        const move = ev => {
+          const w = Math.max(50, startW + (ev.clientX - startX));
+          th.style.width = w + 'px'; th.style.minWidth = w + 'px';
+        };
+        const up = () => {
+          try { sessionStorage.setItem(key, th.offsetWidth); } catch(_){}
+          grip.classList.remove('dragging');
+          document.body.style.cursor = '';
+          document.removeEventListener('mousemove', move);
+          document.removeEventListener('mouseup', up);
+        };
+        document.addEventListener('mousemove', move);
+        document.addEventListener('mouseup', up);
+      });
+      th.appendChild(grip);
+    });
+
     filterRow.innerHTML = COLS.map(c => {
       if (c.filter === 'none') return '<th></th>';
       const sel = state.colFilters[c.key] || [];
