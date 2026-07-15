@@ -351,21 +351,21 @@
 
   // ============ HELPERS ============
     function techaryPrice(item) {
-    const d = Number(item.DealerB) || 0;
+    const rawD = Number(item.DealerB) || 0;
+    const d = Math.ceil(rawD - 1e-9);     // round up to whole dollar
     const fam = (item.Family || '').toLowerCase();
     const round2 = n => Math.round(n * 100) / 100;
     const isAccessory = fam.includes('accessor') || fam.includes('cable') || fam.includes('adapter') ||
                         fam.includes('charger') || fam.includes('keyboard') || fam.includes('mouse') ||
                         fam.includes('trackpad') || fam.includes('pencil');
     if (isAccessory) return round2(d + 0.50);
-    return round2(d);
+    return d;
   }
 
-  // GatorTec MSRP = Apple MSRP + $0.95
   function gatorMSRP(item) {
     const m = Number(item.MSRP);
     if (!Number.isFinite(m) || m <= 0) return null;
-    return Math.round((m + 0.95) * 100) / 100;
+    return m;
   }
 
   function money(n) {

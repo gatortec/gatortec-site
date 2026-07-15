@@ -360,7 +360,6 @@
 
   // ============ HELPERS ============
   // GatorTec MSRP = Apple MSRP + $0.95 (our .95 ending convention).
-  // Used everywhere customer-facing — never displays the raw whole-dollar Apple value.
   function gatorMSRP(item) {
     const m = Number(item.MSRP);
     if (!Number.isFinite(m) || m <= 0) return null;
@@ -368,7 +367,8 @@
   }
 
   function customerPrice(item) {
-    const d = Number(item.DealerB) || 0;
+    const rawD = Number(item.DealerB) || 0;
+    const d = Math.ceil(rawD - 1e-9);     // round up to whole dollar
     const msrp = gatorMSRP(item) || 0;
     const fam = (item.Family || '').toLowerCase();
     const round2 = n => Math.round(n * 100) / 100;
@@ -378,7 +378,7 @@
       const pct = state.acPct != null ? state.acPct : 15;
       return round2(msrp * (1 - pct / 100));
     }
-    // MacBook Neo always passes through Dealer B
+    // MacBook Neo always passes through Dealer B (rounded up)
     if (fam === 'macbook neo') return d;
 
     // Everything else follows the active pricing mode
@@ -390,7 +390,7 @@
       const add = state.dealerAdd != null ? state.dealerAdd : 0.95;
       return round2((d + add) * (1 + state.dealerPct / 100));
     }
-    // Default rule: Dealer B + $0.95 (no markup)
+    // Default rule: ceil(Dealer B) + $0.95
     return round2(d + 0.95);
   }
 

@@ -351,16 +351,15 @@
 
   // ============ HELPERS ============
     function itdevicesPrice(item) {
-    // IT Devices pricing rule: straight Dealer B on everything, no accessory markup
-    const d = Number(item.DealerB) || 0;
-    return Math.round(d * 100) / 100;
+    // IT Devices pricing rule: Dealer B rounded up to whole dollar, no accessory markup
+    const rawD = Number(item.DealerB) || 0;
+    return Math.ceil(rawD - 1e-9);
   }
 
-  // GatorTec MSRP = Apple MSRP + $0.95
   function gatorMSRP(item) {
     const m = Number(item.MSRP);
     if (!Number.isFinite(m) || m <= 0) return null;
-    return Math.round((m + 0.95) * 100) / 100;
+    return m;
   }
 
   function money(n) {
