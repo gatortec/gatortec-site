@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-07-16T00:33:12.144Z",
+    "generated_at": "2026-07-16T00:43:08.078Z",
     "source": "MarkIT CSV Setup tab — daily refresh via n8n",
     "count": 1529
   },
@@ -526,9 +526,9 @@
       "TDS_SKU": "9597494",
       "INGRAM_SKU": "JV4078",
       "AppleCare_SKU": null,
-      "Inventory": 342,
+      "Inventory": 372,
       "TDS_Inventory": 66,
-      "INGRAM_Inventory": 276
+      "INGRAM_Inventory": 306
     },
     {
       "SKU": "MDW94AM/A",
@@ -1051,9 +1051,9 @@
       "TDS_SKU": "14379110",
       "INGRAM_SKU": "S45911",
       "AppleCare_SKU": null,
-      "Inventory": 71336,
+      "Inventory": 71335,
       "TDS_Inventory": 40316,
-      "INGRAM_Inventory": 31020
+      "INGRAM_Inventory": 31019
     },
     {
       "SKU": "MGD74LL/A",
@@ -1551,9 +1551,9 @@
       "TDS_SKU": "9684488",
       "INGRAM_SKU": "JW4079",
       "AppleCare_SKU": null,
-      "Inventory": 1210,
+      "Inventory": 1255,
       "TDS_Inventory": 15,
-      "INGRAM_Inventory": 1195
+      "INGRAM_Inventory": 1240
     },
     {
       "SKU": "MX2D3AM/A",
@@ -18351,9 +18351,9 @@
       "TDS_SKU": "15347429",
       "INGRAM_SKU": "770T26",
       "AppleCare_SKU": "SCV93LL/A",
-      "Inventory": 42,
+      "Inventory": 41,
       "TDS_Inventory": 10,
-      "INGRAM_Inventory": 32
+      "INGRAM_Inventory": 31
     },
     {
       "SKU": "MH7J4LL/A",
@@ -21634,8 +21634,8 @@
       "SKU": "Z1JV000LA",
       "Family": "Mac mini",
       "Description": "CTO MAC MINI M4 PRO 12CPU 16GPU 24GB 2TB 10 GIG ETH",
-      "MSRP": 3499,
-      "DealerB": 3324,
+      "MSRP": 2499,
+      "DealerB": 2374,
       "ScreenSize": null,
       "Color": null,
       "Processor": "M4 Pro 12c CPU 16c GPU",
@@ -33984,8 +33984,8 @@
       "SKU": "Z1MH002Q8",
       "Family": "MacBook Pro",
       "Description": "CTO MBP 14 M5 MAX 18 CPU 40 GPU 48GB 8TB SILVER NANO 96W",
-      "MSRP": 7849,
-      "DealerB": 7457,
+      "MSRP": 7699,
+      "DealerB": 7314,
       "ScreenSize": "14-inch",
       "Color": "Silver",
       "Processor": "M5 Max 18c CPU 40c GPU",
