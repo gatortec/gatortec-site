@@ -122,6 +122,7 @@
 
   var q = getParams();
   var inv = sanitize(q.inv, /[^A-Za-z0-9\-]/g);
+  var num = sanitize(q.num, /[^A-Za-z0-9\-]/g);
   var method = (q.method || '').toLowerCase();
 
   if (!inv || (method !== 'ach' && method !== 'card')) {
@@ -129,13 +130,16 @@
     return;
   }
 
+  // Use the friendly invoice number if provided, otherwise fall back to the ID
+  var displayNum = num || inv;
+
   // Show a small detail line during loading so customers see what's happening
   document.getElementById('loading-detail').innerHTML =
-    'Preparing your Stripe checkout for invoice <strong>#' + inv + '</strong>' +
+    'Preparing your Stripe checkout for invoice <strong>#' + displayNum + '</strong>' +
     '<span class="method-tag">' + method + '</span>';
 
   // Also update the paid state's invoice line for later
-  document.getElementById('paid-inv-line').textContent = ' for Invoice #' + inv;
+  document.getElementById('paid-inv-line').textContent = ' for Invoice #' + displayNum;
 
   var url = WEBHOOK + '?inv=' + encodeURIComponent(inv) + '&method=' + encodeURIComponent(method);
 
