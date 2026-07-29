@@ -102,20 +102,45 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 
 </main>
 
-<footer class="site-foot"><div class="wrap">
-<div class="foot-grid">
-<div><strong>GatorTec</strong><p style="margin:6px 0 0;font-size:13px;color:#6c757d">Apple Premier Partner<br>Gainesville, Florida</p></div>
-<div><strong>Visit</strong><p style="margin:6px 0 0;font-size:13px"><a href="../../">Home</a><br><a href="../../business/">For Business</a><br><a href="../../service/">Service</a></p></div>
-<div><strong>Legal</strong><p style="margin:6px 0 0;font-size:13px"><a href="../../legal/privacy.html">Privacy</a><br><a href="../../legal/terms.html">Terms</a></p></div>
+<footer class="site"><div class="wrap">
+<div class="grid">
+<div class="intro">
+<a class="brand" href="../../"><img src="../../assets/img/site/gatortec-mark.png" alt="" aria-hidden="true"><span>GatorTec</span></a>
+<p>North Florida's Apple Premier Partner. Locally owned, Apple-certified, and here since 2010 — helping businesses and individuals choose, source, and own the right Apple devices. Also an Apple Authorized Service Provider.</p>
+<div class="sig-row" aria-label="Apple Premier Partner"><img src="../../assets/signatures/premier-partner-2ln.png" alt=""></div>
 </div>
-<p class="foot-fine">© <span id="yr"></span> GatorTec. Apple, the Apple logo, and all related marks are trademarks of Apple Inc., registered in the U.S. and other countries.</p>
-</div></footer>
+<nav class="col" aria-label="For Business"><h2>For Business</h2>
+<a href="../../business/">Overview</a>
+<a href="../../products/">Products</a>
+<a href="../../service/">Service</a>
+<a href="../../business/contact/">Request a quote</a>
+</nav>
+<nav class="col" aria-label="For Home"><h2>For Home</h2>
+<a href="../../consumer/">Overview</a>
+<a href="../../products/">Products</a>
+<a href="../../service/">Service</a>
+<a href="../../consumer/contact/">Contact us</a>
+</nav>
+<nav class="col" aria-label="Company"><h2>Company</h2>
+<a href="../../business/faq/">FAQ</a>
+<a href="../../legal/accessibility.html">Accessibility</a>
+<a href="../../legal/privacy.html">Privacy</a>
+<a href="../../legal/terms.html">Terms</a>
+<a href="../../legal/sms-terms.html">SMS Terms</a>
+<a href="/business/apple-parts-list/">Parts List <span class="staff-tag">(staff)</span></a>
+<a href="#" onclick="return window.gtConsentReset && window.gtConsentReset()">Cookie preferences</a>
+</nav>
+</div>
+<div class="legal"><span>© 2010–2026 GatorTec, LLC. All rights reserved.</span><span>Gainesville, FL · <a href="tel:+13525057582">352.505.7582</a></span></div>
+<div class="apple-legal">
+<p>Apple, the Apple logo, MacBook, MacBook Air, MacBook Pro, MacBook Neo, iMac, Mac mini, Mac Studio, iPad, iPad Air, iPad Pro, iPad mini, Apple Watch, AirPods, AirPods Pro, AirPods Max, Apple TV, AirTag, HomePod, AppleCare, AppleCare+, Apple Premier Partner, and Apple Authorized Service Provider are trademarks of Apple Inc., registered in the U.S. and other countries and regions. iPhone, Apple Intelligence, and the Apple at Work program name are trademarks of Apple Inc.</p>
+<p>TM and © 2026 Apple Inc. All rights reserved.</p>
+</div></div></footer>
 
 <script src="../../assets/js/nav.js?v=3" defer></script>
 <script src="../../assets/js/analytics.js?v=3" defer></script>
 <script>
 (function(){
-  document.getElementById('yr').textContent = new Date().getFullYear();
   var f = document.getElementById('abm-form');
   var ts = document.getElementById('form-ts');
   if (ts) ts.value = Date.now();
