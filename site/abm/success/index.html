@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0171B9">
+<title>Enrollment Submitted — GatorTec</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/site/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/site/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/site/apple-touch-icon.png">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/tokens.css?v=5">
+<link rel="stylesheet" href="../../assets/css/base.css?v=5">
+<style>
+.done-wrap{max-width:620px;margin:0 auto;padding:56px 24px;text-align:center}
+.done-icon{width:96px;height:96px;margin:0 auto 24px;border-radius:50%;background:#E7F5EA;display:flex;align-items:center;justify-content:center}
+.done-icon svg{width:52px;height:52px;stroke:#1F6B33;stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.done-h1{font-size:32px;font-weight:700;margin:0 0 14px;letter-spacing:-0.02em;color:#0f172a}
+.done-body{font-size:16px;line-height:1.65;color:#374151;margin:0 0 18px}
+.done-body strong{color:#0f172a}
+.done-body a{color:var(--blue,#0171B9);font-weight:600;text-decoration:none}
+.done-body a:hover{text-decoration:underline}
+.next-card{background:#F8FAFC;border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin:28px 0 0;text-align:left}
+.next-card h2{font-size:15px;font-weight:700;color:#0f172a;margin:0 0 12px;letter-spacing:0.02em;text-transform:uppercase}
+.next-card ol{padding-left:22px;margin:0;font-size:14.5px;line-height:1.65;color:#334155}
+.next-card ol li{margin:6px 0}
+.done-actions{margin-top:32px}
+.done-actions a{color:var(--blue,#0171B9);text-decoration:none;font-weight:600;font-size:15px}
+.done-actions a:hover{text-decoration:underline}
+.inv-tag{display:inline-block;background:#F1F5F9;color:#334155;padding:2px 10px;border-radius:10px;font-size:13px;font-weight:600;letter-spacing:0.03em;margin-left:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../" aria-label="GatorTec home">
+  <img src="../../assets/img/site/gatortec-mark.png" alt="" aria-hidden="true">
+  <span>GatorTec</span>
+</a>
+</div></header>
+
+<main id="main">
+  <div class="done-wrap">
+    <div class="done-icon" role="img" aria-label="Complete">
+      <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <h1 class="done-h1">Enrollment received.</h1>
+    <p class="done-body">Thanks — your payment was processed and your ABM / DEP enrollment request has been submitted to TD Synnex<span id="ref-line"></span>.</p>
+    <p class="done-body">You'll get a confirmation email at the address you provided once TD Synnex has processed the request — usually within one business day.</p>
+
+    <div class="next-card">
+      <h2>What happens next</h2>
+      <ol>
+        <li><strong>GatorTec forwards</strong> your request to TD Synnex's Device Enrollment team.</li>
+        <li><strong>TD Synnex processes</strong> the enrollment against your customer's Apple Business Manager.</li>
+        <li><strong>You get an email</strong> confirming either a successful enrollment (devices are now available in ABM) or, on rare occasions, a rejection with the reason so you can resolve it.</li>
+      </ol>
+    </div>
+
+    <p class="done-body" style="font-size:14px;color:#6c757d;margin-top:28px">
+      Questions? Email <a href="mailto:billing@gatortec.com">billing@gatortec.com</a> or call <a href="tel:+13525059088">(352) 505-9088</a>.
+    </p>
+
+    <div class="done-actions">
+      <a href="../">← Submit another enrollment</a>
+    </div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var m = location.search.match(/[?&]inv=([^&]+)/);
+  if (m && m[1]) {
+    var inv = decodeURIComponent(m[1]).replace(/[^A-Za-z0-9\-]/g,'');
+    if (inv) document.getElementById('ref-line').innerHTML = ' <span class="inv-tag">Ref: ' + inv + '</span>';
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0171B9">
+<title>ABM / DEP Enrollment — GatorTec</title>
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/site/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/site/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/site/apple-touch-icon.png">
+<meta name="description" content="Enroll TD Synnex-purchased Apple hardware into your customer's Apple Business Manager through GatorTec.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://gatortec.com/abm/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css?v=5">
+<link rel="stylesheet" href="../assets/css/base.css?v=5">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<style>
+.banner-warn{background:#FFF4E5;border:1px solid #F5B66A;border-left:4px solid #E08A1A;border-radius:10px;padding:18px 22px;margin:0 0 28px 0;color:#5A3A0B}
+.banner-warn h2{margin:0 0 8px 0;font-size:18px;font-weight:700;color:#7A4E12;letter-spacing:-0.01em}
+.banner-warn p{margin:6px 0;font-size:15px;line-height:1.55}
+.banner-warn a{color:#0171B9;font-weight:600;text-decoration:underline}
+.banner-warn strong.id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:16px;background:#FFE6BF;padding:1px 8px;border-radius:4px;color:#7A4E12}
+.help-text{font-size:13px;color:#6c757d;margin-top:6px;line-height:1.45}
+textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;line-height:1.5}
+textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
+.form-extra{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}
+.fee-callout{background:#EAF4FB;border:1px solid #B8DBF0;border-radius:10px;padding:18px 22px;margin:22px 0;color:#0F3A5A}
+.fee-callout .fee{font-size:22px;font-weight:800;letter-spacing:-0.01em;color:#0171B9}
+.fee-callout .fee-body{font-size:14px;line-height:1.55;margin-top:4px}
+.terms-block{border:1px solid var(--line);border-radius:10px;padding:14px 18px;background:#fafbfc;margin:8px 0 14px}
+.terms-block summary{cursor:pointer;font-weight:600;font-size:14px;color:#0f172a;list-style:none}
+.terms-block summary::-webkit-details-marker{display:none}
+.terms-block summary::before{content:"▸ ";color:#6c757d;transition:transform .15s}
+.terms-block[open] summary::before{content:"▾ "}
+.terms-block .terms-body{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;line-height:1.6;color:#374151}
+.terms-block .terms-body ul{padding-left:22px;margin:8px 0}
+.terms-block .terms-body li{margin:4px 0}
+.terms-check{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;line-height:1.5;color:#334155}
+.terms-check input[type="checkbox"]{margin-top:3px;flex-shrink:0;width:16px;height:16px;accent-color:#0171B9;cursor:pointer}
+.terms-check label{cursor:pointer}
+</style>
+</head><body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../" aria-label="GatorTec home"><img src="../assets/img/site/gatortec-mark.png" alt="" aria-hidden="true"><span>GatorTec</span></a>
+<nav class="main" aria-label="Primary">
+<a href="../products/">Products</a>
+<a href="../business/">For Business</a>
+<a href="../consumer/">For Home</a>
+<a href="../service/">Service</a>
+<a class="pill" href="../contact/">Contact</a>
+</nav></div></header>
+<main id="main">
+
+<section class="cat-hero" aria-labelledby="h1"><div class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="../">Home</a><span class="sep" aria-hidden="true">›</span>
+<span class="current">ABM / DEP Enrollment</span>
+</nav>
+<span class="ptag">Apple Business Manager</span>
+<h1 id="h1">DEP / ABM Enrollment Submission</h1>
+<p class="lede">Submit serial numbers for enrollment in your customer's Apple Business Manager. GatorTec forwards the request to TD Synnex for processing.</p>
+</div></section>
+
+<section class="section"><div class="wrap" style="max-width:780px;margin:0 auto">
+
+<div class="banner-warn" role="alert">
+<h2>One-time setup required before submitting</h2>
+<p>Your customer must first add GatorTec as a Device Supplier in their Apple Business Manager. Our Reseller ID is <strong class="id">5559440</strong>.</p>
+<p><a href="https://support.apple.com/guide/business/manage-device-suppliers-axmef1c47493/web" target="_blank" rel="noopener">View Apple's instructions for adding a Device Supplier →</a></p>
+<p style="margin-top:10px;padding-top:10px;border-top:1px solid #F5B66A;font-size:14px"><strong>Note:</strong> At this time we can only support enrollments for hardware purchased through <strong>TD Synnex</strong>. For orders from other distributors, please contact us directly.</p>
+</div>
+
+<form class="form-card" id="abm-form">
+
+<input type="text" name="_alt_contact" id="alt-contact" class="form-extra" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Leave this field blank">
+<input type="hidden" name="_form_ts" id="form-ts" value="">
+<input type="hidden" name="Distributor" value="TD Synnex">
+
+<div class="field">
+<label for="org-id">End User ABM / DEP # (Organization ID) <span class="req">*</span></label>
+<input type="text" id="org-id" name="Organization ID" required pattern="[0-9]+" inputmode="numeric" autocomplete="off">
+<div class="help-text">Your customer's Apple Business Manager Organization ID — typically a 7-digit number found in their ABM account settings.</div>
+</div>
+
+<div class="field">
+<label for="serials">Serial Numbers <span class="req">*</span></label>
+<textarea id="serials" name="Serial Numbers" class="serials" required placeholder="One serial number per line, e.g.:&#10;SD65M94GVWL&#10;SDC996PF4J2&#10;SDKYXCJQX3J"></textarea>
+<div class="help-text">One serial number per line. Each device will become a separate row in the enrollment request.</div>
+</div>
+
+<div class="field">
+<label for="email">Email for Confirmation <span class="req">*</span></label>
+<input type="email" id="email" name="Email" required autocomplete="email">
+<div class="help-text">We'll email you when the enrollment is processed by TD Synnex (usually within one business day).</div>
+</div>
+
+<div class="field">
+<label for="notes">Notes (optional)</label>
+<textarea id="notes" name="Notes" class="notes" placeholder="Anything we should know about this enrollment (order reference, timing, etc.)"></textarea>
+</div>
+
+<div class="fee-callout">
+<div class="fee">$1.25 processing fee</div>
+<div class="fee-body">One-time, non-refundable fee per enrollment request, charged securely via Stripe. Card only.</div>
+</div>
+
+<details class="terms-block">
+<summary>Terms of Service (please review before submitting)</summary>
+<div class="terms-body">
+<p>By submitting this form, I acknowledge and agree that:</p>
+<ul>
+<li>The <strong>$1.25 processing fee is non-refundable</strong>, regardless of enrollment outcome.</li>
+<li>Successful enrollment requires that (1) <strong>the End User</strong> has added GatorTec (Reseller ID <strong>5559440</strong>) as a Device Supplier in <strong>their</strong> Apple Business Manager, and (2) the hardware listed was <strong>purchased through TD Synnex</strong>.</li>
+<li>GatorTec forwards enrollment requests to TD Synnex; final acceptance is determined by TD Synnex and Apple, not GatorTec.</li>
+<li>If enrollment fails due to setup or hardware sourcing issues, no refund will be issued but GatorTec will notify you with details from Apple so you can resolve and (if applicable) resubmit.</li>
+<li>All information provided (Organization ID, serial numbers, contact info) is shared with TD Synnex and Apple to process this enrollment request.</li>
+</ul>
+</div>
+</details>
+
+<div class="terms-check">
+<input type="checkbox" id="terms" name="terms_agree" required>
+<label for="terms">I have read and agree to the Terms of Service above. <span class="req">*</span></label>
+</div>
+
+<div class="cf-turnstile" data-sitekey="0x4AAAAAADi0CelhpMAuj8ge" data-theme="light" style="margin:18px 0"></div>
+
+<button type="submit" class="btn btn-primary" id="submit-btn">Continue to Payment — $1.25</button>
+
+<p class="help-text" style="margin-top:14px">By continuing, you confirm the hardware listed above was purchased through TD Synnex and that your customer has added GatorTec (Reseller ID <strong>5559440</strong>) as a Device Supplier in Apple Business Manager.</p>
+
+</form>
+
+<div id="error-msg" style="display:none;background:#FEE2E2;border:1px solid #F5A9A9;border-radius:10px;padding:18px 22px;margin-top:20px;color:#7F1D1D">
+<h2 style="margin:0 0 8px;font-size:16px;font-weight:700">We couldn't create your payment link.</h2>
+<p id="error-detail" style="margin:0;font-size:14px;line-height:1.5">Please try again in a moment. If this keeps happening, contact us at <a href="mailto:billing@gatortec.com" style="color:#0171B9;font-weight:600">billing@gatortec.com</a> or (352) 505-9088.</p>
+</div>
+
+</div></section>
+
+</main>
+
+<footer class="site"><div class="wrap">
+<div class="grid">
+<div class="intro">
+<a class="brand" href="../"><img src="../assets/img/site/gatortec-mark.png" alt="" aria-hidden="true"><span>GatorTec</span></a>
+<p>North Florida's Apple Premier Partner. Locally owned, Apple-certified, and here since 2010 — helping businesses and individuals choose, source, and own the right Apple devices. Also an Apple Authorized Service Provider.</p>
+<div class="sig-row" aria-label="Apple Premier Partner"><img src="../assets/signatures/premier-partner-2ln.png" alt=""></div>
+</div>
+<nav class="col" aria-label="For Business"><h2>For Business</h2>
+<a href="../business/">Overview</a>
+<a href="../products/">Products</a>
+<a href="../service/">Service</a>
+<a href="../business/contact/">Request a quote</a>
+</nav>
+<nav class="col" aria-label="For Home"><h2>For Home</h2>
+<a href="../consumer/">Overview</a>
+<a href="../products/">Products</a>
+<a href="../service/">Service</a>
+<a href="../consumer/contact/">Contact us</a>
+</nav>
+<nav class="col" aria-label="Company"><h2>Company</h2>
+<a href="../business/faq/">FAQ</a>
+<a href="../legal/accessibility.html">Accessibility</a>
+<a href="../legal/privacy.html">Privacy</a>
+<a href="../legal/terms.html">Terms</a>
+<a href="../legal/sms-terms.html">SMS Terms</a>
+<a href="#" onclick="return window.gtConsentReset && window.gtConsentReset()">Cookie preferences</a>
+</nav>
+</div>
+<div class="legal"><span>© 2010–2026 GatorTec, LLC. All rights reserved.</span><span>Gainesville, FL · <a href="tel:+13525059088">352.505.9088</a></span></div>
+<div class="apple-legal">
+<p>Apple, the Apple logo, and Apple Business Manager are trademarks of Apple Inc., registered in the U.S. and other countries. TD Synnex and the TD SYNNEX logo are trademarks of TD Synnex Corporation.</p>
+</div></div></footer>
+
+<script src="../assets/js/nav.js?v=3" defer></script>
+<script src="../assets/js/analytics.js?v=3" defer></script>
+<script>
+(function(){
+  var WEBHOOK = 'https://gatortec.app.n8n.cloud/webhook/create-abm-payment';
+
+  var f = document.getElementById('abm-form');
+  var ts = document.getElementById('form-ts');
+  if (ts) ts.value = Date.now();
+
+  function showError(msg){
+    var box = document.getElementById('error-msg');
+    var detail = document.getElementById('error-detail');
+    if (msg) detail.textContent = msg + ' If this keeps happening, contact billing@gatortec.com or (352) 505-9088.';
+    box.style.display = 'block';
+    window.scrollTo({ top: box.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+  }
+
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Get Turnstile token (widget adds a hidden input named cf-turnstile-response)
+    var turnstileEl = f.querySelector('[name="cf-turnstile-response"]');
+    var turnstileToken = turnstileEl ? turnstileEl.value : '';
+    if (!turnstileToken) {
+      showError('Please complete the "I am not a robot" check.');
+      return;
+    }
+
+    // Terms
+    if (!document.getElementById('terms').checked) {
+      showError('You must agree to the Terms of Service before continuing.');
+      return;
+    }
+
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true; btn.textContent = 'Preparing secure checkout…';
+
+    var fd = new FormData(f);
+    var payload = {};
+    fd.forEach(function(v, k){ payload[k] = v; });
+
+    fetch(WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function(r){
+        if (!r.ok) return r.json().then(function(j){ throw new Error(j && j.message || 'http_' + r.status); }).catch(function(){ throw new Error('http_' + r.status); });
+        return r.json();
+      })
+      .then(function(data){
+        if (data && data.status === 'ok' && data.url) {
+          window.location.replace(data.url);
+        } else {
+          throw new Error(data && data.message || 'unknown');
+        }
+      })
+      .catch(function(err){
+        btn.disabled = false;
+        btn.textContent = 'Continue to Payment — $1.25';
+        var m = String(err && err.message || '');
+        showError(m && m !== 'unknown' && m.indexOf('http_') !== 0 ? m + '.' : 'Something went wrong.');
+      });
+  });
+})();
+</script>
+</body>
+</html>
