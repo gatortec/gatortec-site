@@ -215,17 +215,17 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
     var btn = document.getElementById('submit-btn');
     btn.disabled = true; btn.textContent = 'Preparing secure checkout…';
 
+    // Send as FormData (multipart/form-data) — a "simple" CORS request that
+    // doesn't trigger a preflight OPTIONS. JSON body would require preflight
+    // and n8n's webhook doesn't cleanly answer it.
     var fd = new FormData(f);
-    var payload = {};
-    fd.forEach(function(v, k){ payload[k] = v; });
 
     fetch(WEBHOOK, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
+      body: fd
     })
       .then(function(r){
-        if (!r.ok) return r.json().then(function(j){ throw new Error(j && j.message || 'http_' + r.status); }).catch(function(){ throw new Error('http_' + r.status); });
+        if (!r.ok) return r.text().then(function(t){ throw new Error(t || 'http_' + r.status); });
         return r.json();
       })
       .then(function(data){
