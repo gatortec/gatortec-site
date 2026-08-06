@@ -23,6 +23,17 @@
 /terms-conditions              /legal/terms.html              301
 
 # ============================================================================
+# Case variations — the paid catalogs are lowercase-only; catch common
+# capitalization mistakes and redirect to canonical URL.
+# ============================================================================
+/Techary                       /techary/                                 301
+/Techary/                      /techary/                                 301
+/Techary/*                     /techary/:splat                           301
+/TECHARY                       /techary/                                 301
+/TECHARY/                      /techary/                                 301
+/TECHARY/*                     /techary/:splat                           301
+
+# ============================================================================
 # Product slug shortcuts
 # ============================================================================
 /imac                          /products/desktops/imac/                  301
