@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-11T21:05:16.684Z",
+    "generated_at": "2026-08-11T21:35:15.735Z",
     "source": "MarkIT CSV Setup tab — daily refresh via n8n",
     "count": 1523
   },
@@ -26,8 +26,8 @@
       "TDS_SKU": "14392299",
       "INGRAM_SKU": "S43943",
       "AppleCare_SKU": null,
-      "Inventory": 209,
-      "TDS_Inventory": 32,
+      "Inventory": 207,
+      "TDS_Inventory": 30,
       "INGRAM_Inventory": 177
     },
     {
@@ -101,9 +101,9 @@
       "TDS_SKU": "14035519",
       "INGRAM_SKU": "NN0461",
       "AppleCare_SKU": null,
-      "Inventory": 1463,
-      "TDS_Inventory": 358,
-      "INGRAM_Inventory": 1105
+      "Inventory": 1402,
+      "TDS_Inventory": 348,
+      "INGRAM_Inventory": 1054
     },
     {
       "SKU": "MW2R3AM/A",
@@ -126,9 +126,9 @@
       "TDS_SKU": "9780583",
       "INGRAM_SKU": "KY2232",
       "AppleCare_SKU": null,
-      "Inventory": 3522,
+      "Inventory": 3232,
       "TDS_Inventory": 615,
-      "INGRAM_Inventory": 2907
+      "INGRAM_Inventory": 2617
     },
     {
       "SKU": "MUQ93AM/A",
@@ -151,9 +151,9 @@
       "TDS_SKU": "9356687",
       "INGRAM_SKU": "JR9381",
       "AppleCare_SKU": null,
-      "Inventory": 18295,
+      "Inventory": 18294,
       "TDS_Inventory": 17332,
-      "INGRAM_Inventory": 963
+      "INGRAM_Inventory": 962
     },
     {
       "SKU": "MW2M3AM/A",
@@ -176,9 +176,9 @@
       "TDS_SKU": "9812403",
       "INGRAM_SKU": "LS6743",
       "AppleCare_SKU": null,
-      "Inventory": 2698,
-      "TDS_Inventory": 1519,
-      "INGRAM_Inventory": 1179
+      "Inventory": 2695,
+      "TDS_Inventory": 1517,
+      "INGRAM_Inventory": 1178
     },
     {
       "SKU": "MW613AM/A",
@@ -201,9 +201,9 @@
       "TDS_SKU": "14392300",
       "INGRAM_SKU": "S43945",
       "AppleCare_SKU": null,
-      "Inventory": 4547,
-      "TDS_Inventory": 2126,
-      "INGRAM_Inventory": 2421
+      "Inventory": 4512,
+      "TDS_Inventory": 2094,
+      "INGRAM_Inventory": 2418
     },
     {
       "SKU": "MW5J3AM/A",
@@ -301,8 +301,8 @@
       "TDS_SKU": "9597495",
       "INGRAM_SKU": "JV4081",
       "AppleCare_SKU": null,
-      "Inventory": 1346,
-      "TDS_Inventory": 263,
+      "Inventory": 1344,
+      "TDS_Inventory": 261,
       "INGRAM_Inventory": 1083
     },
     {
@@ -326,8 +326,8 @@
       "TDS_SKU": "14309230",
       "INGRAM_SKU": "RF7744",
       "AppleCare_SKU": null,
-      "Inventory": 416,
-      "TDS_Inventory": 89,
+      "Inventory": 415,
+      "TDS_Inventory": 88,
       "INGRAM_Inventory": 327
     },
     {
@@ -351,9 +351,9 @@
       "TDS_SKU": "14309231",
       "INGRAM_SKU": "RF7745",
       "AppleCare_SKU": null,
-      "Inventory": 1480,
+      "Inventory": 1479,
       "TDS_Inventory": 16,
-      "INGRAM_Inventory": 1464
+      "INGRAM_Inventory": 1463
     },
     {
       "SKU": "MXK53AM/A",
@@ -376,9 +376,9 @@
       "TDS_SKU": "14309232",
       "INGRAM_SKU": "RF7746",
       "AppleCare_SKU": null,
-      "Inventory": 4650,
-      "TDS_Inventory": 1396,
-      "INGRAM_Inventory": 3254
+      "Inventory": 4647,
+      "TDS_Inventory": 1394,
+      "INGRAM_Inventory": 3253
     },
     {
       "SKU": "MXK63AM/A",
@@ -426,8 +426,8 @@
       "TDS_SKU": "14309234",
       "INGRAM_SKU": "RF7751",
       "AppleCare_SKU": null,
-      "Inventory": 713,
-      "TDS_Inventory": 713,
+      "Inventory": 711,
+      "TDS_Inventory": 711,
       "INGRAM_Inventory": 0
     },
     {
@@ -576,8 +576,8 @@
       "TDS_SKU": "14542485",
       "INGRAM_SKU": "SG2289",
       "AppleCare_SKU": null,
-      "Inventory": 1295,
-      "TDS_Inventory": 457,
+      "Inventory": 1294,
+      "TDS_Inventory": 456,
       "INGRAM_Inventory": 838
     },
     {
@@ -951,8 +951,8 @@
       "TDS_SKU": "14035529",
       "INGRAM_SKU": "NN0466",
       "AppleCare_SKU": null,
-      "Inventory": 119951,
-      "TDS_Inventory": 66878,
+      "Inventory": 119949,
+      "TDS_Inventory": 66876,
       "INGRAM_Inventory": 53073
     },
     {
@@ -976,9 +976,9 @@
       "TDS_SKU": "14035528",
       "INGRAM_SKU": "NN0465",
       "AppleCare_SKU": null,
-      "Inventory": 23945,
-      "TDS_Inventory": 3054,
-      "INGRAM_Inventory": 20891
+      "Inventory": 23633,
+      "TDS_Inventory": 3022,
+      "INGRAM_Inventory": 20611
     },
     {
       "SKU": "MUQX3AM/A",
@@ -1001,9 +1001,9 @@
       "TDS_SKU": "7831466",
       "INGRAM_SKU": "HL7859",
       "AppleCare_SKU": null,
-      "Inventory": 705,
+      "Inventory": 687,
       "TDS_Inventory": 670,
-      "INGRAM_Inventory": 35
+      "INGRAM_Inventory": 17
     },
     {
       "SKU": "MWTY3AM/A",
@@ -1026,9 +1026,9 @@
       "TDS_SKU": "9780580",
       "INGRAM_SKU": "KY2228",
       "AppleCare_SKU": null,
-      "Inventory": 42328,
+      "Inventory": 41458,
       "TDS_Inventory": 29269,
-      "INGRAM_Inventory": 13059
+      "INGRAM_Inventory": 12189
     },
     {
       "SKU": "MWVV3AM/A",
@@ -1051,9 +1051,9 @@
       "TDS_SKU": "14379110",
       "INGRAM_SKU": "S45911",
       "AppleCare_SKU": null,
-      "Inventory": 57153,
-      "TDS_Inventory": 33740,
-      "INGRAM_Inventory": 23413
+      "Inventory": 56238,
+      "TDS_Inventory": 33536,
+      "INGRAM_Inventory": 22702
     },
     {
       "SKU": "MGD74LL/A",
@@ -1076,9 +1076,9 @@
       "TDS_SKU": "15007616",
       "INGRAM_SKU": "Z55984",
       "AppleCare_SKU": null,
-      "Inventory": 3788,
+      "Inventory": 3787,
       "TDS_Inventory": 1457,
-      "INGRAM_Inventory": 2331
+      "INGRAM_Inventory": 2330
     },
     {
       "SKU": "MGDM4LL/A",
@@ -1126,8 +1126,8 @@
       "TDS_SKU": "15007613",
       "INGRAM_SKU": "Z55829",
       "AppleCare_SKU": null,
-      "Inventory": 1709,
-      "TDS_Inventory": 433,
+      "Inventory": 1677,
+      "TDS_Inventory": 401,
       "INGRAM_Inventory": 1276
     },
     {
@@ -1176,9 +1176,9 @@
       "TDS_SKU": "15272189",
       "INGRAM_SKU": "800P71",
       "AppleCare_SKU": null,
-      "Inventory": 13543,
+      "Inventory": 13541,
       "TDS_Inventory": 6289,
-      "INGRAM_Inventory": 7254
+      "INGRAM_Inventory": 7252
     },
     {
       "SKU": "MFEA4LL/A",
@@ -1201,9 +1201,9 @@
       "TDS_SKU": "15272190",
       "INGRAM_SKU": "800P44",
       "AppleCare_SKU": null,
-      "Inventory": 645,
+      "Inventory": 640,
       "TDS_Inventory": 37,
-      "INGRAM_Inventory": 608
+      "INGRAM_Inventory": 603
     },
     {
       "SKU": "MW2Q3AM/A",
@@ -1226,9 +1226,9 @@
       "TDS_SKU": "9780582",
       "INGRAM_SKU": "KY2227",
       "AppleCare_SKU": null,
-      "Inventory": 20235,
+      "Inventory": 20075,
       "TDS_Inventory": 11262,
-      "INGRAM_Inventory": 8973
+      "INGRAM_Inventory": 8813
     },
     {
       "SKU": "MXN43AM/A",
@@ -1301,8 +1301,8 @@
       "TDS_SKU": "14392302",
       "INGRAM_SKU": "S43941",
       "AppleCare_SKU": null,
-      "Inventory": 252,
-      "TDS_Inventory": 33,
+      "Inventory": 251,
+      "TDS_Inventory": 32,
       "INGRAM_Inventory": 219
     },
     {
@@ -1351,9 +1351,9 @@
       "TDS_SKU": "14542486",
       "INGRAM_SKU": "SG2288",
       "AppleCare_SKU": null,
-      "Inventory": 28313,
-      "TDS_Inventory": 15285,
-      "INGRAM_Inventory": 13028
+      "Inventory": 27652,
+      "TDS_Inventory": 15115,
+      "INGRAM_Inventory": 12537
     },
     {
       "SKU": "MWML3AM/A",
@@ -1426,9 +1426,9 @@
       "TDS_SKU": "9356688",
       "INGRAM_SKU": "JR9383",
       "AppleCare_SKU": null,
-      "Inventory": 7188,
-      "TDS_Inventory": 4852,
-      "INGRAM_Inventory": 2336
+      "Inventory": 6978,
+      "TDS_Inventory": 4842,
+      "INGRAM_Inventory": 2136
     },
     {
       "SKU": "MUWA3AM/A",
@@ -1576,8 +1576,8 @@
       "TDS_SKU": "9684485",
       "INGRAM_SKU": "JW4070",
       "AppleCare_SKU": null,
-      "Inventory": 7533,
-      "TDS_Inventory": 4016,
+      "Inventory": 7532,
+      "TDS_Inventory": 4015,
       "INGRAM_Inventory": 3517
     },
     {
@@ -1876,9 +1876,9 @@
       "TDS_SKU": "14569227",
       "INGRAM_SKU": "SL6918",
       "AppleCare_SKU": null,
-      "Inventory": 79,
+      "Inventory": 74,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 79
+      "INGRAM_Inventory": 74
     },
     {
       "SKU": "MGYX4LL/A",
@@ -2001,9 +2001,9 @@
       "TDS_SKU": "14195304",
       "INGRAM_SKU": "NR8122",
       "AppleCare_SKU": null,
-      "Inventory": 15650,
-      "TDS_Inventory": 4069,
-      "INGRAM_Inventory": 11581
+      "Inventory": 15647,
+      "TDS_Inventory": 4068,
+      "INGRAM_Inventory": 11579
     },
     {
       "SKU": "MXP63LL/A",
@@ -2076,9 +2076,9 @@
       "TDS_SKU": "15384644",
       "INGRAM_SKU": "760U62",
       "AppleCare_SKU": null,
-      "Inventory": 111,
+      "Inventory": 110,
       "TDS_Inventory": 34,
-      "INGRAM_Inventory": 77
+      "INGRAM_Inventory": 76
     },
     {
       "SKU": "MHWP4AM/A",
@@ -2126,9 +2126,9 @@
       "TDS_SKU": "15384642",
       "INGRAM_SKU": "760U19",
       "AppleCare_SKU": null,
-      "Inventory": 543,
+      "Inventory": 542,
       "TDS_Inventory": 542,
-      "INGRAM_Inventory": 1
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MHWL4AM/A",
@@ -2301,9 +2301,9 @@
       "TDS_SKU": "14035521",
       "INGRAM_SKU": "NN0464",
       "AppleCare_SKU": null,
-      "Inventory": 122,
+      "Inventory": 121,
       "TDS_Inventory": 30,
-      "INGRAM_Inventory": 92
+      "INGRAM_Inventory": 91
     },
     {
       "SKU": "MX5J3AM/A",
@@ -5676,8 +5676,8 @@
       "TDS_SKU": "14309300",
       "INGRAM_SKU": "RF8247",
       "AppleCare_SKU": "STKT2LL/A",
-      "Inventory": 510,
-      "TDS_Inventory": 476,
+      "Inventory": 509,
+      "TDS_Inventory": 475,
       "INGRAM_Inventory": 34
     },
     {
@@ -6576,9 +6576,9 @@
       "TDS_SKU": "14309295",
       "INGRAM_SKU": "RF8243",
       "AppleCare_SKU": "STKT2LL/A",
-      "Inventory": 69,
+      "Inventory": 68,
       "TDS_Inventory": 27,
-      "INGRAM_Inventory": 42
+      "INGRAM_Inventory": 41
     },
     {
       "SKU": "Z1E50008W",
@@ -12576,9 +12576,9 @@
       "TDS_SKU": "14309284",
       "INGRAM_SKU": "RF8250",
       "AppleCare_SKU": "STKT2LL/A",
-      "Inventory": 28,
+      "Inventory": 0,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 28
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "Z1EN0007M",
@@ -12626,9 +12626,9 @@
       "TDS_SKU": "14309276",
       "INGRAM_SKU": "RF8237",
       "AppleCare_SKU": "STKT2LL/A",
-      "Inventory": 7,
+      "Inventory": 6,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 7
+      "INGRAM_Inventory": 6
     },
     {
       "SKU": "Z1EN000F1",
@@ -17151,8 +17151,8 @@
       "TDS_SKU": "14569093",
       "INGRAM_SKU": "SL6586",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 36037,
-      "TDS_Inventory": 13599,
+      "Inventory": 36015,
+      "TDS_Inventory": 13577,
       "INGRAM_Inventory": 22438
     },
     {
@@ -17226,9 +17226,9 @@
       "TDS_SKU": "14569096",
       "INGRAM_SKU": "SL6600",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 2900,
+      "Inventory": 2898,
       "TDS_Inventory": 1857,
-      "INGRAM_Inventory": 1043
+      "INGRAM_Inventory": 1041
     },
     {
       "SKU": "MD4G4LL/A",
@@ -17451,9 +17451,9 @@
       "TDS_SKU": "14569114",
       "INGRAM_SKU": "SL6585",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 10115,
-      "TDS_Inventory": 6174,
-      "INGRAM_Inventory": 3941
+      "Inventory": 10109,
+      "TDS_Inventory": 6171,
+      "INGRAM_Inventory": 3938
     },
     {
       "SKU": "MD7G4LL/A",
@@ -17751,8 +17751,8 @@
       "TDS_SKU": "15347460",
       "INGRAM_SKU": "770T09",
       "AppleCare_SKU": "SCV93LL/A",
-      "Inventory": 1767,
-      "TDS_Inventory": 243,
+      "Inventory": 1763,
+      "TDS_Inventory": 239,
       "INGRAM_Inventory": 1524
     },
     {
@@ -17851,9 +17851,9 @@
       "TDS_SKU": "15347482",
       "INGRAM_SKU": "770T15",
       "AppleCare_SKU": "SCV93LL/A",
-      "Inventory": 945,
+      "Inventory": 890,
       "TDS_Inventory": 32,
-      "INGRAM_Inventory": 913
+      "INGRAM_Inventory": 858
     },
     {
       "SKU": "MH364LL/A",
@@ -18676,9 +18676,9 @@
       "TDS_SKU": "15347499",
       "INGRAM_SKU": "770T46",
       "AppleCare_SKU": "SCVD3LL/A",
-      "Inventory": 152,
+      "Inventory": 151,
       "TDS_Inventory": 73,
-      "INGRAM_Inventory": 79
+      "INGRAM_Inventory": 78
     },
     {
       "SKU": "MH5W4LL/A",
@@ -18701,9 +18701,9 @@
       "TDS_SKU": "15347500",
       "INGRAM_SKU": "770T54",
       "AppleCare_SKU": "SCVD3LL/A",
-      "Inventory": 35,
+      "Inventory": 36,
       "TDS_Inventory": 14,
-      "INGRAM_Inventory": 21
+      "INGRAM_Inventory": 22
     },
     {
       "SKU": "MH5X4LL/A",
@@ -18726,9 +18726,9 @@
       "TDS_SKU": "15347502",
       "INGRAM_SKU": "770T48",
       "AppleCare_SKU": "SCVD3LL/A",
-      "Inventory": 68,
+      "Inventory": 70,
       "TDS_Inventory": 36,
-      "INGRAM_Inventory": 32
+      "INGRAM_Inventory": 34
     },
     {
       "SKU": "MH5Y4LL/A",
@@ -19351,9 +19351,9 @@
       "TDS_SKU": "14290288",
       "INGRAM_SKU": "NU1899",
       "AppleCare_SKU": "SNGN2LL/A",
-      "Inventory": 2610,
+      "Inventory": 2608,
       "TDS_Inventory": 2190,
-      "INGRAM_Inventory": 420
+      "INGRAM_Inventory": 418
     },
     {
       "SKU": "MXN73LL/A",
@@ -19376,9 +19376,9 @@
       "TDS_SKU": "14290289",
       "INGRAM_SKU": "NU1902",
       "AppleCare_SKU": "SNGN2LL/A",
-      "Inventory": 399,
+      "Inventory": 398,
       "TDS_Inventory": 67,
-      "INGRAM_Inventory": 332
+      "INGRAM_Inventory": 331
     },
     {
       "SKU": "MXN83LL/A",
@@ -19451,9 +19451,9 @@
       "TDS_SKU": "14290292",
       "INGRAM_SKU": "NU1907",
       "AppleCare_SKU": "SNGN2LL/A",
-      "Inventory": 140,
+      "Inventory": 115,
       "TDS_Inventory": 48,
-      "INGRAM_Inventory": 92
+      "INGRAM_Inventory": 67
     },
     {
       "SKU": "MXNC3LL/A",
@@ -20251,9 +20251,9 @@
       "TDS_SKU": "15098175",
       "INGRAM_SKU": "360C14",
       "AppleCare_SKU": "SXT02LL/A",
-      "Inventory": 215,
+      "Inventory": 214,
       "TDS_Inventory": 139,
-      "INGRAM_Inventory": 76
+      "INGRAM_Inventory": 75
     },
     {
       "SKU": "ME2P4LL/A",
@@ -20551,9 +20551,9 @@
       "TDS_SKU": "15098136",
       "INGRAM_SKU": "370C33",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 1485,
+      "Inventory": 1481,
       "TDS_Inventory": 496,
-      "INGRAM_Inventory": 989
+      "INGRAM_Inventory": 985
     },
     {
       "SKU": "MDYK4LL/A",
@@ -20576,9 +20576,9 @@
       "TDS_SKU": "15098137",
       "INGRAM_SKU": "370C40",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 169,
+      "Inventory": 179,
       "TDS_Inventory": 20,
-      "INGRAM_Inventory": 149
+      "INGRAM_Inventory": 159
     },
     {
       "SKU": "MDYL4LL/A",
@@ -20601,9 +20601,9 @@
       "TDS_SKU": "15098138",
       "INGRAM_SKU": "360C95",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 397,
+      "Inventory": 395,
       "TDS_Inventory": 131,
-      "INGRAM_Inventory": 266
+      "INGRAM_Inventory": 264
     },
     {
       "SKU": "MDYM4LL/A",
@@ -20851,9 +20851,9 @@
       "TDS_SKU": "15098157",
       "INGRAM_SKU": "370C25",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 445,
+      "Inventory": 458,
       "TDS_Inventory": 139,
-      "INGRAM_Inventory": 306
+      "INGRAM_Inventory": 319
     },
     {
       "SKU": "ME7X4LL/A",
@@ -20876,9 +20876,9 @@
       "TDS_SKU": "15098158",
       "INGRAM_SKU": "370C50",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 285,
+      "Inventory": 287,
       "TDS_Inventory": 127,
-      "INGRAM_Inventory": 158
+      "INGRAM_Inventory": 160
     },
     {
       "SKU": "ME7Y4LL/A",
@@ -21226,9 +21226,9 @@
       "TDS_SKU": "15132602",
       "INGRAM_SKU": "680C21",
       "AppleCare_SKU": "SR1C2LL/A",
-      "Inventory": 0,
+      "Inventory": 4,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 0
+      "INGRAM_Inventory": 4
     },
     {
       "SKU": "Z1CF000C0",
@@ -23226,8 +23226,8 @@
       "TDS_SKU": "15350886",
       "INGRAM_SKU": "840T39",
       "AppleCare_SKU": "SCW93LL/A",
-      "Inventory": 44,
-      "TDS_Inventory": 41,
+      "Inventory": 43,
+      "TDS_Inventory": 40,
       "INGRAM_Inventory": 3
     },
     {
@@ -23301,9 +23301,9 @@
       "TDS_SKU": "15350889",
       "INGRAM_SKU": "840T53",
       "AppleCare_SKU": "SCW93LL/A",
-      "Inventory": 20,
+      "Inventory": 19,
       "TDS_Inventory": 5,
-      "INGRAM_Inventory": 15
+      "INGRAM_Inventory": 14
     },
     {
       "SKU": "MDVN4LL/A",
@@ -23376,8 +23376,8 @@
       "TDS_SKU": "15350978",
       "INGRAM_SKU": "840T38",
       "AppleCare_SKU": "SCW93LL/A",
-      "Inventory": 48,
-      "TDS_Inventory": 48,
+      "Inventory": 47,
+      "TDS_Inventory": 47,
       "INGRAM_Inventory": 0
     },
     {
@@ -25301,8 +25301,8 @@
       "TDS_SKU": "15358370",
       "INGRAM_SKU": "100U04",
       "AppleCare_SKU": "SCW83LL/A",
-      "Inventory": 80,
-      "TDS_Inventory": 80,
+      "Inventory": 75,
+      "TDS_Inventory": 75,
       "INGRAM_Inventory": 0
     },
     {
@@ -27101,8 +27101,8 @@
       "TDS_SKU": "15355954",
       "INGRAM_SKU": "020U56",
       "AppleCare_SKU": "SCW93LL/A",
-      "Inventory": 23,
-      "TDS_Inventory": 23,
+      "Inventory": 21,
+      "TDS_Inventory": 21,
       "INGRAM_Inventory": 0
     },
     {
@@ -30601,9 +30601,9 @@
       "TDS_SKU": "15350893",
       "INGRAM_SKU": "840T91",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 2576,
+      "Inventory": 2575,
       "TDS_Inventory": 2064,
-      "INGRAM_Inventory": 512
+      "INGRAM_Inventory": 511
     },
     {
       "SKU": "MGDT4LL/A",
@@ -30701,9 +30701,9 @@
       "TDS_SKU": "15350916",
       "INGRAM_SKU": "840T75",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 3165,
-      "TDS_Inventory": 2637,
-      "INGRAM_Inventory": 528
+      "Inventory": 3156,
+      "TDS_Inventory": 2636,
+      "INGRAM_Inventory": 520
     },
     {
       "SKU": "MGE74LL/A",
@@ -30776,8 +30776,8 @@
       "TDS_SKU": "15350919",
       "INGRAM_SKU": "840T84",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 3071,
-      "TDS_Inventory": 1351,
+      "Inventory": 3068,
+      "TDS_Inventory": 1348,
       "INGRAM_Inventory": 1720
     },
     {
@@ -30851,9 +30851,9 @@
       "TDS_SKU": "15350951",
       "INGRAM_SKU": "840T43",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 544,
+      "Inventory": 513,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 544
+      "INGRAM_Inventory": 513
     },
     {
       "SKU": "MJ3D4LL/A",
@@ -30951,9 +30951,9 @@
       "TDS_SKU": "15350881",
       "INGRAM_SKU": "840T83",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 94,
+      "Inventory": 95,
       "TDS_Inventory": 24,
-      "INGRAM_Inventory": 70
+      "INGRAM_Inventory": 71
     },
     {
       "SKU": "MDE14LL/A",
@@ -30976,9 +30976,9 @@
       "TDS_SKU": "15098111",
       "INGRAM_SKU": "350C41",
       "AppleCare_SKU": "SXKH2LL/A",
-      "Inventory": 3217,
+      "Inventory": 3213,
       "TDS_Inventory": 1882,
-      "INGRAM_Inventory": 1335
+      "INGRAM_Inventory": 1331
     },
     {
       "SKU": "MDE34LL/A",
@@ -31001,8 +31001,8 @@
       "TDS_SKU": "15098112",
       "INGRAM_SKU": "350C50",
       "AppleCare_SKU": "SXKH2LL/A",
-      "Inventory": 2430,
-      "TDS_Inventory": 2430,
+      "Inventory": 2428,
+      "TDS_Inventory": 2428,
       "INGRAM_Inventory": 0
     },
     {
@@ -31026,9 +31026,9 @@
       "TDS_SKU": "15098114",
       "INGRAM_SKU": "350C42",
       "AppleCare_SKU": "SXKH2LL/A",
-      "Inventory": 1407,
+      "Inventory": 1401,
       "TDS_Inventory": 1291,
-      "INGRAM_Inventory": 116
+      "INGRAM_Inventory": 110
     },
     {
       "SKU": "MDE64LL/A",
@@ -34751,8 +34751,8 @@
       "TDS_SKU": "15358625",
       "INGRAM_SKU": "930T23",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 27,
-      "TDS_Inventory": 27,
+      "Inventory": 25,
+      "TDS_Inventory": 25,
       "INGRAM_Inventory": 0
     },
     {
@@ -35151,8 +35151,8 @@
       "TDS_SKU": "15358611",
       "INGRAM_SKU": "930T08",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 673,
-      "TDS_Inventory": 673,
+      "Inventory": 668,
+      "TDS_Inventory": 668,
       "INGRAM_Inventory": 0
     },
     {
