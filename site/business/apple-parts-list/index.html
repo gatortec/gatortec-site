@@ -960,21 +960,43 @@
     render();
   });
 
-  // ============ LOAD ============
-  fetch('../../assets/data/parts.json?v=' + Date.now())
-    .then(r => r.json())
-    .then(data => {
-      state.items = data.items || [];
-      const m = data._meta || {};
-      document.getElementById('meta').textContent =
-        (m.generated_at ? 'Data refreshed ' + new Date(m.generated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York' }) + ' ET' : '') +
-        ' · ' + state.items.length + ' SKUs';
-      render();
-    })
-    .catch(err => {
-      document.getElementById('meta').textContent = 'Failed to load: ' + err.message;
-      document.getElementById('tbody').innerHTML = '<tr><td colspan="20" class="empty">Failed to load data.</td></tr>';
-    });
+  // ============ LOAD + AUTO-REFRESH ============
+  let lastGeneratedAt = null;
+  let hasLoadedOnce = false;
+
+  function loadParts() {
+    return fetch('../../assets/data/parts.json?v=' + Date.now())
+      .then(r => r.json())
+      .then(data => {
+        const m = data._meta || {};
+        if (hasLoadedOnce && m.generated_at && m.generated_at === lastGeneratedAt) {
+          return false; // No new data on server; skip re-render
+        }
+        lastGeneratedAt = m.generated_at || null;
+        state.items = data.items || [];
+        document.getElementById('meta').textContent =
+          (m.generated_at ? 'Data refreshed ' + new Date(m.generated_at).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'America/New_York' }) + ' ET' : '') +
+          ' · ' + state.items.length + ' SKUs';
+        // Preserve scroll position across background refreshes
+        const wrap = document.querySelector('.table-wrap');
+        const scrollTop = wrap ? wrap.scrollTop : 0;
+        render();
+        if (wrap) wrap.scrollTop = scrollTop;
+        hasLoadedOnce = true;
+        return true;
+      })
+      .catch(err => {
+        if (!hasLoadedOnce) {
+          document.getElementById('meta').textContent = 'Failed to load: ' + err.message;
+          document.getElementById('tbody').innerHTML = '<tr><td colspan="20" class="empty">Failed to load data.</td></tr>';
+        }
+        // On background poll failures, keep whatever data we have; retry next tick.
+        return false;
+      });
+  }
+
+  loadParts();
+  setInterval(loadParts, 5 * 60 * 1000); // background refresh every 5 minutes
 
   document.addEventListener('click', e => {
     if (!e.target.closest('.col-filter-wrap')) {
