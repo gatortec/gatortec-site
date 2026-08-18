@@ -838,7 +838,7 @@
     card.querySelectorAll('.ac-value').forEach(el => {
       el.addEventListener('click', () => {
         const v = el.getAttribute('data-copy') || el.textContent;
-        copyToClipboard(v, el, 'Copied: ' + (v.length > 28 ? v.slice(0, 28) + '…' : v));
+        copy(v, el, 'Copied: ' + (v.length > 28 ? v.slice(0, 28) + '…' : v));
       });
     });
   }
