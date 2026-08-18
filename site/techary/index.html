@@ -179,6 +179,9 @@
   .drawer-emails .email-btn small { color: var(--slate); font-size: 11px; }
   .drawer-specs { font-size: 13px; line-height: 1.7; }
   .drawer-specs .row { display: flex; gap: 8px; padding: 4px 0; border-bottom: 1px solid var(--mist); }
+  .drawer-specs .row .v.v-copy { cursor: pointer; user-select: none; padding: 2px 8px; margin: -2px -8px; border-radius: 4px; transition: background .12s; }
+  .drawer-specs .row .v.v-copy:hover { background: rgba(1,113,185,.08); }
+  .drawer-specs .row .v.v-copy.copied { background: #d5f0e0; }
   .drawer-specs .k { color: var(--slate); min-width: 110px; }
   .drawer-specs .v { color: var(--ink); flex: 1; }
 
@@ -742,11 +745,14 @@
     setDrawerPrice('d-msrp', 'MSRP', msrpGT);
     setDrawerPrice('d-dealer', 'Techary Cost', techaryPrice(item));
 
-    // Email blocks
+    // Email blocks — append stock line when we have inventory
+    const invN = Number(item.Inventory) || 0;
+    const stockLine = invN > 0 ? `\nIn stock: ${invN}` : '';
+    const stockSummary = invN > 0 ? ` · ${invN} in stock` : '';
     const blocks = [
-      { label: 'Email — Techary Cost', text: `${item.Description}\nSKU: ${item.SKU}\nCost: ${money(techaryPrice(item))}` },
-      { label: 'Email — MSRP', text: `${item.Description}\nSKU: ${item.SKU}\nMSRP: ${money(msrpGT)}` },
-      { label: 'One-line summary', text: `${item.SKU} — ${item.Description} — ${money(msrpGT)}` },
+      { label: 'Email — Techary Cost', text: `${item.Description}\nSKU: ${item.SKU}\nCost: ${money(techaryPrice(item))}${stockLine}` },
+      { label: 'Email — MSRP', text: `${item.Description}\nSKU: ${item.SKU}\nMSRP: ${money(msrpGT)}${stockLine}` },
+      { label: 'One-line summary', text: `${item.SKU} — ${item.Description} — ${money(msrpGT)}${stockSummary}` },
     ];
     document.getElementById('d-emails').innerHTML = blocks.map((b, i) => `
       <button type="button" class="email-btn" data-block="${i}">
@@ -772,9 +778,21 @@
       ['Chip', item.Processor], ['Memory', item.Memory], ['Storage', item.Storage],
       ['Power', item.Power], ['Nano-Texture', item.NanoTexture], ['Cellular', item.Cellular],
       ['Ethernet', item.Ethernet], ['Keyboard', item.Keyboard], ['Moveability', item.Moveability],
-      ['Stock', stockLabel],
+      ['Stock', stockLabel, true],
     ];
-    document.getElementById('d-specs').innerHTML = specFields.filter(([_, v]) => v != null && v !== '').map(([k, v]) => `<div class="row"><div class="k">${k}</div><div class="v">${escapeHtml(v)}</div></div>`).join('');
+    document.getElementById('d-specs').innerHTML = specFields
+      .filter(([_, v]) => v != null && v !== '')
+      .map(([k, v, copyable]) => {
+        const vClass = copyable ? 'v v-copy' : 'v';
+        const dataAttr = copyable ? ` data-copy="${escapeAttr(v)}"` : '';
+        return `<div class="row"><div class="k">${k}</div><div class="${vClass}"${dataAttr}>${escapeHtml(v)}</div></div>`;
+      }).join('');
+    document.querySelectorAll('#d-specs .v-copy').forEach(el => {
+      el.addEventListener('click', () => {
+        const v = el.getAttribute('data-copy') || el.textContent;
+        copy(v, el, 'Copied: ' + (v.length > 28 ? v.slice(0, 28) + '…' : v));
+      });
+    });
 
     document.getElementById('drawer').classList.add('open');
     document.getElementById('drawer').setAttribute('aria-hidden', 'false');
