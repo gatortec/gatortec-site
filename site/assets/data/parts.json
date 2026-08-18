@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-08-18T21:35:11.519Z",
+    "generated_at": "2026-08-18T21:48:26.968Z",
     "source": "MarkIT CSV Setup tab — daily refresh via n8n",
     "count": 1523
   },
@@ -51,8 +51,8 @@
       "TDS_SKU": "14004531",
       "INGRAM_SKU": "NJ6872",
       "AppleCare_SKU": null,
-      "Inventory": 4134,
-      "TDS_Inventory": 1114,
+      "Inventory": 4133,
+      "TDS_Inventory": 1113,
       "INGRAM_Inventory": 3020
     },
     {
@@ -151,9 +151,9 @@
       "TDS_SKU": "9356687",
       "INGRAM_SKU": "JR9381",
       "AppleCare_SKU": null,
-      "Inventory": 15474,
+      "Inventory": 15465,
       "TDS_Inventory": 12721,
-      "INGRAM_Inventory": 2753
+      "INGRAM_Inventory": 2744
     },
     {
       "SKU": "MW2M3AM/A",
@@ -176,9 +176,9 @@
       "TDS_SKU": "9812403",
       "INGRAM_SKU": "LS6743",
       "AppleCare_SKU": null,
-      "Inventory": 2465,
+      "Inventory": 2464,
       "TDS_Inventory": 1385,
-      "INGRAM_Inventory": 1080
+      "INGRAM_Inventory": 1079
     },
     {
       "SKU": "MW613AM/A",
@@ -201,8 +201,8 @@
       "TDS_SKU": "14392300",
       "INGRAM_SKU": "S43945",
       "AppleCare_SKU": null,
-      "Inventory": 4522,
-      "TDS_Inventory": 1792,
+      "Inventory": 4521,
+      "TDS_Inventory": 1791,
       "INGRAM_Inventory": 2730
     },
     {
@@ -326,9 +326,9 @@
       "TDS_SKU": "14309230",
       "INGRAM_SKU": "RF7744",
       "AppleCare_SKU": null,
-      "Inventory": 394,
+      "Inventory": 392,
       "TDS_Inventory": 109,
-      "INGRAM_Inventory": 285
+      "INGRAM_Inventory": 283
     },
     {
       "SKU": "MXCL3LL/A",
@@ -351,9 +351,9 @@
       "TDS_SKU": "14309231",
       "INGRAM_SKU": "RF7745",
       "AppleCare_SKU": null,
-      "Inventory": 1455,
-      "TDS_Inventory": 99,
-      "INGRAM_Inventory": 1356
+      "Inventory": 1453,
+      "TDS_Inventory": 98,
+      "INGRAM_Inventory": 1355
     },
     {
       "SKU": "MXK53AM/A",
@@ -376,9 +376,9 @@
       "TDS_SKU": "14309232",
       "INGRAM_SKU": "RF7746",
       "AppleCare_SKU": null,
-      "Inventory": 4748,
-      "TDS_Inventory": 736,
-      "INGRAM_Inventory": 4012
+      "Inventory": 4743,
+      "TDS_Inventory": 735,
+      "INGRAM_Inventory": 4008
     },
     {
       "SKU": "MXK63AM/A",
@@ -401,9 +401,9 @@
       "TDS_SKU": "14309233",
       "INGRAM_SKU": "RF7750",
       "AppleCare_SKU": null,
-      "Inventory": 221,
+      "Inventory": 220,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 221
+      "INGRAM_Inventory": 220
     },
     {
       "SKU": "MXK73LL/A",
@@ -451,9 +451,9 @@
       "TDS_SKU": "14309235",
       "INGRAM_SKU": "RF7752",
       "AppleCare_SKU": null,
-      "Inventory": 219,
+      "Inventory": 217,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 219
+      "INGRAM_Inventory": 217
     },
     {
       "SKU": "MXK93AM/A",
@@ -476,9 +476,9 @@
       "TDS_SKU": "14309236",
       "INGRAM_SKU": "RF7753",
       "AppleCare_SKU": null,
-      "Inventory": 100,
+      "Inventory": 99,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 100
+      "INGRAM_Inventory": 99
     },
     {
       "SKU": "MXKA3AM/A",
@@ -951,9 +951,9 @@
       "TDS_SKU": "14035529",
       "INGRAM_SKU": "NN0466",
       "AppleCare_SKU": null,
-      "Inventory": 144902,
+      "Inventory": 144056,
       "TDS_Inventory": 77770,
-      "INGRAM_Inventory": 67132
+      "INGRAM_Inventory": 66286
     },
     {
       "SKU": "MYQT3AM/A",
@@ -976,9 +976,9 @@
       "TDS_SKU": "14035528",
       "INGRAM_SKU": "NN0465",
       "AppleCare_SKU": null,
-      "Inventory": 24237,
+      "Inventory": 24236,
       "TDS_Inventory": 2626,
-      "INGRAM_Inventory": 21611
+      "INGRAM_Inventory": 21610
     },
     {
       "SKU": "MUQX3AM/A",
@@ -1026,9 +1026,9 @@
       "TDS_SKU": "9780580",
       "INGRAM_SKU": "KY2228",
       "AppleCare_SKU": null,
-      "Inventory": 34958,
+      "Inventory": 33928,
       "TDS_Inventory": 24610,
-      "INGRAM_Inventory": 10348
+      "INGRAM_Inventory": 9318
     },
     {
       "SKU": "MWVV3AM/A",
@@ -1051,9 +1051,9 @@
       "TDS_SKU": "14379110",
       "INGRAM_SKU": "S45911",
       "AppleCare_SKU": null,
-      "Inventory": 51642,
+      "Inventory": 51352,
       "TDS_Inventory": 31415,
-      "INGRAM_Inventory": 20227
+      "INGRAM_Inventory": 19937
     },
     {
       "SKU": "MGD74LL/A",
@@ -1126,9 +1126,9 @@
       "TDS_SKU": "15007613",
       "INGRAM_SKU": "Z55829",
       "AppleCare_SKU": null,
-      "Inventory": 2312,
+      "Inventory": 2301,
       "TDS_Inventory": 109,
-      "INGRAM_Inventory": 2203
+      "INGRAM_Inventory": 2192
     },
     {
       "SKU": "MGPG4AM/A",
@@ -1176,9 +1176,9 @@
       "TDS_SKU": "15272189",
       "INGRAM_SKU": "800P71",
       "AppleCare_SKU": null,
-      "Inventory": 11109,
+      "Inventory": 11094,
       "TDS_Inventory": 4368,
-      "INGRAM_Inventory": 6741
+      "INGRAM_Inventory": 6726
     },
     {
       "SKU": "MFEA4LL/A",
@@ -1201,9 +1201,9 @@
       "TDS_SKU": "15272190",
       "INGRAM_SKU": "800P44",
       "AppleCare_SKU": null,
-      "Inventory": 1156,
+      "Inventory": 1155,
       "TDS_Inventory": 2,
-      "INGRAM_Inventory": 1154
+      "INGRAM_Inventory": 1153
     },
     {
       "SKU": "MW2Q3AM/A",
@@ -1351,9 +1351,9 @@
       "TDS_SKU": "14542486",
       "INGRAM_SKU": "SG2288",
       "AppleCare_SKU": null,
-      "Inventory": 30760,
+      "Inventory": 30480,
       "TDS_Inventory": 17635,
-      "INGRAM_Inventory": 13125
+      "INGRAM_Inventory": 12845
     },
     {
       "SKU": "MWML3AM/A",
@@ -1376,9 +1376,9 @@
       "TDS_SKU": "9597498",
       "INGRAM_SKU": "JV4082",
       "AppleCare_SKU": null,
-      "Inventory": 82,
+      "Inventory": 81,
       "TDS_Inventory": 12,
-      "INGRAM_Inventory": 70
+      "INGRAM_Inventory": 69
     },
     {
       "SKU": "MYQW3AM/A",
@@ -1401,9 +1401,9 @@
       "TDS_SKU": "14542484",
       "INGRAM_SKU": "SG2287",
       "AppleCare_SKU": null,
-      "Inventory": 309,
+      "Inventory": 259,
       "TDS_Inventory": 81,
-      "INGRAM_Inventory": 228
+      "INGRAM_Inventory": 178
     },
     {
       "SKU": "MUQW3AM/A",
@@ -1426,9 +1426,9 @@
       "TDS_SKU": "9356688",
       "INGRAM_SKU": "JR9383",
       "AppleCare_SKU": null,
-      "Inventory": 4515,
+      "Inventory": 4514,
       "TDS_Inventory": 2082,
-      "INGRAM_Inventory": 2433
+      "INGRAM_Inventory": 2432
     },
     {
       "SKU": "MUWA3AM/A",
@@ -1451,9 +1451,9 @@
       "TDS_SKU": "8828250",
       "INGRAM_SKU": "HZ4846",
       "AppleCare_SKU": null,
-      "Inventory": 7466,
-      "TDS_Inventory": 3026,
-      "INGRAM_Inventory": 4440
+      "Inventory": 7453,
+      "TDS_Inventory": 3025,
+      "INGRAM_Inventory": 4428
     },
     {
       "SKU": "MWR03LL/A",
@@ -1576,8 +1576,8 @@
       "TDS_SKU": "9684485",
       "INGRAM_SKU": "JW4070",
       "AppleCare_SKU": null,
-      "Inventory": 6985,
-      "TDS_Inventory": 3466,
+      "Inventory": 6981,
+      "TDS_Inventory": 3462,
       "INGRAM_Inventory": 3519
     },
     {
@@ -2001,9 +2001,9 @@
       "TDS_SKU": "14195304",
       "INGRAM_SKU": "NR8122",
       "AppleCare_SKU": null,
-      "Inventory": 13672,
+      "Inventory": 13670,
       "TDS_Inventory": 3526,
-      "INGRAM_Inventory": 10146
+      "INGRAM_Inventory": 10144
     },
     {
       "SKU": "MXP63LL/A",
@@ -2226,9 +2226,9 @@
       "TDS_SKU": "14740242",
       "INGRAM_SKU": "SS1179",
       "AppleCare_SKU": null,
-      "Inventory": 73,
+      "Inventory": 72,
       "TDS_Inventory": 30,
-      "INGRAM_Inventory": 43
+      "INGRAM_Inventory": 42
     },
     {
       "SKU": "MTJT3LL/A",
@@ -2376,8 +2376,8 @@
       "TDS_SKU": "6799473",
       "INGRAM_SKU": "07NZ10",
       "AppleCare_SKU": null,
-      "Inventory": 105,
-      "TDS_Inventory": 105,
+      "Inventory": 104,
+      "TDS_Inventory": 104,
       "INGRAM_Inventory": 0
     },
     {
@@ -6277,7 +6277,7 @@
       "INGRAM_SKU": "RF8765",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6302,7 +6302,7 @@
       "INGRAM_SKU": "S10638",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6327,7 +6327,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6352,7 +6352,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6377,7 +6377,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6402,7 +6402,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6427,7 +6427,7 @@
       "INGRAM_SKU": "RF8771",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6452,7 +6452,7 @@
       "INGRAM_SKU": "S10646",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6477,7 +6477,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6502,7 +6502,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6527,7 +6527,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6552,7 +6552,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6576,8 +6576,8 @@
       "TDS_SKU": "14309295",
       "INGRAM_SKU": "RF8243",
       "AppleCare_SKU": "SR1A2LL/A",
-      "Inventory": 213,
-      "TDS_Inventory": 178,
+      "Inventory": 35,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 35
     },
     {
@@ -6602,7 +6602,7 @@
       "INGRAM_SKU": "RF8792",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6627,7 +6627,7 @@
       "INGRAM_SKU": "RF8781",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6652,7 +6652,7 @@
       "INGRAM_SKU": "RF8747",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6677,7 +6677,7 @@
       "INGRAM_SKU": "RF8788",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6702,7 +6702,7 @@
       "INGRAM_SKU": "RF8794",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6727,7 +6727,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6752,7 +6752,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6777,7 +6777,7 @@
       "INGRAM_SKU": "RF8784",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6802,7 +6802,7 @@
       "INGRAM_SKU": "RF8774",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6827,7 +6827,7 @@
       "INGRAM_SKU": "RF8783",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6852,7 +6852,7 @@
       "INGRAM_SKU": "RF8791",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6877,7 +6877,7 @@
       "INGRAM_SKU": "RF8787",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6902,7 +6902,7 @@
       "INGRAM_SKU": "RF8775",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -6927,7 +6927,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6952,7 +6952,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -6977,7 +6977,7 @@
       "INGRAM_SKU": "RF8786",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7002,7 +7002,7 @@
       "INGRAM_SKU": "RF8750",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7027,7 +7027,7 @@
       "INGRAM_SKU": "RF8785",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7052,7 +7052,7 @@
       "INGRAM_SKU": "RF8776",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7077,7 +7077,7 @@
       "INGRAM_SKU": "RF8790",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7102,7 +7102,7 @@
       "INGRAM_SKU": "RF8793",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7127,7 +7127,7 @@
       "INGRAM_SKU": "RF8789",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7152,7 +7152,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -7176,8 +7176,8 @@
       "TDS_SKU": "14309296",
       "INGRAM_SKU": "RF8246",
       "AppleCare_SKU": "SR1A2LL/A",
-      "Inventory": 137,
-      "TDS_Inventory": 136,
+      "Inventory": 1,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 1
     },
     {
@@ -7202,7 +7202,7 @@
       "INGRAM_SKU": "RF8875",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7227,7 +7227,7 @@
       "INGRAM_SKU": "RF8817",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7252,7 +7252,7 @@
       "INGRAM_SKU": "RF8878",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7277,7 +7277,7 @@
       "INGRAM_SKU": "RF8819",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7302,7 +7302,7 @@
       "INGRAM_SKU": "RF8881",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7327,7 +7327,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -7352,7 +7352,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -7377,7 +7377,7 @@
       "INGRAM_SKU": "RF8848",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7402,7 +7402,7 @@
       "INGRAM_SKU": "RF8877",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7427,7 +7427,7 @@
       "INGRAM_SKU": "RF8847",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7452,7 +7452,7 @@
       "INGRAM_SKU": "RF8880",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -7477,7 +7477,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -7502,7 +7502,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -13777,7 +13777,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -13802,7 +13802,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -13827,7 +13827,7 @@
       "INGRAM_SKU": "RF8868",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -13852,7 +13852,7 @@
       "INGRAM_SKU": "S10704",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -13877,7 +13877,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -13902,7 +13902,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -13927,7 +13927,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -13952,7 +13952,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -13977,7 +13977,7 @@
       "INGRAM_SKU": "RF8906",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14002,7 +14002,7 @@
       "INGRAM_SKU": "S10684",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14027,7 +14027,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14052,7 +14052,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14077,7 +14077,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14102,7 +14102,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14127,7 +14127,7 @@
       "INGRAM_SKU": "RF8867",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14152,7 +14152,7 @@
       "INGRAM_SKU": "S10703",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14177,7 +14177,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14202,7 +14202,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14227,7 +14227,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14252,7 +14252,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14277,7 +14277,7 @@
       "INGRAM_SKU": "RF8916",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14302,7 +14302,7 @@
       "INGRAM_SKU": "S10710",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14327,7 +14327,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14352,7 +14352,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14377,7 +14377,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14402,7 +14402,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14427,7 +14427,7 @@
       "INGRAM_SKU": "RF8870",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14452,7 +14452,7 @@
       "INGRAM_SKU": "S10706",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14477,7 +14477,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14502,7 +14502,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14527,7 +14527,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14552,7 +14552,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14577,7 +14577,7 @@
       "INGRAM_SKU": "RF8256",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14602,7 +14602,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14627,7 +14627,7 @@
       "INGRAM_SKU": "RF8846",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14652,7 +14652,7 @@
       "INGRAM_SKU": "S10748",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14677,7 +14677,7 @@
       "INGRAM_SKU": "RF8858",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14702,7 +14702,7 @@
       "INGRAM_SKU": "S10749",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14727,7 +14727,7 @@
       "INGRAM_SKU": "RF8857",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14752,7 +14752,7 @@
       "INGRAM_SKU": "S10737",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14777,7 +14777,7 @@
       "INGRAM_SKU": "XS9790",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14802,7 +14802,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14827,7 +14827,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14852,7 +14852,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14877,7 +14877,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14902,7 +14902,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -14927,7 +14927,7 @@
       "INGRAM_SKU": "RF8861",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14952,7 +14952,7 @@
       "INGRAM_SKU": "S10751",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -14977,7 +14977,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -15002,7 +15002,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16277,7 +16277,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16302,7 +16302,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16327,7 +16327,7 @@
       "INGRAM_SKU": "RS6133",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -16352,7 +16352,7 @@
       "INGRAM_SKU": "S10735",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -16377,7 +16377,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16402,7 +16402,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16427,7 +16427,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16452,7 +16452,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16477,7 +16477,7 @@
       "INGRAM_SKU": "RF8834",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -16502,7 +16502,7 @@
       "INGRAM_SKU": "S10742",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -16527,7 +16527,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16552,7 +16552,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16577,7 +16577,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16602,7 +16602,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16627,7 +16627,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16652,7 +16652,7 @@
       "INGRAM_SKU": "S10715",
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -16677,7 +16677,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16702,7 +16702,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16727,7 +16727,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16752,7 +16752,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16763,7 +16763,7 @@
       "DealerB": 1567,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "256GB",
       "Power": null,
@@ -16777,7 +16777,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16788,7 +16788,7 @@
       "DealerB": 1874,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "512GB",
       "Power": null,
@@ -16802,7 +16802,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16813,7 +16813,7 @@
       "DealerB": 2323,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "1TB",
       "Power": null,
@@ -16827,7 +16827,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16838,7 +16838,7 @@
       "DealerB": 2038,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "512GB",
       "Power": null,
@@ -16852,7 +16852,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16863,7 +16863,7 @@
       "DealerB": 1848,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "512GB",
       "Power": null,
@@ -16877,7 +16877,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16888,7 +16888,7 @@
       "DealerB": 2988,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "32GB",
       "Storage": "2TB",
       "Power": null,
@@ -16902,7 +16902,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16913,7 +16913,7 @@
       "DealerB": 2159,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "1TB",
       "Power": null,
@@ -16927,7 +16927,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16938,7 +16938,7 @@
       "DealerB": 2539,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "32GB",
       "Storage": "1TB",
       "Power": null,
@@ -16952,7 +16952,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16963,7 +16963,7 @@
       "DealerB": 2228,
       "ScreenSize": "24-inch",
       "Color": "Green",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "32GB",
       "Storage": "512GB",
       "Power": null,
@@ -16977,7 +16977,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -16988,7 +16988,7 @@
       "DealerB": 2798,
       "ScreenSize": "24-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "2TB",
       "Power": null,
@@ -17002,7 +17002,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -17013,7 +17013,7 @@
       "DealerB": 1874,
       "ScreenSize": "24-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "512GB",
       "Power": null,
@@ -17027,7 +17027,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -17038,7 +17038,7 @@
       "DealerB": 2159,
       "ScreenSize": "24-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "1TB",
       "Power": null,
@@ -17052,7 +17052,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -17063,7 +17063,7 @@
       "DealerB": 1848,
       "ScreenSize": "24-inch",
       "Color": "Orange",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "512GB",
       "Power": null,
@@ -17077,7 +17077,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -17088,7 +17088,7 @@
       "DealerB": 2184,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "512GB",
       "Power": null,
@@ -17102,7 +17102,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -17113,7 +17113,7 @@
       "DealerB": 3014,
       "ScreenSize": "24-inch",
       "Color": "Silver",
-      "Processor": "M4",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "32GB",
       "Storage": "2TB",
       "Power": null,
@@ -17127,7 +17127,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1A2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -17138,7 +17138,7 @@
       "DealerB": 427,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17151,9 +17151,9 @@
       "TDS_SKU": "14569093",
       "INGRAM_SKU": "SL6586",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 43705,
-      "TDS_Inventory": 21760,
-      "INGRAM_Inventory": 21945
+      "Inventory": 21944,
+      "TDS_Inventory": null,
+      "INGRAM_Inventory": 21944
     },
     {
       "SKU": "MD4A4LL/A",
@@ -17163,7 +17163,7 @@
       "DealerB": 427,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17176,9 +17176,9 @@
       "TDS_SKU": "14569094",
       "INGRAM_SKU": "SL6596",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 6877,
-      "TDS_Inventory": 3853,
-      "INGRAM_Inventory": 3024
+      "Inventory": 3023,
+      "TDS_Inventory": null,
+      "INGRAM_Inventory": 3023
     },
     {
       "SKU": "MD4D4LL/A",
@@ -17188,7 +17188,7 @@
       "DealerB": 427,
       "ScreenSize": "11-inch",
       "Color": "Yellow",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17201,9 +17201,9 @@
       "TDS_SKU": "14569095",
       "INGRAM_SKU": "SL6587",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 1803,
-      "TDS_Inventory": 1381,
-      "INGRAM_Inventory": 422
+      "Inventory": 421,
+      "TDS_Inventory": null,
+      "INGRAM_Inventory": 421
     },
     {
       "SKU": "MD4E4LL/A",
@@ -17213,7 +17213,7 @@
       "DealerB": 427,
       "ScreenSize": "11-inch",
       "Color": "Pink",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17226,8 +17226,8 @@
       "TDS_SKU": "14569096",
       "INGRAM_SKU": "SL6600",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 3026,
-      "TDS_Inventory": 2119,
+      "Inventory": 907,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 907
     },
     {
@@ -17238,7 +17238,7 @@
       "DealerB": 522,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17251,8 +17251,8 @@
       "TDS_SKU": "14569097",
       "INGRAM_SKU": "SL6591",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 2595,
-      "TDS_Inventory": 929,
+      "Inventory": 1666,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 1666
     },
     {
@@ -17263,7 +17263,7 @@
       "DealerB": 522,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17276,8 +17276,8 @@
       "TDS_SKU": "14569098",
       "INGRAM_SKU": "SL6599",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 2183,
-      "TDS_Inventory": 1004,
+      "Inventory": 1179,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 1179
     },
     {
@@ -17288,7 +17288,7 @@
       "DealerB": 522,
       "ScreenSize": "11-inch",
       "Color": "Yellow",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17301,8 +17301,8 @@
       "TDS_SKU": "14569212",
       "INGRAM_SKU": "SL6606",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 93,
-      "TDS_Inventory": 93,
+      "Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -17313,7 +17313,7 @@
       "DealerB": 522,
       "ScreenSize": "11-inch",
       "Color": "Pink",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17326,8 +17326,8 @@
       "TDS_SKU": "14569109",
       "INGRAM_SKU": "SL6603",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 602,
-      "TDS_Inventory": 322,
+      "Inventory": 280,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 280
     },
     {
@@ -17338,7 +17338,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17351,8 +17351,8 @@
       "TDS_SKU": "14569110",
       "INGRAM_SKU": "SL6602",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 159,
-      "TDS_Inventory": 69,
+      "Inventory": 90,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 90
     },
     {
@@ -17363,7 +17363,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17377,7 +17377,7 @@
       "INGRAM_SKU": "SL6601",
       "AppleCare_SKU": "SUYD2LL/A",
       "Inventory": 37,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 37
     },
     {
@@ -17388,7 +17388,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Yellow",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17401,8 +17401,8 @@
       "TDS_SKU": "14569112",
       "INGRAM_SKU": "SL6588",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 9,
-      "TDS_Inventory": 9,
+      "Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -17413,7 +17413,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Pink",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17426,8 +17426,8 @@
       "TDS_SKU": "14569113",
       "INGRAM_SKU": "SL6605",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 5,
-      "TDS_Inventory": 5,
+      "Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -17438,7 +17438,7 @@
       "DealerB": 569,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17451,9 +17451,9 @@
       "TDS_SKU": "14569114",
       "INGRAM_SKU": "SL6585",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 8232,
-      "TDS_Inventory": 5806,
-      "INGRAM_Inventory": 2426
+      "Inventory": 2391,
+      "TDS_Inventory": null,
+      "INGRAM_Inventory": 2391
     },
     {
       "SKU": "MD7G4LL/A",
@@ -17463,7 +17463,7 @@
       "DealerB": 569,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17476,8 +17476,8 @@
       "TDS_SKU": "14569115",
       "INGRAM_SKU": "SL6607",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 769,
-      "TDS_Inventory": 303,
+      "Inventory": 466,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 466
     },
     {
@@ -17488,7 +17488,7 @@
       "DealerB": 569,
       "ScreenSize": "11-inch",
       "Color": "Yellow",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17501,8 +17501,8 @@
       "TDS_SKU": "14569116",
       "INGRAM_SKU": "SL6631",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 47,
-      "TDS_Inventory": 40,
+      "Inventory": 7,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 7
     },
     {
@@ -17513,7 +17513,7 @@
       "DealerB": 569,
       "ScreenSize": "11-inch",
       "Color": "Pink",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17538,7 +17538,7 @@
       "DealerB": 664,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17563,7 +17563,7 @@
       "DealerB": 664,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17588,7 +17588,7 @@
       "DealerB": 664,
       "ScreenSize": "11-inch",
       "Color": "Yellow",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17613,7 +17613,7 @@
       "DealerB": 664,
       "ScreenSize": "11-inch",
       "Color": "Pink",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17638,7 +17638,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17663,7 +17663,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17688,7 +17688,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Yellow",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17713,7 +17713,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Pink",
-      "Processor": "A16",
+      "Processor": "A16 5c CPU 4c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17738,7 +17738,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17763,7 +17763,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17788,7 +17788,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17813,7 +17813,7 @@
       "DealerB": 712,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -17838,7 +17838,7 @@
       "DealerB": 807,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17863,7 +17863,7 @@
       "DealerB": 807,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17888,7 +17888,7 @@
       "DealerB": 807,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17901,9 +17901,9 @@
       "TDS_SKU": "15347484",
       "INGRAM_SKU": "770T70",
       "AppleCare_SKU": "SCV93LL/A",
-      "Inventory": 103,
+      "Inventory": 102,
       "TDS_Inventory": 42,
-      "INGRAM_Inventory": 61
+      "INGRAM_Inventory": 60
     },
     {
       "SKU": "MH394LL/A",
@@ -17913,7 +17913,7 @@
       "DealerB": 807,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -17938,7 +17938,7 @@
       "DealerB": 997,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17963,7 +17963,7 @@
       "DealerB": 997,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -17988,7 +17988,7 @@
       "DealerB": 997,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18013,7 +18013,7 @@
       "DealerB": 997,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18038,7 +18038,7 @@
       "DealerB": 1282,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18063,7 +18063,7 @@
       "DealerB": 1282,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18088,7 +18088,7 @@
       "DealerB": 1282,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18113,7 +18113,7 @@
       "DealerB": 1282,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18138,7 +18138,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18151,9 +18151,9 @@
       "TDS_SKU": "15347510",
       "INGRAM_SKU": "770T19",
       "AppleCare_SKU": "SCV93LL/A",
-      "Inventory": 203,
+      "Inventory": 202,
       "TDS_Inventory": 11,
-      "INGRAM_Inventory": 192
+      "INGRAM_Inventory": 191
     },
     {
       "SKU": "MH794LL/A",
@@ -18163,7 +18163,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18188,7 +18188,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18213,7 +18213,7 @@
       "DealerB": 854,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18238,7 +18238,7 @@
       "DealerB": 949,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18263,7 +18263,7 @@
       "DealerB": 949,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18288,7 +18288,7 @@
       "DealerB": 949,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18313,7 +18313,7 @@
       "DealerB": 949,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18338,7 +18338,7 @@
       "DealerB": 1139,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18363,7 +18363,7 @@
       "DealerB": 1139,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18388,7 +18388,7 @@
       "DealerB": 1139,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18413,7 +18413,7 @@
       "DealerB": 1139,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18438,7 +18438,7 @@
       "DealerB": 1424,
       "ScreenSize": "11-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18463,7 +18463,7 @@
       "DealerB": 1424,
       "ScreenSize": "11-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18488,7 +18488,7 @@
       "DealerB": 1424,
       "ScreenSize": "11-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18513,7 +18513,7 @@
       "DealerB": 1424,
       "ScreenSize": "11-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18538,7 +18538,7 @@
       "DealerB": 902,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18563,7 +18563,7 @@
       "DealerB": 902,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18588,7 +18588,7 @@
       "DealerB": 902,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18613,7 +18613,7 @@
       "DealerB": 902,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18638,7 +18638,7 @@
       "DealerB": 997,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18663,7 +18663,7 @@
       "DealerB": 997,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18688,7 +18688,7 @@
       "DealerB": 997,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18713,7 +18713,7 @@
       "DealerB": 997,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -18738,7 +18738,7 @@
       "DealerB": 1187,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18763,7 +18763,7 @@
       "DealerB": 1187,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18788,7 +18788,7 @@
       "DealerB": 1187,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18813,7 +18813,7 @@
       "DealerB": 1187,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -18838,7 +18838,7 @@
       "DealerB": 1472,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18863,7 +18863,7 @@
       "DealerB": 1472,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18888,7 +18888,7 @@
       "DealerB": 1472,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -18913,7 +18913,7 @@
       "DealerB": 1044,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18938,7 +18938,7 @@
       "DealerB": 1044,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18963,7 +18963,7 @@
       "DealerB": 1044,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -18988,7 +18988,7 @@
       "DealerB": 1044,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19013,7 +19013,7 @@
       "DealerB": 1139,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19038,7 +19038,7 @@
       "DealerB": 1139,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19063,7 +19063,7 @@
       "DealerB": 1139,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19088,7 +19088,7 @@
       "DealerB": 1139,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19113,7 +19113,7 @@
       "DealerB": 1329,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19138,7 +19138,7 @@
       "DealerB": 1329,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19163,7 +19163,7 @@
       "DealerB": 1329,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19188,7 +19188,7 @@
       "DealerB": 1329,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19213,7 +19213,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Space Gray",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -19238,7 +19238,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Blue",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -19263,7 +19263,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Starlight",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -19288,7 +19288,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -19313,7 +19313,7 @@
       "DealerB": 1472,
       "ScreenSize": "13-inch",
       "Color": "Purple",
-      "Processor": "M4",
+      "Processor": "M4 8c CPU 9c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -19338,7 +19338,7 @@
       "DealerB": 569,
       "ScreenSize": "mini",
       "Color": "Space Gray",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19363,7 +19363,7 @@
       "DealerB": 569,
       "ScreenSize": "mini",
       "Color": "Blue",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19388,7 +19388,7 @@
       "DealerB": 569,
       "ScreenSize": "mini",
       "Color": "Starlight",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19413,7 +19413,7 @@
       "DealerB": 569,
       "ScreenSize": "mini",
       "Color": "Purple",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19438,7 +19438,7 @@
       "DealerB": 664,
       "ScreenSize": "mini",
       "Color": "Space Gray",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19463,7 +19463,7 @@
       "DealerB": 664,
       "ScreenSize": "mini",
       "Color": "Blue",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19488,7 +19488,7 @@
       "DealerB": 664,
       "ScreenSize": "mini",
       "Color": "Starlight",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19513,7 +19513,7 @@
       "DealerB": 664,
       "ScreenSize": "mini",
       "Color": "Purple",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19538,7 +19538,7 @@
       "DealerB": 712,
       "ScreenSize": "mini",
       "Color": "Space Gray",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19563,7 +19563,7 @@
       "DealerB": 712,
       "ScreenSize": "mini",
       "Color": "Blue",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19588,7 +19588,7 @@
       "DealerB": 712,
       "ScreenSize": "mini",
       "Color": "Starlight",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19613,7 +19613,7 @@
       "DealerB": 712,
       "ScreenSize": "mini",
       "Color": "Purple",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "128GB",
       "Power": null,
@@ -19638,7 +19638,7 @@
       "DealerB": 807,
       "ScreenSize": "mini",
       "Color": "Space Gray",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19663,7 +19663,7 @@
       "DealerB": 807,
       "ScreenSize": "mini",
       "Color": "Blue",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19688,7 +19688,7 @@
       "DealerB": 807,
       "ScreenSize": "mini",
       "Color": "Starlight",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19713,7 +19713,7 @@
       "DealerB": 807,
       "ScreenSize": "mini",
       "Color": "Purple",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19738,7 +19738,7 @@
       "DealerB": 854,
       "ScreenSize": "mini",
       "Color": "Space Gray",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19763,7 +19763,7 @@
       "DealerB": 854,
       "ScreenSize": "mini",
       "Color": "Blue",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19788,7 +19788,7 @@
       "DealerB": 854,
       "ScreenSize": "mini",
       "Color": "Starlight",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19813,7 +19813,7 @@
       "DealerB": 854,
       "ScreenSize": "mini",
       "Color": "Purple",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19838,7 +19838,7 @@
       "DealerB": 997,
       "ScreenSize": "mini",
       "Color": "Space Gray",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19863,7 +19863,7 @@
       "DealerB": 997,
       "ScreenSize": "mini",
       "Color": "Blue",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19888,7 +19888,7 @@
       "DealerB": 997,
       "ScreenSize": "mini",
       "Color": "Starlight",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19913,7 +19913,7 @@
       "DealerB": 997,
       "ScreenSize": "mini",
       "Color": "Purple",
-      "Processor": "A17 Pro",
+      "Processor": "A17 Pro 6c CPU 5c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -19938,7 +19938,7 @@
       "DealerB": 1139,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19951,9 +19951,9 @@
       "TDS_SKU": "15098124",
       "INGRAM_SKU": "360C51",
       "AppleCare_SKU": "SXT02LL/A",
-      "Inventory": 217,
+      "Inventory": 216,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 217
+      "INGRAM_Inventory": 216
     },
     {
       "SKU": "MDWL4LL/A",
@@ -19963,7 +19963,7 @@
       "DealerB": 1139,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -19988,7 +19988,7 @@
       "DealerB": 1329,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20013,7 +20013,7 @@
       "DealerB": 1329,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20038,7 +20038,7 @@
       "DealerB": 1709,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20063,7 +20063,7 @@
       "DealerB": 1709,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20088,7 +20088,7 @@
       "DealerB": 1804,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20113,7 +20113,7 @@
       "DealerB": 1804,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20138,7 +20138,7 @@
       "DealerB": 2184,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20163,7 +20163,7 @@
       "DealerB": 2184,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20188,7 +20188,7 @@
       "DealerB": 2279,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20213,7 +20213,7 @@
       "DealerB": 2279,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20238,7 +20238,7 @@
       "DealerB": 1329,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -20263,7 +20263,7 @@
       "DealerB": 1329,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -20288,7 +20288,7 @@
       "DealerB": 1519,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20313,7 +20313,7 @@
       "DealerB": 1519,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20338,7 +20338,7 @@
       "DealerB": 1899,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20363,7 +20363,7 @@
       "DealerB": 1899,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20388,7 +20388,7 @@
       "DealerB": 1994,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20413,7 +20413,7 @@
       "DealerB": 1994,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20438,7 +20438,7 @@
       "DealerB": 2374,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20463,7 +20463,7 @@
       "DealerB": 2374,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20488,7 +20488,7 @@
       "DealerB": 2469,
       "ScreenSize": "11-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20513,7 +20513,7 @@
       "DealerB": 2469,
       "ScreenSize": "11-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20538,7 +20538,7 @@
       "DealerB": 1424,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -20563,7 +20563,7 @@
       "DealerB": 1424,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -20588,7 +20588,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20613,7 +20613,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20638,7 +20638,7 @@
       "DealerB": 1994,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20663,7 +20663,7 @@
       "DealerB": 1994,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20688,7 +20688,7 @@
       "DealerB": 2089,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20713,7 +20713,7 @@
       "DealerB": 2089,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20738,7 +20738,7 @@
       "DealerB": 2469,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20763,7 +20763,7 @@
       "DealerB": 2469,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20788,7 +20788,7 @@
       "DealerB": 2564,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20813,7 +20813,7 @@
       "DealerB": 2564,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -20838,7 +20838,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -20863,7 +20863,7 @@
       "DealerB": 1614,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "256GB",
       "Power": null,
@@ -20876,8 +20876,8 @@
       "TDS_SKU": "15098158",
       "INGRAM_SKU": "370C50",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 227,
-      "TDS_Inventory": 84,
+      "Inventory": 223,
+      "TDS_Inventory": 80,
       "INGRAM_Inventory": 143
     },
     {
@@ -20888,7 +20888,7 @@
       "DealerB": 1804,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20913,7 +20913,7 @@
       "DealerB": 1804,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 9c CPU 10c GPU",
       "Memory": null,
       "Storage": "512GB",
       "Power": null,
@@ -20938,7 +20938,7 @@
       "DealerB": 2184,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20963,7 +20963,7 @@
       "DealerB": 2184,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -20988,7 +20988,7 @@
       "DealerB": 2279,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -21013,7 +21013,7 @@
       "DealerB": 2279,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "1TB",
       "Power": null,
@@ -21038,7 +21038,7 @@
       "DealerB": 2659,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -21063,7 +21063,7 @@
       "DealerB": 2659,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -21088,7 +21088,7 @@
       "DealerB": 2754,
       "ScreenSize": "13-inch",
       "Color": "Space Black",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -21113,7 +21113,7 @@
       "DealerB": 2754,
       "ScreenSize": "13-inch",
       "Color": "Silver",
-      "Processor": "M5",
+      "Processor": "M5 10c CPU 10c GPU",
       "Memory": null,
       "Storage": "2TB",
       "Power": null,
@@ -22926,8 +22926,8 @@
       "TDS_SKU": "15350874",
       "INGRAM_SKU": "840T85",
       "AppleCare_SKU": "SCW83LL/A",
-      "Inventory": 8,
-      "TDS_Inventory": 8,
+      "Inventory": 2,
+      "TDS_Inventory": 2,
       "INGRAM_Inventory": 0
     },
     {
@@ -30526,8 +30526,8 @@
       "TDS_SKU": "15350890",
       "INGRAM_SKU": "840T90",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 2204,
-      "TDS_Inventory": 733,
+      "Inventory": 2199,
+      "TDS_Inventory": 728,
       "INGRAM_Inventory": 1471
     },
     {
@@ -30601,8 +30601,8 @@
       "TDS_SKU": "15350893",
       "INGRAM_SKU": "840T91",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 4360,
-      "TDS_Inventory": 3000,
+      "Inventory": 4359,
+      "TDS_Inventory": 2999,
       "INGRAM_Inventory": 1360
     },
     {
@@ -30701,9 +30701,9 @@
       "TDS_SKU": "15350916",
       "INGRAM_SKU": "840T75",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 3316,
+      "Inventory": 3314,
       "TDS_Inventory": 2449,
-      "INGRAM_Inventory": 867
+      "INGRAM_Inventory": 865
     },
     {
       "SKU": "MGE74LL/A",
@@ -30726,9 +30726,9 @@
       "TDS_SKU": "15350917",
       "INGRAM_SKU": "840T86",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 992,
+      "Inventory": 991,
       "TDS_Inventory": 200,
-      "INGRAM_Inventory": 792
+      "INGRAM_Inventory": 791
     },
     {
       "SKU": "MGE94LL/A",
@@ -30751,8 +30751,8 @@
       "TDS_SKU": "15350918",
       "INGRAM_SKU": "840T72",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 358,
-      "TDS_Inventory": 291,
+      "Inventory": 354,
+      "TDS_Inventory": 287,
       "INGRAM_Inventory": 67
     },
     {
@@ -30851,9 +30851,9 @@
       "TDS_SKU": "15350951",
       "INGRAM_SKU": "840T43",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 953,
+      "Inventory": 1445,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 953
+      "INGRAM_Inventory": 1445
     },
     {
       "SKU": "MJ3D4LL/A",
@@ -31277,7 +31277,7 @@
       "INGRAM_SKU": "960T41",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31302,7 +31302,7 @@
       "INGRAM_SKU": "950T83",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31327,7 +31327,7 @@
       "INGRAM_SKU": "960T50",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31352,7 +31352,7 @@
       "INGRAM_SKU": "960T40",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31377,7 +31377,7 @@
       "INGRAM_SKU": "960T09",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31402,7 +31402,7 @@
       "INGRAM_SKU": "960T03",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31427,7 +31427,7 @@
       "INGRAM_SKU": "960T31",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31452,7 +31452,7 @@
       "INGRAM_SKU": "950T87",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31477,7 +31477,7 @@
       "INGRAM_SKU": "960T20",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31502,7 +31502,7 @@
       "INGRAM_SKU": "960T30",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31527,7 +31527,7 @@
       "INGRAM_SKU": "950T68",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31552,7 +31552,7 @@
       "INGRAM_SKU": "950T95",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31577,7 +31577,7 @@
       "INGRAM_SKU": "960T26",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31602,7 +31602,7 @@
       "INGRAM_SKU": "960T15",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31627,7 +31627,7 @@
       "INGRAM_SKU": "960T05",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31652,7 +31652,7 @@
       "INGRAM_SKU": "960T06",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31677,7 +31677,7 @@
       "INGRAM_SKU": "960T04",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31702,7 +31702,7 @@
       "INGRAM_SKU": "950T98",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31727,7 +31727,7 @@
       "INGRAM_SKU": "960T51",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31752,7 +31752,7 @@
       "INGRAM_SKU": "950T88",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31777,7 +31777,7 @@
       "INGRAM_SKU": "950T97",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31802,7 +31802,7 @@
       "INGRAM_SKU": "950T82",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31827,7 +31827,7 @@
       "INGRAM_SKU": "950T94",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31852,7 +31852,7 @@
       "INGRAM_SKU": "960T27",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31877,7 +31877,7 @@
       "INGRAM_SKU": "950T69",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31902,7 +31902,7 @@
       "INGRAM_SKU": "950T89",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31927,7 +31927,7 @@
       "INGRAM_SKU": "950T84",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31952,7 +31952,7 @@
       "INGRAM_SKU": "960T34",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -31977,7 +31977,7 @@
       "INGRAM_SKU": "960T54",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32002,7 +32002,7 @@
       "INGRAM_SKU": "950T85",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32027,7 +32027,7 @@
       "INGRAM_SKU": "960T36",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32052,7 +32052,7 @@
       "INGRAM_SKU": "960T25",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32077,7 +32077,7 @@
       "INGRAM_SKU": "960T71",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32102,7 +32102,7 @@
       "INGRAM_SKU": "960T57",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32127,7 +32127,7 @@
       "INGRAM_SKU": "950T99",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32152,7 +32152,7 @@
       "INGRAM_SKU": "960T18",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32177,7 +32177,7 @@
       "INGRAM_SKU": "950T66",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32202,7 +32202,7 @@
       "INGRAM_SKU": "960T37",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32227,7 +32227,7 @@
       "INGRAM_SKU": "960T55",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32252,7 +32252,7 @@
       "INGRAM_SKU": "960T42",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32277,7 +32277,7 @@
       "INGRAM_SKU": "960T72",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32302,7 +32302,7 @@
       "INGRAM_SKU": "960T43",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32327,7 +32327,7 @@
       "INGRAM_SKU": "950T93",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32352,7 +32352,7 @@
       "INGRAM_SKU": "960T29",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32377,7 +32377,7 @@
       "INGRAM_SKU": "960T17",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32402,7 +32402,7 @@
       "INGRAM_SKU": "960T16",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32427,7 +32427,7 @@
       "INGRAM_SKU": "960T70",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32452,7 +32452,7 @@
       "INGRAM_SKU": "960T38",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32477,7 +32477,7 @@
       "INGRAM_SKU": "960T60",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -32502,7 +32502,7 @@
       "INGRAM_SKU": "960T62",
       "AppleCare_SKU": "SXKH2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37527,7 +37527,7 @@
       "INGRAM_SKU": "070U62",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37552,7 +37552,7 @@
       "INGRAM_SKU": "070U65",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37577,7 +37577,7 @@
       "INGRAM_SKU": "080U00",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37602,7 +37602,7 @@
       "INGRAM_SKU": "070U63",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37627,7 +37627,7 @@
       "INGRAM_SKU": "070U83",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37652,7 +37652,7 @@
       "INGRAM_SKU": "070U59",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37677,7 +37677,7 @@
       "INGRAM_SKU": "070U28",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37702,7 +37702,7 @@
       "INGRAM_SKU": "070U34",
       "AppleCare_SKU": "SCXU3LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": 0
     },
     {
@@ -37713,7 +37713,7 @@
       "DealerB": 1234,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "1TB",
       "Power": null,
@@ -37727,7 +37727,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37738,7 +37738,7 @@
       "DealerB": 1709,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "2TB",
       "Power": null,
@@ -37752,7 +37752,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37763,7 +37763,7 @@
       "DealerB": 1804,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "2TB",
       "Power": null,
@@ -37777,7 +37777,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37788,7 +37788,7 @@
       "DealerB": 1329,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "1TB",
       "Power": null,
@@ -37802,7 +37802,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37813,7 +37813,7 @@
       "DealerB": 1044,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "16GB",
       "Storage": "512GB",
       "Power": null,
@@ -37827,7 +37827,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37838,7 +37838,7 @@
       "DealerB": 1519,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "1TB",
       "Power": null,
@@ -37852,7 +37852,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37863,7 +37863,7 @@
       "DealerB": 1424,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "1TB",
       "Power": null,
@@ -37877,7 +37877,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37888,7 +37888,7 @@
       "DealerB": 1234,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "512GB",
       "Power": null,
@@ -37902,7 +37902,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37913,7 +37913,7 @@
       "DealerB": 1994,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "2TB",
       "Power": null,
@@ -37927,7 +37927,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37938,7 +37938,7 @@
       "DealerB": 1899,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 chip with 10‑core CPU, 10‑core GPU",
+      "Processor": "M4 10c CPU 10c GPU",
       "Memory": "24GB",
       "Storage": "2TB",
       "Power": null,
@@ -37952,7 +37952,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37963,7 +37963,7 @@
       "DealerB": 1804,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 Pro chip with 12‑core CPU, 16‑core GPU",
+      "Processor": "M4 Pro 12c CPU 16c GPU",
       "Memory": "24GB",
       "Storage": "1TB",
       "Power": null,
@@ -37977,7 +37977,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -37988,7 +37988,7 @@
       "DealerB": 2374,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 Pro chip with 12‑core CPU, 16‑core GPU",
+      "Processor": "M4 Pro 12c CPU 16c GPU",
       "Memory": "48GB",
       "Storage": "1TB",
       "Power": null,
@@ -38002,7 +38002,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "SR1C2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -38013,7 +38013,7 @@
       "DealerB": 2659,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 Max with 14-core CPU, 32-core GPU",
+      "Processor": "M4 Max 14c CPU 32c GPU",
       "Memory": "36GB",
       "Storage": "1TB",
       "Power": null,
@@ -38027,7 +38027,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "STKT2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -38038,7 +38038,7 @@
       "DealerB": 3609,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 Max with 16-core CPU, 40-core GPU",
+      "Processor": "M4 Max 16c CPU 40c GPU",
       "Memory": "64GB",
       "Storage": "1TB",
       "Power": null,
@@ -38052,7 +38052,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "STKT2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     },
     {
@@ -38063,7 +38063,7 @@
       "DealerB": 4084,
       "ScreenSize": null,
       "Color": null,
-      "Processor": "M4 Max with 16-core CPU, 40-core GPU",
+      "Processor": "M4 Max 16c CPU 40c GPU",
       "Memory": "64GB",
       "Storage": "2TB",
       "Power": null,
@@ -38077,7 +38077,7 @@
       "INGRAM_SKU": null,
       "AppleCare_SKU": "STKT2LL/A",
       "Inventory": 0,
-      "TDS_Inventory": 0,
+      "TDS_Inventory": null,
       "INGRAM_Inventory": null
     }
   ]
