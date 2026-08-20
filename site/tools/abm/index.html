@@ -74,6 +74,12 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
 </div>
 
 <div class="field">
+<label for="customer-po">Customer PO # (optional)</label>
+<input type="text" id="customer-po" name="Customer PO" autocomplete="off" maxlength="60">
+<div class="help-text">If your customer uses a PO number for this enrollment, enter it here. It will appear on the confirmation emails they receive.</div>
+</div>
+
+<div class="field">
 <label for="serials">Serial Numbers <span class="req">*</span></label>
 <textarea id="serials" name="Serial Numbers" class="serials" required placeholder="One serial number per line, e.g.:&#10;SD65M94GVWL&#10;SDC996PF4J2&#10;SDKYXCJQX3J"></textarea>
 <div class="help-text">One serial number per line. Each device will become a separate row in the enrollment request.</div>
