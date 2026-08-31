@@ -61,11 +61,13 @@
   }
   .col-toggle-pop .pop-actions button:hover { text-decoration: underline; }
   .col-toggle-pop label {
-    display: flex; gap: 8px; align-items: center;
+    display: block;
     padding: 6px 12px; cursor: pointer; font-size: 13px; color: var(--ink);
+    white-space: nowrap;
   }
   .col-toggle-pop label:hover { background: #f0f4f8; }
-  .col-toggle-pop input { accent-color: var(--blue); margin: 0; }
+  .col-toggle-pop label input { accent-color: var(--blue); margin: 0 8px 0 0; vertical-align: middle; }
+  .col-toggle-pop label span { vertical-align: middle; }
   @media (max-width: 640px) {
     .topbar { flex-wrap: wrap; padding: 10px 12px; }
     .topbar-actions input { width: 100%; }
