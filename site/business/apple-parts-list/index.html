@@ -41,6 +41,31 @@
   .topbar-actions input::placeholder { color: rgba(255,255,255,.55); }
   .topbar-actions input:focus { outline: none; border-color: var(--blue); background: rgba(255,255,255,.15); }
   .topbar-actions button:hover { background: rgba(255,255,255,.2); }
+
+  /* Columns visibility toggle */
+  .col-toggle-wrap { position: relative; }
+  .col-toggle-pop {
+    position: absolute; top: calc(100% + 6px); right: 0;
+    background: #fff; color: var(--ink); border: 1px solid var(--line);
+    border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,.12);
+    padding: 6px 0; min-width: 220px; max-height: 70vh; overflow-y: auto;
+    z-index: 100;
+  }
+  .col-toggle-pop .pop-actions {
+    display: flex; gap: 8px; padding: 4px 10px 6px;
+    border-bottom: 1px solid var(--mist);
+  }
+  .col-toggle-pop .pop-actions button {
+    font-size: 11px; padding: 2px 6px; border: 0; background: none;
+    color: var(--blue); cursor: pointer;
+  }
+  .col-toggle-pop .pop-actions button:hover { text-decoration: underline; }
+  .col-toggle-pop label {
+    display: flex; gap: 8px; align-items: center;
+    padding: 6px 12px; cursor: pointer; font-size: 13px; color: var(--ink);
+  }
+  .col-toggle-pop label:hover { background: #f0f4f8; }
+  .col-toggle-pop input { accent-color: var(--blue); margin: 0; }
   @media (max-width: 640px) {
     .topbar { flex-wrap: wrap; padding: 10px 12px; }
     .topbar-actions input { width: 100%; }
@@ -248,6 +273,16 @@
   </div>
   <div class="topbar-actions">
     <input type="text" id="search" aria-label="Quick search across all SKUs, models, and colors" placeholder="Quick search SKU, model, color…" autocomplete="off" spellcheck="false">
+    <div class="col-toggle-wrap">
+      <button id="col-toggle-btn" type="button" aria-haspopup="true" aria-expanded="false" title="Show or hide columns">Columns ▾</button>
+      <div id="col-toggle-pop" class="col-toggle-pop" hidden>
+        <div class="pop-actions">
+          <button type="button" id="col-toggle-all">Show all</button>
+          <button type="button" id="col-toggle-none">Hide all</button>
+        </div>
+        <div id="col-toggle-list"></div>
+      </div>
+    </div>
     <button id="reset">Reset filters</button>
   </div>
 </div>
@@ -359,7 +394,24 @@
     acPct: null,              // % off MSRP for AppleCare+ items (always applies; defaults to 15)
     sortKey: 'Family',  // default sort
     sortDir: 'asc',     // 'asc' | 'desc'
+    hiddenCols: new Set(),  // column keys the viewer has hidden (persisted per-browser)
   };
+
+  const HIDDEN_COLS_KEY = 'apl:hiddenCols';
+  function loadHiddenCols() {
+    try {
+      const raw = localStorage.getItem(HIDDEN_COLS_KEY);
+      if (raw) state.hiddenCols = new Set(JSON.parse(raw));
+    } catch (_) { /* ignore quota / private-window errors */ }
+  }
+  function saveHiddenCols() {
+    try {
+      localStorage.setItem(HIDDEN_COLS_KEY, JSON.stringify([...state.hiddenCols]));
+    } catch (_) {}
+  }
+  function visibleCols() {
+    return COLS.filter(c => !state.hiddenCols.has(c.key));
+  }
 
   // ============ HELPERS ============
   // GatorTec MSRP = Apple MSRP + $0.95 (our .95 ending convention).
@@ -510,7 +562,7 @@
   function renderHeaders() {
     const labelRow = document.getElementById('label-row');
     const filterRow = document.getElementById('filter-row');
-    labelRow.innerHTML = COLS.map(c => {
+    labelRow.innerHTML = visibleCols().map(c => {
       const sortable = c.type !== 'action';
       const isActive = state.sortKey === c.key;
       const arrow = isActive ? (state.sortDir === 'desc' ? '▼' : '▲') : '↕';
@@ -561,7 +613,7 @@
       th.appendChild(grip);
     });
 
-    filterRow.innerHTML = COLS.map(c => {
+    filterRow.innerHTML = visibleCols().map(c => {
       if (c.filter === 'none') return '<th></th>';
       const sel = state.colFilters[c.key] || [];
       if (c.filter === 'search') {
@@ -722,10 +774,11 @@
 
     const tbody = document.getElementById('tbody');
     if (results.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="${COLS.length}" class="empty">No matching SKUs. Try clearing filters.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="${visibleCols().length}" class="empty">No matching SKUs. Try clearing filters.</td></tr>`;
       return;
     }
-    tbody.innerHTML = results.map(item => '<tr>' + COLS.map(c => cellHtml(item, c)).join('') + '</tr>').join('');
+    const vc = visibleCols();
+    tbody.innerHTML = results.map(item => '<tr>' + vc.map(c => cellHtml(item, c)).join('') + '</tr>').join('');
 
     // Wire cell-copy
     tbody.querySelectorAll('.copy-cell').forEach(td => {
@@ -1014,10 +1067,66 @@
       });
   }
 
+  // ============ COLUMNS VISIBILITY TOGGLE ============
+  loadHiddenCols();
+
+  function populateColToggleList() {
+    const list = document.getElementById('col-toggle-list');
+    if (!list) return;
+    // Skip the action column — it's the "View" button, no reason to hide.
+    // Also skip Description since it's most of the info; hiding it is rarely useful.
+    const toggleable = COLS.filter(c => c.type !== 'action');
+    list.innerHTML = toggleable.map(c => {
+      const checked = !state.hiddenCols.has(c.key) ? ' checked' : '';
+      const label = c.label && c.label.trim() ? c.label : c.key;
+      return `<label><input type="checkbox" data-colkey="${escapeAttr(c.key)}"${checked}> <span>${escapeHtml(label)}</span></label>`;
+    }).join('');
+  }
+  populateColToggleList();
+
+  document.getElementById('col-toggle-btn').addEventListener('click', e => {
+    e.stopPropagation();
+    const pop = document.getElementById('col-toggle-pop');
+    const willOpen = pop.hidden;
+    pop.hidden = !willOpen;
+    e.currentTarget.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    if (willOpen) populateColToggleList(); // refresh checkbox states
+  });
+  document.getElementById('col-toggle-list').addEventListener('change', e => {
+    if (!e.target.matches('input[type="checkbox"]')) return;
+    const key = e.target.getAttribute('data-colkey');
+    if (e.target.checked) state.hiddenCols.delete(key);
+    else state.hiddenCols.add(key);
+    saveHiddenCols();
+    render();
+  });
+  document.getElementById('col-toggle-all').addEventListener('click', () => {
+    state.hiddenCols.clear();
+    saveHiddenCols();
+    populateColToggleList();
+    render();
+  });
+  document.getElementById('col-toggle-none').addEventListener('click', () => {
+    // Hide everything toggleable — keep the action column so viewers can still open the drawer
+    state.hiddenCols = new Set(COLS.filter(c => c.type !== 'action').map(c => c.key));
+    saveHiddenCols();
+    populateColToggleList();
+    render();
+  });
+
   loadParts();
   setInterval(loadParts, 5 * 60 * 1000); // background refresh every 5 minutes
 
   document.addEventListener('click', e => {
+    // Close the Columns popover on outside click
+    if (!e.target.closest('.col-toggle-wrap')) {
+      const pop = document.getElementById('col-toggle-pop');
+      if (pop && !pop.hidden) {
+        pop.hidden = true;
+        const btn = document.getElementById('col-toggle-btn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    }
     if (!e.target.closest('.col-filter-wrap')) {
       document.querySelectorAll('.col-filter-pop').forEach(p => {
         if (!p.hidden) {
