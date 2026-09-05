@@ -207,13 +207,23 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
     e.preventDefault();
 
     // Serial number validation — refuse anything that doesn't look like an Apple serial
-    var badSerials = invalidSerials(document.getElementById('serials').value);
+    var serialsText = document.getElementById('serials').value;
+    var badSerials = invalidSerials(serialsText);
     if (badSerials.length > 0) {
       var sample = badSerials.slice(0, 3).map(function(s){
         return s.length > 40 ? s.substring(0, 37) + '...' : s;
       }).join('", "');
       showError('Some entries don\'t look like Apple serial numbers (e.g. "' + sample + '"). Apple serials are 10-12 characters — letters and numbers only. Please enter ONE serial per line, with no descriptions, quantities, or notes.');
       return;
+    }
+    // Size checks — hard cap at 1500, soft-warn over 500
+    var validCount = String(serialsText || '').split(/[\r\n,]+/).map(function(s){return s.trim();}).filter(Boolean).length;
+    if (validCount > 1500) {
+      showError('This request has ' + validCount + ' serials. Enrollments larger than 1500 devices need to be split into separate requests. Please break this into two or more submissions.');
+      return;
+    }
+    if (validCount > 500) {
+      if (!confirm('Heads up — you\'re submitting ' + validCount + ' serials in one enrollment. Continue?')) return;
     }
 
     // Get Turnstile token (widget adds a hidden input named cf-turnstile-response)

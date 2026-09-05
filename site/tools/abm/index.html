@@ -163,7 +163,8 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
     e.preventDefault();
 
     // Serial number validation — refuse anything that doesn't look like an Apple serial
-    var badSerials = invalidSerials(document.getElementById('serials').value);
+    var serialsText = document.getElementById('serials').value;
+    var badSerials = invalidSerials(serialsText);
     if (badSerials.length > 0) {
       var preview = badSerials.slice(0, 3).map(function(s){
         return '  • ' + (s.length > 60 ? s.substring(0, 57) + '...' : s);
@@ -172,6 +173,15 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
       alert('These entries don\'t look like Apple serial numbers:\n\n' + preview + extra +
         '\n\nApple serials are 10-12 characters — letters and numbers only. Please enter ONE serial per line, with no descriptions, quantities, or other text.');
       return;
+    }
+    // Size checks — hard cap at 1500, soft-warn over 500
+    var validCount = String(serialsText || '').split(/[\r\n,]+/).map(function(s){return s.trim();}).filter(Boolean).length;
+    if (validCount > 1500) {
+      alert('This request has ' + validCount + ' serials. Enrollments larger than 1500 devices need to be split into separate requests. Please break this into two or more submissions.');
+      return;
+    }
+    if (validCount > 500) {
+      if (!confirm('Heads up — you\'re submitting ' + validCount + ' serials in one enrollment. Continue?')) return;
     }
 
     var btn = document.getElementById('submit-btn');
