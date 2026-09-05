@@ -195,8 +195,26 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
     window.scrollTo({ top: box.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
   }
 
+  // Apple serial numbers are 10-12 chars of uppercase letters + digits only.
+  // Blocks accidental prose (descriptions, quantity notes, etc.) getting pasted
+  // into the field, which historically has led to failed enrollments.
+  function invalidSerials(text) {
+    var lines = String(text || '').split(/[\r\n,]+/).map(function(s){ return s.trim(); }).filter(Boolean);
+    return lines.filter(function(s){ return !/^[A-Z0-9]{10,12}$/i.test(s); });
+  }
+
   f.addEventListener('submit', function(e){
     e.preventDefault();
+
+    // Serial number validation — refuse anything that doesn't look like an Apple serial
+    var badSerials = invalidSerials(document.getElementById('serials').value);
+    if (badSerials.length > 0) {
+      var sample = badSerials.slice(0, 3).map(function(s){
+        return s.length > 40 ? s.substring(0, 37) + '...' : s;
+      }).join('", "');
+      showError('Some entries don\'t look like Apple serial numbers (e.g. "' + sample + '"). Apple serials are 10-12 characters — letters and numbers only. Please enter ONE serial per line, with no descriptions, quantities, or notes.');
+      return;
+    }
 
     // Get Turnstile token (widget adds a hidden input named cf-turnstile-response)
     var turnstileEl = f.querySelector('[name="cf-turnstile-response"]');

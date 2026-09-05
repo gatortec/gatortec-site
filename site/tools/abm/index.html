@@ -151,8 +151,29 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
   var ts = document.getElementById('form-ts');
   if (ts) ts.value = Date.now();
 
+  // Apple serial numbers are 10-12 chars of uppercase letters + digits only.
+  // Blocks accidental prose (descriptions, quantity notes, etc.) getting pasted
+  // into the field, which historically has led to failed enrollments.
+  function invalidSerials(text) {
+    var lines = String(text || '').split(/[\r\n,]+/).map(function(s){ return s.trim(); }).filter(Boolean);
+    return lines.filter(function(s){ return !/^[A-Z0-9]{10,12}$/i.test(s); });
+  }
+
   f.addEventListener('submit', function(e){
     e.preventDefault();
+
+    // Serial number validation — refuse anything that doesn't look like an Apple serial
+    var badSerials = invalidSerials(document.getElementById('serials').value);
+    if (badSerials.length > 0) {
+      var preview = badSerials.slice(0, 3).map(function(s){
+        return '  • ' + (s.length > 60 ? s.substring(0, 57) + '...' : s);
+      }).join('\n');
+      var extra = badSerials.length > 3 ? '\n  ... and ' + (badSerials.length - 3) + ' more' : '';
+      alert('These entries don\'t look like Apple serial numbers:\n\n' + preview + extra +
+        '\n\nApple serials are 10-12 characters — letters and numbers only. Please enter ONE serial per line, with no descriptions, quantities, or other text.');
+      return;
+    }
+
     var btn = document.getElementById('submit-btn');
     btn.disabled = true; btn.textContent = 'Submitting...';
 
