@@ -89,7 +89,8 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
 <div class="field">
 <label for="serials">Serial Numbers <span class="req">*</span></label>
 <textarea id="serials" name="Serial Numbers" class="serials" required placeholder="One serial number per line, e.g.:&#10;SD65M94GVWL&#10;SDC996PF4J2&#10;SDKYXCJQX3J"></textarea>
-<div class="help-text">One serial number per line. Each device will become a separate row in the enrollment request.</div>
+<div class="help-text">One serial per line — or comma-separated on a single line. Each device becomes a separate row in the enrollment request. Apple serials are 10–12 characters (letters + numbers only, no descriptions or notes).</div>
+<div id="serials-status" class="help-text" style="margin-top:6px;font-weight:600" aria-live="polite"></div>
 </div>
 
 <div class="field">
@@ -198,10 +199,32 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
   // Apple serial numbers are 10-12 chars of uppercase letters + digits only.
   // Blocks accidental prose (descriptions, quantity notes, etc.) getting pasted
   // into the field, which historically has led to failed enrollments.
-  function invalidSerials(text) {
-    var lines = String(text || '').split(/[\r\n,]+/).map(function(s){ return s.trim(); }).filter(Boolean);
-    return lines.filter(function(s){ return !/^[A-Z0-9]{10,12}$/i.test(s); });
+  function parseSerials(text) {
+    return String(text || '').split(/[\r\n,]+/).map(function(s){ return s.trim(); }).filter(Boolean);
   }
+  function invalidSerials(text) {
+    return parseSerials(text).filter(function(s){ return !/^[A-Z0-9]{10,12}$/i.test(s); });
+  }
+
+  // On blur, show a calm inline status: valid count, or a warning with samples.
+  var serialsEl = document.getElementById('serials');
+  var statusEl = document.getElementById('serials-status');
+  function refreshSerialsStatus() {
+    var text = serialsEl.value;
+    if (!text.trim()) { statusEl.textContent = ''; statusEl.style.color = ''; return; }
+    var all = parseSerials(text);
+    var bad = invalidSerials(text);
+    if (bad.length === 0) {
+      statusEl.textContent = '✓ ' + all.length + ' serial' + (all.length === 1 ? '' : 's') + ' look valid';
+      statusEl.style.color = '#1F6B33';
+    } else {
+      var sample = bad.slice(0, 2).map(function(s){ return s.length > 40 ? s.substring(0, 37) + '...' : s; }).join('", "');
+      var extra = bad.length > 2 ? ' (+' + (bad.length - 2) + ' more)' : '';
+      statusEl.textContent = '⚠ ' + bad.length + ' entr' + (bad.length === 1 ? 'y' : 'ies') + ' don\'t look like Apple serials: "' + sample + '"' + extra;
+      statusEl.style.color = '#B45309';
+    }
+  }
+  serialsEl.addEventListener('blur', refreshSerialsStatus);
 
   f.addEventListener('submit', function(e){
     e.preventDefault();
