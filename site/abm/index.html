@@ -89,7 +89,7 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
 <div class="field">
 <label for="serials">Serial Numbers <span class="req">*</span></label>
 <textarea id="serials" name="Serial Numbers" class="serials" required placeholder="One serial number per line, e.g.:&#10;SD65M94GVWL&#10;SDC996PF4J2&#10;SDKYXCJQX3J"></textarea>
-<div class="help-text">One serial per line — or comma-separated on a single line. Each device becomes a separate row in the enrollment request. Apple serials are 10–12 characters (letters + numbers only, no descriptions or notes).</div>
+<div class="help-text">One serial per line — or comma-separated on a single line. Each device becomes a separate row in the enrollment request. Apple serials are 8–14 characters (letters + numbers only, no descriptions or notes).</div>
 <div id="serials-status" class="help-text" style="margin-top:6px;font-weight:600" aria-live="polite"></div>
 </div>
 
@@ -203,7 +203,7 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
     return String(text || '').split(/[\r\n,]+/).map(function(s){ return s.trim(); }).filter(Boolean);
   }
   function invalidSerials(text) {
-    return parseSerials(text).filter(function(s){ return !/^[A-Z0-9]{10,12}$/i.test(s); });
+    return parseSerials(text).filter(function(s){ return !/^[A-Z0-9]{8,14}$/i.test(s); });
   }
 
   // On blur, show a calm inline status: valid count, or a warning with samples.
@@ -236,7 +236,7 @@ textarea.notes{min-height:80px;font-size:14px;line-height:1.5}
       var sample = badSerials.slice(0, 3).map(function(s){
         return s.length > 40 ? s.substring(0, 37) + '...' : s;
       }).join('", "');
-      showError('Some entries don\'t look like Apple serial numbers (e.g. "' + sample + '"). Apple serials are 10-12 characters — letters and numbers only. Please enter ONE serial per line, with no descriptions, quantities, or notes.');
+      showError('Some entries don\'t look like Apple serial numbers (e.g. "' + sample + '"). Apple serials are 8-14 characters — letters and numbers only. Please enter ONE serial per line, with no descriptions, quantities, or notes.');
       return;
     }
     // Size checks — hard cap at 1500, soft-warn over 500
