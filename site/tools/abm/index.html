@@ -176,7 +176,8 @@ textarea.serials{min-height:160px;font-family:ui-monospace,SFMono-Regular,Menlo,
     } else {
       var sample = bad.slice(0, 2).map(function(s){ return s.length > 40 ? s.substring(0, 37) + '...' : s; }).join('", "');
       var extra = bad.length > 2 ? ' (+' + (bad.length - 2) + ' more)' : '';
-      statusEl.textContent = '⚠ ' + bad.length + ' entr' + (bad.length === 1 ? 'y' : 'ies') + ' don\'t look like Apple serials: "' + sample + '"' + extra;
+      var isOne = bad.length === 1;
+      statusEl.textContent = '⚠ ' + bad.length + ' entr' + (isOne ? 'y' : 'ies') + (isOne ? ' doesn\'t look like an Apple serial: "' : ' don\'t look like Apple serials: "') + sample + '"' + extra;
       statusEl.style.color = '#B45309';
     }
   }
