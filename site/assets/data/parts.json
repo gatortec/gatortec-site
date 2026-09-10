@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generated_at": "2026-09-10T19:05:14.572Z",
+    "generated_at": "2026-09-10T19:22:08.747Z",
     "source": "MarkIT CSV Setup tab — daily refresh via n8n",
     "count": 1583
   },
@@ -51,9 +51,9 @@
       "TDS_SKU": "14004531",
       "INGRAM_SKU": "NJ6872",
       "AppleCare_SKU": null,
-      "Inventory": 3328,
+      "Inventory": 3318,
       "TDS_Inventory": 1173,
-      "INGRAM_Inventory": 2155
+      "INGRAM_Inventory": 2145
     },
     {
       "SKU": "MYH93AM/A",
@@ -126,9 +126,9 @@
       "TDS_SKU": "9780583",
       "INGRAM_SKU": "KY2232",
       "AppleCare_SKU": null,
-      "Inventory": 3052,
+      "Inventory": 2998,
       "TDS_Inventory": 443,
-      "INGRAM_Inventory": 2609
+      "INGRAM_Inventory": 2555
     },
     {
       "SKU": "MUQ93AM/A",
@@ -376,9 +376,9 @@
       "TDS_SKU": "14309232",
       "INGRAM_SKU": "RF7746",
       "AppleCare_SKU": null,
-      "Inventory": 4905,
-      "TDS_Inventory": 2778,
-      "INGRAM_Inventory": 2127
+      "Inventory": 4884,
+      "TDS_Inventory": 2777,
+      "INGRAM_Inventory": 2107
     },
     {
       "SKU": "MXK63AM/A",
@@ -476,9 +476,9 @@
       "TDS_SKU": "14309236",
       "INGRAM_SKU": "RF7753",
       "AppleCare_SKU": null,
-      "Inventory": 590,
+      "Inventory": 589,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 590
+      "INGRAM_Inventory": 589
     },
     {
       "SKU": "MXKA3AM/A",
@@ -951,9 +951,9 @@
       "TDS_SKU": "14035529",
       "INGRAM_SKU": "NN0466",
       "AppleCare_SKU": null,
-      "Inventory": 111358,
+      "Inventory": 111357,
       "TDS_Inventory": 46286,
-      "INGRAM_Inventory": 65072
+      "INGRAM_Inventory": 65071
     },
     {
       "SKU": "MYQT3AM/A",
@@ -976,9 +976,9 @@
       "TDS_SKU": "14035528",
       "INGRAM_SKU": "NN0465",
       "AppleCare_SKU": null,
-      "Inventory": 12307,
+      "Inventory": 12054,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 12307
+      "INGRAM_Inventory": 12054
     },
     {
       "SKU": "MUQX3AM/A",
@@ -1051,9 +1051,9 @@
       "TDS_SKU": "14379110",
       "INGRAM_SKU": "S45911",
       "AppleCare_SKU": null,
-      "Inventory": 29449,
+      "Inventory": 29329,
       "TDS_Inventory": 15656,
-      "INGRAM_Inventory": 13793
+      "INGRAM_Inventory": 13673
     },
     {
       "SKU": "MGD74LL/A",
@@ -1426,9 +1426,9 @@
       "TDS_SKU": "9356688",
       "INGRAM_SKU": "JR9383",
       "AppleCare_SKU": null,
-      "Inventory": 8244,
+      "Inventory": 8242,
       "TDS_Inventory": 3787,
-      "INGRAM_Inventory": 4457
+      "INGRAM_Inventory": 4455
     },
     {
       "SKU": "MUWA3AM/A",
@@ -1551,8 +1551,8 @@
       "TDS_SKU": "9684488",
       "INGRAM_SKU": "JW4079",
       "AppleCare_SKU": null,
-      "Inventory": 923,
-      "TDS_Inventory": 133,
+      "Inventory": 922,
+      "TDS_Inventory": 132,
       "INGRAM_Inventory": 790
     },
     {
@@ -1576,9 +1576,9 @@
       "TDS_SKU": "9684485",
       "INGRAM_SKU": "JW4070",
       "AppleCare_SKU": null,
-      "Inventory": 5125,
+      "Inventory": 5355,
       "TDS_Inventory": 3107,
-      "INGRAM_Inventory": 2018
+      "INGRAM_Inventory": 2248
     },
     {
       "SKU": "MW2P3AM/A",
@@ -2001,9 +2001,9 @@
       "TDS_SKU": "15007615",
       "INGRAM_SKU": "Z55683",
       "AppleCare_SKU": null,
-      "Inventory": 20799,
+      "Inventory": 20798,
       "TDS_Inventory": 12112,
-      "INGRAM_Inventory": 8687
+      "INGRAM_Inventory": 8686
     },
     {
       "SKU": "MHWM4AM/A",
@@ -15101,9 +15101,9 @@
       "TDS_SKU": "14569093",
       "INGRAM_SKU": "SL6586",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 36855,
-      "TDS_Inventory": 33746,
-      "INGRAM_Inventory": 3109
+      "Inventory": 36850,
+      "TDS_Inventory": 33742,
+      "INGRAM_Inventory": 3108
     },
     {
       "SKU": "MD4A4LL/A",
@@ -15301,9 +15301,9 @@
       "TDS_SKU": "14569110",
       "INGRAM_SKU": "SL6602",
       "AppleCare_SKU": "SUYD2LL/A",
-      "Inventory": 45,
+      "Inventory": 43,
       "TDS_Inventory": 22,
-      "INGRAM_Inventory": 23
+      "INGRAM_Inventory": 21
     },
     {
       "SKU": "MD4Y4LL/A",
@@ -16551,9 +16551,9 @@
       "TDS_SKU": "15347496",
       "INGRAM_SKU": "770T23",
       "AppleCare_SKU": "SCVD3LL/A",
-      "Inventory": 50,
+      "Inventory": 48,
       "TDS_Inventory": 14,
-      "INGRAM_Inventory": 36
+      "INGRAM_Inventory": 34
     },
     {
       "SKU": "MH5T4LL/A",
@@ -17376,9 +17376,9 @@
       "TDS_SKU": "14290291",
       "INGRAM_SKU": "NU1905",
       "AppleCare_SKU": "SNGN2LL/A",
-      "Inventory": 60,
+      "Inventory": 58,
       "TDS_Inventory": 7,
-      "INGRAM_Inventory": 53
+      "INGRAM_Inventory": 51
     },
     {
       "SKU": "MXNA3LL/A",
@@ -17601,9 +17601,9 @@
       "TDS_SKU": "14290300",
       "INGRAM_SKU": "NU1906",
       "AppleCare_SKU": "SNGN2LL/A",
-      "Inventory": 567,
+      "Inventory": 566,
       "TDS_Inventory": 106,
-      "INGRAM_Inventory": 461
+      "INGRAM_Inventory": 460
     },
     {
       "SKU": "MXPW3LL/A",
@@ -17776,9 +17776,9 @@
       "TDS_SKU": "14290307",
       "INGRAM_SKU": "NU1916",
       "AppleCare_SKU": "SNGN2LL/A",
-      "Inventory": 4,
+      "Inventory": 3,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 4
+      "INGRAM_Inventory": 3
     },
     {
       "SKU": "MYHC3LL/A",
@@ -17901,8 +17901,8 @@
       "TDS_SKU": "15098124",
       "INGRAM_SKU": "360C51",
       "AppleCare_SKU": "SXT02LL/A",
-      "Inventory": 118,
-      "TDS_Inventory": 118,
+      "Inventory": 117,
+      "TDS_Inventory": 117,
       "INGRAM_Inventory": 0
     },
     {
@@ -18226,8 +18226,8 @@
       "TDS_SKU": "15098176",
       "INGRAM_SKU": "350C67",
       "AppleCare_SKU": "SXT02LL/A",
-      "Inventory": 631,
-      "TDS_Inventory": 94,
+      "Inventory": 630,
+      "TDS_Inventory": 93,
       "INGRAM_Inventory": 537
     },
     {
@@ -18501,9 +18501,9 @@
       "TDS_SKU": "15098136",
       "INGRAM_SKU": "370C33",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 666,
+      "Inventory": 665,
       "TDS_Inventory": 151,
-      "INGRAM_Inventory": 515
+      "INGRAM_Inventory": 514
     },
     {
       "SKU": "MDYK4LL/A",
@@ -18801,9 +18801,9 @@
       "TDS_SKU": "15098157",
       "INGRAM_SKU": "370C25",
       "AppleCare_SKU": "SXT12LL/A",
-      "Inventory": 35,
+      "Inventory": 34,
       "TDS_Inventory": 0,
-      "INGRAM_Inventory": 35
+      "INGRAM_Inventory": 34
     },
     {
       "SKU": "ME7X4LL/A",
@@ -26801,9 +26801,9 @@
       "TDS_SKU": "15350890",
       "INGRAM_SKU": "840T90",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 2839,
+      "Inventory": 2840,
       "TDS_Inventory": 2073,
-      "INGRAM_Inventory": 766
+      "INGRAM_Inventory": 767
     },
     {
       "SKU": "MGDP4LL/A",
@@ -26951,9 +26951,9 @@
       "TDS_SKU": "15350896",
       "INGRAM_SKU": "840T47",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 1592,
+      "Inventory": 1591,
       "TDS_Inventory": 928,
-      "INGRAM_Inventory": 664
+      "INGRAM_Inventory": 663
     },
     {
       "SKU": "MGE64LL/A",
@@ -26976,9 +26976,9 @@
       "TDS_SKU": "15350916",
       "INGRAM_SKU": "840T75",
       "AppleCare_SKU": "SCXU3LL/A",
-      "Inventory": 1595,
+      "Inventory": 1594,
       "TDS_Inventory": 1555,
-      "INGRAM_Inventory": 40
+      "INGRAM_Inventory": 39
     },
     {
       "SKU": "MGE74LL/A",
@@ -27201,9 +27201,9 @@
       "TDS_SKU": "15350923",
       "INGRAM_SKU": "840T87",
       "AppleCare_SKU": "SCXT3LL/A",
-      "Inventory": 152,
+      "Inventory": 151,
       "TDS_Inventory": 119,
-      "INGRAM_Inventory": 33
+      "INGRAM_Inventory": 32
     },
     {
       "SKU": "MJLW4LL/A",
@@ -27251,9 +27251,9 @@
       "TDS_SKU": "15098111",
       "INGRAM_SKU": "350C41",
       "AppleCare_SKU": "SXKH2LL/A",
-      "Inventory": 660,
+      "Inventory": 659,
       "TDS_Inventory": 633,
-      "INGRAM_Inventory": 27
+      "INGRAM_Inventory": 26
     },
     {
       "SKU": "MDE34LL/A",
@@ -27276,9 +27276,9 @@
       "TDS_SKU": "15098112",
       "INGRAM_SKU": "350C50",
       "AppleCare_SKU": "SXKH2LL/A",
-      "Inventory": 1570,
+      "Inventory": 1569,
       "TDS_Inventory": 1345,
-      "INGRAM_Inventory": 225
+      "INGRAM_Inventory": 224
     },
     {
       "SKU": "MDE54LL/A",
@@ -27301,9 +27301,9 @@
       "TDS_SKU": "15098114",
       "INGRAM_SKU": "350C42",
       "AppleCare_SKU": "SXKH2LL/A",
-      "Inventory": 843,
+      "Inventory": 844,
       "TDS_Inventory": 552,
-      "INGRAM_Inventory": 291
+      "INGRAM_Inventory": 292
     },
     {
       "SKU": "MDE64LL/A",
@@ -27326,8 +27326,8 @@
       "TDS_SKU": "15098115",
       "INGRAM_SKU": "350C60",
       "AppleCare_SKU": "SXKH2LL/A",
-      "Inventory": 1229,
-      "TDS_Inventory": 1126,
+      "Inventory": 1228,
+      "TDS_Inventory": 1125,
       "INGRAM_Inventory": 103
     },
     {
@@ -37198,11 +37198,11 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
+      "TDS_SKU": "15861849",
       "INGRAM_SKU": null,
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
+      "TDS_Inventory": 0,
       "INGRAM_Inventory": null
     },
     {
@@ -37223,12 +37223,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861850",
+      "INGRAM_SKU": "141L15",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAA4LS/A",
@@ -37248,12 +37248,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861851",
+      "INGRAM_SKU": "141L38",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAD4LS/A",
@@ -37273,12 +37273,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861852",
+      "INGRAM_SKU": "141L71",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAE4LS/A",
@@ -37298,12 +37298,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861853",
+      "INGRAM_SKU": "141L09",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAF4LS/A",
@@ -37323,12 +37323,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861854",
+      "INGRAM_SKU": "141L36",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAG4LS/A",
@@ -37348,12 +37348,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861868",
+      "INGRAM_SKU": "131L99",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAJ4LS/A",
@@ -37373,12 +37373,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861869",
+      "INGRAM_SKU": "141L06",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAQ4LS/A",
@@ -37398,12 +37398,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861870",
+      "INGRAM_SKU": "141L35",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAU4LS/A",
@@ -37423,12 +37423,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861871",
+      "INGRAM_SKU": "141L46",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAV4LS/A",
@@ -37448,12 +37448,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861872",
+      "INGRAM_SKU": "141L51",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAX4LS/A",
@@ -37473,12 +37473,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861873",
+      "INGRAM_SKU": "141L41",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJAY4LS/A",
@@ -37498,12 +37498,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861874",
+      "INGRAM_SKU": "141L39",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJC04LS/A",
@@ -37523,12 +37523,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861875",
+      "INGRAM_SKU": "141L25",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJC14LS/A",
@@ -37548,12 +37548,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861876",
+      "INGRAM_SKU": "141L47",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJC24LS/A",
@@ -37573,12 +37573,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861877",
+      "INGRAM_SKU": "141L42",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJC34LS/A",
@@ -37598,12 +37598,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861709",
+      "INGRAM_SKU": "131L97",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJC44LS/A",
@@ -37623,12 +37623,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861710",
+      "INGRAM_SKU": "141L62",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJE74LS/A",
@@ -37648,12 +37648,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861749",
+      "INGRAM_SKU": "131L69",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJE94LS/A",
@@ -37673,12 +37673,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861750",
+      "INGRAM_SKU": "141L21",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEA4LS/A",
@@ -37698,12 +37698,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861751",
+      "INGRAM_SKU": "131L62",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEC4LS/A",
@@ -37723,12 +37723,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861752",
+      "INGRAM_SKU": "131L58",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJED4LS/A",
@@ -37748,12 +37748,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861753",
+      "INGRAM_SKU": "131L86",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEE4LS/A",
@@ -37773,12 +37773,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861754",
+      "INGRAM_SKU": "131L89",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEF4LS/A",
@@ -37798,12 +37798,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861765",
+      "INGRAM_SKU": "131L72",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEG4LS/A",
@@ -37823,12 +37823,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861766",
+      "INGRAM_SKU": "131L59",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEH4LS/A",
@@ -37848,12 +37848,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861767",
+      "INGRAM_SKU": "131L55",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEJ4LS/A",
@@ -37873,12 +37873,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861768",
+      "INGRAM_SKU": "131L75",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEK4LS/A",
@@ -37898,12 +37898,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861769",
+      "INGRAM_SKU": "131L76",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEL4LS/A",
@@ -37923,12 +37923,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861770",
+      "INGRAM_SKU": "131L66",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEN4LS/A",
@@ -37948,12 +37948,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861771",
+      "INGRAM_SKU": "131L90",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEP4LS/A",
@@ -37973,12 +37973,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861772",
+      "INGRAM_SKU": "141L03",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEQ4LS/A",
@@ -37998,12 +37998,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861773",
+      "INGRAM_SKU": "141L00",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJEU4LS/A",
@@ -38023,12 +38023,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861774",
+      "INGRAM_SKU": "141L13",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJFX4LS/A",
@@ -38048,12 +38048,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861785",
+      "INGRAM_SKU": "141L12",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJFY4LS/A",
@@ -38073,12 +38073,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861786",
+      "INGRAM_SKU": "141L11",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG04LS/A",
@@ -38098,12 +38098,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861787",
+      "INGRAM_SKU": "131L77",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG14LS/A",
@@ -38123,12 +38123,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861788",
+      "INGRAM_SKU": "141L32",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG24LS/A",
@@ -38148,12 +38148,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861789",
+      "INGRAM_SKU": "141L23",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG34LS/A",
@@ -38173,12 +38173,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861790",
+      "INGRAM_SKU": "121L98",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG44LS/A",
@@ -38198,12 +38198,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861791",
+      "INGRAM_SKU": "131L95",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG54LS/A",
@@ -38223,12 +38223,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861792",
+      "INGRAM_SKU": "131L88",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG64LS/A",
@@ -38248,12 +38248,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861793",
+      "INGRAM_SKU": "131L39",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG74LS/A",
@@ -38273,12 +38273,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861794",
+      "INGRAM_SKU": "141L02",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG84LS/A",
@@ -38298,12 +38298,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861805",
+      "INGRAM_SKU": "131L79",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJG94LS/A",
@@ -38323,12 +38323,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861806",
+      "INGRAM_SKU": "141L20",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGA4LS/A",
@@ -38348,12 +38348,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861807",
+      "INGRAM_SKU": "131L98",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGC4LS/A",
@@ -38373,12 +38373,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861808",
+      "INGRAM_SKU": "141L30",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGD4LS/A",
@@ -38398,12 +38398,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861809",
+      "INGRAM_SKU": "131L63",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGE4LS/A",
@@ -38423,12 +38423,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861810",
+      "INGRAM_SKU": "141L14",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGF4LS/A",
@@ -38448,12 +38448,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861811",
+      "INGRAM_SKU": "131L78",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGG4LS/A",
@@ -38473,12 +38473,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861812",
+      "INGRAM_SKU": "141L43",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGH4LS/A",
@@ -38498,12 +38498,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861813",
+      "INGRAM_SKU": "141L33",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGJ4LS/A",
@@ -38523,12 +38523,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861814",
+      "INGRAM_SKU": "131L91",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGK4LS/A",
@@ -38548,12 +38548,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861825",
+      "INGRAM_SKU": "131L64",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGL4LS/A",
@@ -38573,11 +38573,11 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
+      "TDS_SKU": "15861826",
       "INGRAM_SKU": null,
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
+      "TDS_Inventory": 0,
       "INGRAM_Inventory": null
     },
     {
@@ -38598,12 +38598,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861827",
+      "INGRAM_SKU": "131L73",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGN4LS/A",
@@ -38623,12 +38623,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861828",
+      "INGRAM_SKU": "141L07",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGP4LS/A",
@@ -38648,12 +38648,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861829",
+      "INGRAM_SKU": "131L65",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGQ4LS/A",
@@ -38673,12 +38673,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861830",
+      "INGRAM_SKU": "141L50",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGR4LS/A",
@@ -38698,12 +38698,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861831",
+      "INGRAM_SKU": "141L05",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGT4LS/A",
@@ -38723,12 +38723,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861832",
+      "INGRAM_SKU": "141L37",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGU4LS/A",
@@ -38748,11 +38748,11 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
+      "TDS_SKU": "15861833",
       "INGRAM_SKU": null,
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
+      "TDS_Inventory": 0,
       "INGRAM_Inventory": null
     },
     {
@@ -38773,11 +38773,11 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
+      "TDS_SKU": "15861834",
       "INGRAM_SKU": null,
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
+      "TDS_Inventory": 0,
       "INGRAM_Inventory": null
     },
     {
@@ -38798,12 +38798,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861699",
+      "INGRAM_SKU": "141L16",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGX4LS/A",
@@ -38823,12 +38823,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861700",
+      "INGRAM_SKU": "141L04",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJGY4LS/A",
@@ -38848,12 +38848,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861701",
+      "INGRAM_SKU": "141L34",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJH04LS/A",
@@ -38873,12 +38873,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861702",
+      "INGRAM_SKU": "141L17",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJH14LS/A",
@@ -38898,12 +38898,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861703",
+      "INGRAM_SKU": "141L22",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJH24LS/A",
@@ -38923,12 +38923,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861704",
+      "INGRAM_SKU": "141L08",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJH34LS/A",
@@ -38948,12 +38948,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861705",
+      "INGRAM_SKU": "141L60",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJH44LS/A",
@@ -38973,12 +38973,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861706",
+      "INGRAM_SKU": "131L96",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJKR4LW/A",
@@ -38998,12 +38998,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861733",
+      "INGRAM_SKU": "121L97",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJKW4LW/A",
@@ -39023,12 +39023,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861734",
+      "INGRAM_SKU": "121L99",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJKY4LW/A",
@@ -39048,12 +39048,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861679",
+      "INGRAM_SKU": "131L61",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJL14LW/A",
@@ -39073,12 +39073,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861680",
+      "INGRAM_SKU": "131L74",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJL34LW/A",
@@ -39098,12 +39098,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861681",
+      "INGRAM_SKU": "131L57",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJL54LW/A",
@@ -39123,12 +39123,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861682",
+      "INGRAM_SKU": "131L92",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJL74LW/A",
@@ -39148,12 +39148,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861683",
+      "INGRAM_SKU": "131L37",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJL94LW/A",
@@ -39173,12 +39173,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861684",
+      "INGRAM_SKU": "141L01",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLC4LW/A",
@@ -39198,12 +39198,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861685",
+      "INGRAM_SKU": "131L38",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLE4LW/A",
@@ -39223,12 +39223,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861686",
+      "INGRAM_SKU": "141L10",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLG4LW/A",
@@ -39248,12 +39248,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861687",
+      "INGRAM_SKU": "131L36",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLJ4LW/A",
@@ -39273,12 +39273,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861688",
+      "INGRAM_SKU": "131L68",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLL4LW/A",
@@ -39298,12 +39298,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861745",
+      "INGRAM_SKU": "131L93",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLN4LW/A",
@@ -39323,12 +39323,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861746",
+      "INGRAM_SKU": "131L87",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLQ4LW/A",
@@ -39348,12 +39348,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861747",
+      "INGRAM_SKU": "131L56",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MJLT4LW/A",
@@ -39373,12 +39373,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861748",
+      "INGRAM_SKU": "131L67",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKD74LS/A",
@@ -39398,12 +39398,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861707",
+      "INGRAM_SKU": "141L24",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKD84LS/A",
@@ -39423,12 +39423,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861708",
+      "INGRAM_SKU": "141L61",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKDC4LS/A",
@@ -39448,12 +39448,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861845",
+      "INGRAM_SKU": "141L44",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKDF4LS/A",
@@ -39473,12 +39473,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861846",
+      "INGRAM_SKU": "141L70",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKDG4LS/A",
@@ -39498,12 +39498,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861847",
+      "INGRAM_SKU": "141L45",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKDK4LS/A",
@@ -39523,12 +39523,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15861848",
+      "INGRAM_SKU": "141L52",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKFT4LL/A",
@@ -39548,12 +39548,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15862266",
+      "INGRAM_SKU": "131L01",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     },
     {
       "SKU": "MKFW4LL/A",
@@ -39573,12 +39573,12 @@
       "Keyboard": null,
       "Moveability": null,
       "Stocked": null,
-      "TDS_SKU": null,
-      "INGRAM_SKU": null,
+      "TDS_SKU": "15862267",
+      "INGRAM_SKU": "131L20",
       "AppleCare_SKU": null,
       "Inventory": 0,
-      "TDS_Inventory": null,
-      "INGRAM_Inventory": null
+      "TDS_Inventory": 0,
+      "INGRAM_Inventory": 0
     }
   ]
 }
