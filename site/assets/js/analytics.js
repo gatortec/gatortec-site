@@ -71,7 +71,7 @@
       '<div class="gt-consent-text">' +
       '<strong>We use cookies for analytics.</strong> ' +
       'We use Google Analytics to understand how visitors use our site. No personally identifying info is collected. ' +
-      '<a href="/legal/privacy.html">Learn more</a>.' +
+      '<a href="/legal/privacy.html">Privacy</a> · <a href="/legal/cookies.html">Cookies</a>.' +
       '</div>' +
       '<div class="gt-consent-actions">' +
       '<button type="button" id="gt-consent-decline" class="gt-consent-btn-secondary">Decline</button>' +

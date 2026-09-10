@@ -98,8 +98,19 @@
 <h2>Cookies</h2>
 <p>The gatortec.com website uses essential cookies required for site functionality. We do not use third-party advertising trackers or behavioral targeting cookies.</p>
 
+<h2>Third parties on this site</h2>
+<p>When you accept analytics on the cookie banner, the following services load and receive information about your visit. We list them here for transparency; a full per-cookie breakdown lives on the <a href="cookies.html">Cookies</a> page.</p>
+<ul>
+<li><strong>Google Analytics 4</strong> — sets cookies to distinguish visitors and measure session activity. Loads only after Accept.</li>
+<li><strong>Google Tag Manager</strong> (<code>www.googletagmanager.com</code>) — loads as part of the Google Analytics bootstrap. Loads only after Accept.</li>
+<li><strong>Google DoubleClick</strong> (<code>stats.g.doubleclick.net</code>) — a downstream request from Google Analytics 4. We set <code>allow_google_signals: false</code> and <code>allow_ad_personalization_signals: false</code>, so this data is not used for advertising personalization by us; the request still occurs, and we disclose it as a recipient. Loads only after Accept.</li>
+<li><strong>Cloudflare Web Analytics</strong> (<code>cloudflareinsights.com</code>) — sets no cookies but does transmit the page URL and a per-pageload ID. Loads only after Accept.</li>
+<li><strong>Cloudflare Turnstile</strong> (<code>challenges.cloudflare.com</code>) — bot and fraud protection on our contact and enrollment forms. Loads on those pages regardless of consent, as it is strictly necessary for the forms to function.</li>
+<li><strong>Google Fonts</strong> (<code>fonts.googleapis.com</code>, <code>fonts.gstatic.com</code>) — used to display our site's typography. Loads on every page regardless of consent.</li>
+</ul>
+
 <h2>Your privacy choices</h2>
-<p>We use Google Analytics 4 to understand how visitors use our site. You can opt in or out of this analytics tracking at any time using the controls below. Your choice is saved in your browser — clearing your browser data will reset it. We also use Cloudflare Web Analytics, which is privacy-first (no cookies, no personal info collected) and runs regardless of this setting.</p>
+<p>You can opt in or out of analytics at any time using the controls below. This governs Google Analytics 4, Google Tag Manager, Google DoubleClick, and Cloudflare Web Analytics — none of them will load until you Accept, and all of them will stop loading if you Decline. Your choice is saved in your browser; clearing your browser data will reset it.</p>
 
 <div id="gt-privacy-panel" style="background:var(--mist);border-radius:12px;padding:24px 26px;margin:22px 0;">
   <div id="gt-privacy-status" style="font-size:15.5px;color:var(--ink);margin-bottom:14px">
@@ -121,11 +132,11 @@
     var decline = document.getElementById('gt-privacy-decline');
     if (!el) return;
     if (status === 'accepted') {
-      el.innerHTML = '<span style="color:#0a7140;font-weight:600">✓ Opted in</span> — Google Analytics is loading for you.';
+      el.innerHTML = '<span style="color:#0a7140;font-weight:600">✓ Opted in</span> — Google Analytics and Cloudflare Web Analytics are loading for you.';
       accept.disabled = true; accept.style.opacity = '0.5'; accept.style.cursor = 'default';
       decline.disabled = false; decline.style.opacity = '1'; decline.style.cursor = 'pointer';
     } else if (status === 'declined') {
-      el.innerHTML = '<span style="color:#a52424;font-weight:600">✗ Opted out</span> — Google Analytics is not loading for you.';
+      el.innerHTML = '<span style="color:#a52424;font-weight:600">✗ Opted out</span> — no analytics services are loading for you.';
       accept.disabled = false; accept.style.opacity = '1'; accept.style.cursor = 'pointer';
       decline.disabled = true; decline.style.opacity = '0.5'; decline.style.cursor = 'default';
     } else {
@@ -191,7 +202,8 @@
 <a href="../business/faq/">FAQ</a>
 <a href="../legal/accessibility.html">Accessibility</a>
 <a href="../legal/privacy.html">Privacy</a>
-<a href="../legal/terms.html">Terms</a>
+
+<a href="../legal/cookies.html">Cookies</a><a href="../legal/terms.html">Terms</a>
 <a href="../legal/sms-terms.html">SMS Terms</a>
 <a href="/business/apple-parts-list/">Parts List <span class="staff-tag">(staff)</span></a>
 <a href="#" onclick="return window.gtConsentReset && window.gtConsentReset()">Cookie preferences</a>
