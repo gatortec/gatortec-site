@@ -1,22 +1,14 @@
 // GatorTec analytics + consent banner
-// Cloudflare Web Analytics is privacy-first (no consent needed, no cookies).
-// Google Analytics 4 sets cookies, so we gate it behind explicit consent.
+// Both Google Analytics 4 and Cloudflare Web Analytics are gated behind explicit consent.
+// Cloudflare's beacon sets no cookies, but it does POST the full page URL and a
+// per-pageload id to cloudflareinsights.com, so it is treated as non-essential and
+// loaded only after an affirmative Accept. See tracking-audit/FIX-gatortec.com.md.
 // To rotate keys: update GA4_ID and CF_BEACON_TOKEN below.
 
 (function () {
   var GA4_ID = 'G-015MR208YK';
   var CF_BEACON_TOKEN = '2dd930756a5842fbaf5cff2da50eb637';
   var STORAGE_KEY = 'gt_consent_v1';
-
-  // ============ CLOUDFLARE WEB ANALYTICS ============
-  // No consent needed — Cloudflare's beacon doesn't set cookies or store PII.
-  if (CF_BEACON_TOKEN) {
-    var cf = document.createElement('script');
-    cf.defer = true;
-    cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-    cf.setAttribute('data-cf-beacon', '{"token": "' + CF_BEACON_TOKEN + '"}');
-    document.head.appendChild(cf);
-  }
 
   // ============ CONSENT STATE ============
   function getConsent() {
@@ -47,6 +39,26 @@
     });
   }
 
+  // ============ LOAD CLOUDFLARE WEB ANALYTICS ON CONSENT ============
+  function loadCloudflareAnalytics() {
+    if (!CF_BEACON_TOKEN) return;
+    if (window._cfLoaded) return;
+    window._cfLoaded = true;
+
+    var cf = document.createElement('script');
+    cf.defer = true;
+    cf.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    cf.setAttribute('data-cf-beacon', '{"token": "' + CF_BEACON_TOKEN + '"}');
+    document.head.appendChild(cf);
+  }
+
+  // Single entry point for everything that requires consent, so a future tag
+  // cannot be wired to one call site and missed at the other two.
+  function loadConsentedAnalytics() {
+    loadGA();
+    loadCloudflareAnalytics();
+  }
+
   // ============ CONSENT BANNER ============
   function showBanner() {
     if (document.getElementById('gt-consent')) return;
@@ -70,7 +82,7 @@
 
     document.getElementById('gt-consent-accept').addEventListener('click', function () {
       setConsent('accepted');
-      loadGA();
+      loadConsentedAnalytics();
       banner.remove();
     });
     document.getElementById('gt-consent-decline').addEventListener('click', function () {
@@ -83,7 +95,7 @@
   function init() {
     var consent = getConsent();
     if (consent === 'accepted') {
-      loadGA();
+      loadConsentedAnalytics();
     } else if (consent === 'declined') {
       // do nothing
     } else {
@@ -98,7 +110,7 @@
   // Accept consent programmatically (e.g., from privacy page button)
   window.gtConsentAccept = function () {
     setConsent('accepted');
-    loadGA();
+    loadConsentedAnalytics();
     var existing = document.getElementById('gt-consent');
     if (existing) existing.remove();
     document.dispatchEvent(new CustomEvent('gt:consent-change', { detail: { status: 'accepted' } }));
