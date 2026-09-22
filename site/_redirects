@@ -32,6 +32,12 @@
 /TECHARY                       /techary/                                 301
 /TECHARY/                      /techary/                                 301
 /TECHARY/*                     /techary/:splat                           301
+/Meldon                        /meldon/                                  301
+/Meldon/                       /meldon/                                  301
+/Meldon/*                      /meldon/:splat                            301
+/MELDON                        /meldon/                                  301
+/MELDON/                       /meldon/                                  301
+/MELDON/*                      /meldon/:splat                            301
 
 # ============================================================================
 # Product slug shortcuts
